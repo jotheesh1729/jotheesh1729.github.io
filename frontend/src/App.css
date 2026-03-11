@@ -1,14 +1,33 @@
-/* Smooth scrolling behavior */
+/* Simple academic portfolio styling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Remove any default margins */
 body {
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
 }
 
 .App {
     min-height: 100vh;
+}
+
+/* Simple link styling */
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Remove default margins */
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
 }

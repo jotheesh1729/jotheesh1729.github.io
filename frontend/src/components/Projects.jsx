@@ -1,130 +1,138 @@
 import React from 'react';
-import { Rocket, ExternalLink } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
+import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
     title: 'Decentralized Coordination of Heterogeneous Swarm Robots',
     image: '/assets/images/project-swarm-robots.jpg',
-    description: 'Designed a decentralized multi-robot framework for mixed UGV-UAV teams in confined spaces. Implemented collision-free navigation and dynamic goal assignment without centralized control using Graph Neural Networks.',
-    technologies: ['Graph Neural Networks', 'ROS2', 'Unity3D', 'Multi-Agent Systems', 'Python'],
+    description: 'Designed a decentralized multi-robot framework for mixed UGV-UAV teams in confined spaces using Graph Neural Networks for collision-free navigation and dynamic goal assignment.',
+    technologies: ['Graph Neural Networks', 'ROS2', 'Unity3D', 'Python'],
     dates: 'Feb - May 2025',
-    github: '#'
+    link: '#'
   },
   {
     title: 'Reinforcement Learning for Quadruped Locomotion',
     image: '/assets/images/project-quadruped.jpg',
-    description: 'Trained a PPO-based walking policy for Unitree Go2 quadruped in Isaac Lab with custom reward shaping. Implemented domain randomization and PD torque controller with gait phase tracking for stable trotting gaits.',
-    technologies: ['Reinforcement Learning', 'PPO', 'Isaac Lab', 'Unitree Go2', 'Python', 'PyTorch'],
+    description: 'Trained PPO-based walking policy for Unitree Go2 in Isaac Lab with domain randomization. Implemented PD torque controller with gait phase tracking for stable locomotion.',
+    technologies: ['PPO', 'Isaac Lab', 'PyTorch', 'Python'],
     dates: 'Sep - Dec 2024',
-    github: '#'
+    link: '#'
   },
   {
     title: 'Slip-Aware MPPI Navigation for Skid-Steer Robots',
     image: '/assets/images/project-mppi-navigation.jpg',
-    description: 'Developed autonomous navigation stack for Clearpath Warthog on Mars-like terrain. Combined slip-aware kinematics, Unscented Kalman Filter for GPS-free localization, and MPPI control for trajectory optimization.',
-    technologies: ['MPPI', 'Isaac Sim', 'UKF', 'LiDAR', 'RTAB-Map SLAM', 'Blender', 'C++'],
+    description: 'Developed autonomous navigation for Clearpath Warthog on Martian terrain combining slip-aware kinematics, UKF localization, and MPPI trajectory optimization.',
+    technologies: ['MPPI', 'Isaac Sim', 'UKF', 'LiDAR', 'C++'],
     dates: 'Sep - Dec 2024',
-    github: '#'
+    link: '#'
   },
   {
     title: 'Vision-Based Maze Navigation',
     image: '/assets/images/project-vision-navigation.jpg',
-    description: 'Built vision-only localization system using ResNet50 features and BallTree search achieving sub-2ms query time. Created topological graph enabling A* path planning through maze using only camera input.',
-    technologies: ['Computer Vision', 'ResNet50', 'A* Planning', 'Python', 'OpenCV'],
+    description: 'Built vision-only localization using ResNet50 features and BallTree search (sub-2ms query). Created topological graph for A* path planning using camera input only.',
+    technologies: ['ResNet50', 'A* Planning', 'OpenCV', 'Python'],
     dates: 'Sep - Dec 2024',
-    github: '#'
+    link: '#'
   },
   {
     title: 'Wearable Emergency Alerting System',
     image: '/assets/images/project-wearable.jpg',
-    description: 'Developed wearable device using vibrations for emergency alerts with interactive acknowledgment. Features ESP32 microcontroller, Adafruit IO integration, and 3D printed watch/neckband design for broad accessibility.',
-    technologies: ['ESP32', 'Arduino', 'IoT', 'Adafruit IO', 'Fusion 360', '3D Printing', 'C++'],
+    description: 'Developed IoT wearable device for emergency alerts with ESP32, Adafruit IO integration, and 3D printed design for accessibility.',
+    technologies: ['ESP32', 'IoT', 'Fusion 360', 'C++'],
     dates: 'March - June 2023',
-    github: 'https://github.com/jotheesh1729'
+    link: 'https://github.com/jotheesh1729'
   }
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-12 px-6" style={{ backgroundColor: '#3a3a3a' }}>
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-2 mb-8">
-          <Rocket size={20} style={{ color: '#d1d1d1' }} />
-          <h2 className="text-2xl font-semibold" style={{ color: '#f5f5f5' }}>Projects</h2>
-        </div>
+    <section style={{ marginBottom: '60px' }}>
+      <h2 style={{ 
+        fontSize: '22px', 
+        fontWeight: '600',
+        marginBottom: '24px',
+        color: '#111',
+        borderBottom: '1px solid #e5e5e5',
+        paddingBottom: '8px'
+      }}>
+        Selected Projects
+      </h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="border transition-all duration-300 overflow-hidden"
-              style={{ borderColor: '#555', backgroundColor: '#2a2a2a' }}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = '#777'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = '#555'}
-            >
-              {/* Project Image */}
-              <div className="bg-gray-700 h-40 relative overflow-hidden">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        {projects.map((project, index) => (
+          <div 
+            key={index}
+            style={{
+              display: 'flex',
+              gap: '20px',
+              padding: '16px',
+              border: '1px solid #e5e5e5',
+              borderRadius: '4px',
+              backgroundColor: '#fafafa'
+            }}
+          >
+            {/* Project Image */}
+            <div style={{ flexShrink: 0 }}>
+              <div style={{
+                width: '140px',
+                height: '105px',
+                backgroundColor: '#e5e5e5',
+                borderRadius: '3px',
+                overflow: 'hidden'
+              }}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
                     e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-xs font-medium" style="color: #888">Project Demo</div>';
+                    e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #999;">Demo</div>';
                   }}
                 />
               </div>
+            </div>
 
-              {/* Project Details */}
-              <CardContent className="p-4">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-sm font-semibold leading-tight" style={{ color: '#f5f5f5' }}>
-                    {project.title}
-                  </h3>
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-colors ml-2 flex-shrink-0"
-                      style={{ color: '#999' }}
-                      onMouseEnter={(e) => e.target.style.color = '#d1d1d1'}
-                      onMouseLeave={(e) => e.target.style.color = '#999'}
-                      aria-label="View on GitHub"
-                    >
-                      <ExternalLink size={14} />
-                    </a>
-                  )}
-                </div>
-                
-                <p className="text-xs mb-2" style={{ color: '#999' }}>{project.dates}</p>
-                
-                <p className="text-xs mb-3 leading-relaxed" style={{ color: '#b8b8b8' }}>
-                  {project.description}
-                </p>
+            {/* Project Details */}
+            <div style={{ flex: 1 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111', marginBottom: '4px' }}>
+                  {project.title}
+                </h3>
+                {project.link && (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ color: '#666' }}>
+                    <ExternalLink size={16} />
+                  </a>
+                )}
+              </div>
+              
+              <p style={{ fontSize: '13px', color: '#888', marginBottom: '8px' }}>
+                {project.dates}
+              </p>
+              
+              <p style={{ fontSize: '14px', color: '#555', marginBottom: '10px', lineHeight: '1.5' }}>
+                {project.description}
+              </p>
 
-                <div className="flex flex-wrap gap-1.5">
-                  {project.technologies.map((tech, idx) => (
-                    <Badge
-                      key={idx}
-                      variant="outline"
-                      className="text-xs px-2 py-0.5"
-                      style={{ 
-                        borderColor: '#555',
-                        color: '#b8b8b8',
-                        backgroundColor: '#333'
-                      }}
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {project.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    style={{
+                      fontSize: '12px',
+                      padding: '2px 8px',
+                      backgroundColor: '#fff',
+                      border: '1px solid #d1d5db',
+                      borderRadius: '3px',
+                      color: '#555'
+                    }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
