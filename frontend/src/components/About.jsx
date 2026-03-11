@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { Linkedin, Mail, FileText } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 const About = () => {
   return (
@@ -8,11 +9,11 @@ const About = () => {
         {/* Profile Image */}
         <div>
           <img
-            src="/assets/images/profile-photo.jpg"
+            src="/assets/images/profile-photo.JPG"
             alt="Jotheesh Reddy Kummathi"
             style={{
               width: '240px',
-              height: '240px',
+              height: '300px',
               borderRadius: '4px',
               objectFit: 'cover',
               border: '1px solid #e5e5e5'
@@ -35,36 +36,24 @@ const About = () => {
             Jotheesh Reddy Kummathi
           </h1>
           
-          <div style={{ fontSize: '15px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
+          <div style={{ fontSize: '13px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
-              I'm a Master's student in Electrical Engineering at New York University, focusing on robotics, 
-              embedded systems, and autonomous systems. My research interests lie at the intersection of 
-              reinforcement learning, state estimation, and real-time control for robotic systems. I'm 
-              passionate about building intelligent systems that can operate reliably in complex, 
-              unstructured environments.
+              I'm a Master's student in Computer Engineering at NYU Tandon. I came into engineering because I wanted to build things that physically interact with the world, not models that live in the cloud, but systems that move, sense, and respond to the messiness of reality. I believe robotics should make humans more capable, not redundant. A robot that takes over a dangerous job, carries a heavier load, or navigates terrain a person can't, that's what interests me. A robot that just replaces a worker doesn't.
             </p>
             
             <p style={{ marginBottom: '12px' }}>
-              Currently, I work as a Head Teaching Assistant for Real-Time Embedded Systems and as a 
-              Graduate Research Assistant at the Agile Robotics and Perception Lab, where I'm involved 
-              in drone development and autonomous systems research. This role allows me to bridge theoretical 
-              concepts with practical implementations while mentoring students in embedded programming and 
-              real-time system design.
+              Before NYU I worked as an Embedded Engineer at Magnibot in Bengaluru, writing firmware for IoT and industrial devices. It was my first real taste of hardware that had to work. Not pass a test, not run clean in simulation, but actually work in the hands of someone depending on it. That experience shaped how I think about every system I've built since.
             </p>
             
             <p>
-              My experience spans quadruped locomotion using deep reinforcement learning, multi-agent 
-              coordination with graph neural networks, embedded IoT systems, and hardware-software integration 
-              for industrial applications. I'm particularly interested in developing intelligent control systems 
-              that bridge the gap between simulation and real-world deployment, with a focus on robust 
-              performance under uncertainty and computational constraints.
+              I'm looking for roles in embedded systems and robotics where the work is close to hardware and the impact is on people doing real things in the real world.
             </p>
           </div>
 
           {/* Links */}
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <a 
-              href="/assets/documents/resume.pdf" 
+              href="/assets/resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               style={{
@@ -100,11 +89,11 @@ const About = () => {
                 backgroundColor: '#fff'
               }}
             >
-              <Github size={16} />
+              <FaGithub size={16} />
               GitHub
             </a>
             <a 
-              href="https://linkedin.com/in/jotheesh1729" 
+              href="https://www.linkedin.com/in/jotheesh-reddy-kummathi" 
               target="_blank" 
               rel="noopener noreferrer"
               style={{

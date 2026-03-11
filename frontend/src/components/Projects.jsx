@@ -1,78 +1,85 @@
 import React from 'react';
-
-const GitHubIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="11" fill="white" stroke="#d1d5db" strokeWidth="1"/>
-    <path fillRule="evenodd" clipRule="evenodd" d="M12 6C8.68629 6 6 8.68629 6 12C6 14.6141 7.59314 16.8787 9.83863 17.7419C10.1386 17.7981 10.2508 17.6058 10.2508 17.4415C10.2508 17.2949 10.2447 16.8597 10.2416 16.3035C8.48657 16.6655 8.13486 15.4485 8.13486 15.4485C7.86171 14.6956 7.46629 14.5041 7.46629 14.5041C6.91629 14.1309 7.50857 14.1384 7.50857 14.1384C8.11714 14.1826 8.43343 14.7675 8.43343 14.7675C8.97371 15.6943 9.85914 15.4262 10.2631 15.2682C10.3186 14.8787 10.4762 14.6109 10.65 14.4565C9.35657 14.3005 7.99714 13.7811 7.99714 11.5282C7.99714 10.8137 8.23371 10.2311 8.44629 9.77311C8.38371 9.61654 8.17629 9.00654 8.50457 8.18397C8.50457 8.18397 9.01114 8.01625 10.2346 8.85054C10.7186 8.71225 11.2346 8.64311 11.7508 8.64054C12.2662 8.64311 12.7822 8.71225 13.2669 8.85054C14.4897 8.01625 14.9954 8.18397 14.9954 8.18397C15.3246 9.00654 15.1169 9.61654 15.0546 9.77311C15.2679 10.2311 15.5029 10.8137 15.5029 11.5282C15.5029 13.7872 14.1408 14.2982 12.8422 14.4511C13.0591 14.6373 13.2562 15.0037 13.2562 15.5629C13.2562 16.3631 13.2492 17.0091 13.2492 17.2262C13.2492 17.3919 13.3591 17.5856 13.6646 17.5197C15.9131 16.6565 17.5 14.3919 17.5 11.7778C17.5 8.46411 14.8137 5.77782 11.5 5.77782C8.18629 5.77782 5.5 8.46411 5.5 11.7778C5.5 14.3919 7.08686 16.6565 9.33543 17.5197C9.64086 17.5856 9.75086 17.3919 9.75086 17.2262C9.75086 17.0091 9.74371 16.3631 9.74371 15.5629C9.74371 15.0037 9.94086 14.6373 10.1577 14.4511C8.85914 14.2982 7.49714 13.7872 7.49714 11.5282C7.49714 10.8137 7.73371 10.2311 7.94629 9.77311C7.88371 9.61654 7.67629 9.00654 8.00457 8.18397C8.00457 8.18397 8.51114 8.01625 9.73457 8.85054C10.2186 8.71225 10.7346 8.64311 11.2508 8.64054C11.7662 8.64311 12.2822 8.71225 12.7669 8.85054C13.9897 8.01625 14.4954 8.18397 14.4954 8.18397C14.8246 9.00654 14.6169 9.61654 14.5546 9.77311C14.7679 10.2311 15.0029 10.8137 15.0029 11.5282C15.0029 13.7872 13.6408 14.2982 12.3422 14.4511C12.5591 14.6373 12.7562 15.0037 12.7562 15.5629C12.7562 16.3631 12.7492 17.0091 12.7492 17.2262C12.7492 17.3919 12.8591 17.5856 13.1646 17.5197C15.4131 16.6565 17 14.3919 17 11.7778C17 8.46411 14.3137 5.77782 11 5.77782L12 6Z" fill="#111"/>
-  </svg>
-);
+import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
-    title: 'Decentralized Coordination of Heterogeneous Swarm Robots',
-    image: '/assets/images/project-swarm-robots.jpg',
-    dates: 'Feb - May 2025',
+    title: 'Reinforcement Learning for Quadruped Locomotion',
+    image: '/assets/videos/unitree.MOV',
+    dates: 'September - December 2025',
     points: [
-      'Designed a decentralized multi-robot framework for mixed UGV-UAV teams in confined spaces, enabling robots to operate autonomously without relying on centralized coordination',
-      'Implemented collision-free navigation and dynamic goal assignment without centralized control, using message-passing architecture that ensures scalability across varying team sizes',
-      'Adapted Graph Neural Network architecture for scalable goal allocation using local observations and neighbor communication, allowing each agent to make independent decisions based on distributed information',
-      'Validated in ROS2-Unity3D simulation demonstrating resilience to agent failures and communication delays, achieving 95% task completion rate even with 30% robot failure scenarios'
+      'Trained a deep RL policy (PPO) in NVIDIA Isaac Lab using 4,096 parallel GPU-simulated environments with a comprehensive reward function covering velocity tracking, orientation stability, foot clearance, and contact force management.',
+      'Engineered a robust sim-to-real transfer pipeline through extensive domain randomization of ground friction, actuator stiction & viscous friction, and terrain properties, combined with a custom physics-based actuator friction model.',
+      'Developed a two-stage curriculum learning approach — flat terrain with Raibert heuristic gait guidance, then procedurally generated rough terrain with relaxed constraints for adaptive gait learning.',
+      'Selected as one of only 5 teams out of 30+ to demonstrate zero-shot sim-to-real transfer of the trained policy on a real Unitree Go2 robot.'
     ],
-    technologies: ['Graph Neural Networks', 'ROS2', 'Unity3D', 'Python'],
-    link: '#'
+    technologies: ['Isaac Lab', 'Deep Reinforcement Learning (PPO)', 'PyTorch', 'Unitree Go2', 'Sim-to-Real Transfer'],
+    link: 'https://github.com/jotheesh1729/rob6323_go2_project.git'
   },
   {
-    title: 'Reinforcement Learning for Quadruped Locomotion',
-    image: '/assets/images/project-quadruped.jpg',
-    dates: 'Sep - Dec 2024',
+    title: 'Autonomous Person Following on Boston Dynamics Spot',
+    image: '/assets/videos/spot_fast.mp4',
+    dates: 'January 2026',
     points: [
-      'Trained PPO-based walking policy for Unitree Go2 quadruped in Isaac Lab, developing a robust locomotion controller capable of adapting to various terrain conditions',
-      'Implemented custom reward shaping for foot placement and contact forces, optimizing gait stability and energy efficiency while maintaining natural motion patterns',
-      'Achieved stable velocity tracking across flat and rough terrain with velocity tracking error under 5%, demonstrating successful sim-to-real transfer through domain randomization techniques',
-      'Built PD torque controller with gait phase tracking and action smoothing for stable trotting, reducing oscillations by 40% compared to baseline implementations'
+      'Developed a visual servoing pipeline using ZED 2i stereo camera and YOLOv8 for real-time person detection and tracking at 30fps, computing lateral, distance, and pitch control errors from bounding box analysis.',
+      'Implemented proportional control with three independent channels — angular velocity for lateral tracking, linear velocity for distance maintenance, and body pitch for elevation changes like stairs.',
+      'Designed a behavior state machine with autonomous search patterns when the target person is lost, including smooth acceleration ramping and velocity-limited commands sent to Spot at 10Hz.',
+      'Deployed the full system via Docker with NVIDIA GPU acceleration, featuring a live Flask web monitoring stream and comprehensive safety systems including hardware/software E-Stop.'
     ],
-    technologies: ['PPO', 'Isaac Lab', 'PyTorch', 'Python', 'Domain Randomization'],
-    link: '#'
+    technologies: ['Boston Dynamics Spot SDK', 'YOLOv8', 'Visual Servoing', 'Docker', 'ZED 2i Camera'],
+    link: 'https://github.com/vivekmattam02/spot.git'
   },
   {
     title: 'Slip-Aware MPPI Navigation for Skid-Steer Robots',
-    image: '/assets/images/project-mppi-navigation.jpg',
-    dates: 'Sep - Dec 2024',
+    image: '/assets/images/warthog.jpg',
+    dates: 'September - December 2025',
     points: [
-      'Developed autonomous navigation stack for Clearpath Warthog on Mars-like terrain in Isaac Sim, incorporating physics-based slip modeling to handle challenging low-traction environments',
-      'Combined slip-aware kinematics with Unscented Kalman Filter for GPS-free localization, achieving position estimation accuracy within 15cm over 100m trajectories on deformable terrain',
-      'Implemented real-time MPPI controller with terrain-aware cost function, optimizing control sequences at 20Hz while accounting for predicted slip and obstacle avoidance constraints',
-      'Integrated 3D LiDAR and RTAB-Map SLAM for autonomous obstacle avoidance and mapping, enabling safe navigation through unknown environments with dynamic re-planning capabilities'
+      'Modeled the Extended Differential Drive (EDD) kinematics where Martian regolith (μ=0.35) causes the effective track width to expand 2.2×, quantifying the massive understeer that renders standard kinematic models unreliable.',
+      'Implemented a 6-state Unscented Kalman Filter (UKF) fusing LiDAR-Inertial Odometry with EDD predictions for GPS-denied localization, augmenting the state with longitudinal acceleration to maintain observability during high-slip maneuvers.',
+      'Deployed an MPPI controller with a composite cost function — terminal goal-seeking + heading alignment, running collision penalties, proximity-weighted obstacle costs, and control smoothness terms.',
+      'Validated the framework in Isaac Sim showing Mars regolith induces 2× higher lateral drift velocities and 28× worse cross-track error compared to Earth surfaces, proving the necessity of slip-aware estimation and control.'
     ],
-    technologies: ['MPPI', 'Isaac Sim', 'UKF', 'LiDAR', 'RTAB-Map', 'C++'],
-    link: '#'
+    technologies: ['NVIDIA Isaac Sim', 'MPPI Control', 'Unscented Kalman Filter', 'LiDAR-Inertial Odometry', 'ROS 2 Humble'],
+    link: 'https://github.com/jotheesh1729/clearpath-warthog-isaac-sim.git'
   },
   {
     title: 'Vision-Based Maze Navigation',
-    image: '/assets/images/project-vision-navigation.jpg',
-    dates: 'Sep - Dec 2024',
+    image: '/assets/images/vis-nav.png',
+    dates: 'September - December 2025',
     points: [
-      'Built vision-only localization system using ResNet50 features and BallTree search, eliminating the need for traditional SLAM while maintaining robust localization performance',
-      'Achieved sub-2ms query time matching live frames against reference images stored in a database of 5000+ reference views, enabling real-time localization at 30fps',
-      'Created topological graph with sequential and loop-closure connections representing navigable paths, using visual similarity metrics to establish reliable place recognition',
-      'Enabled A* path planning through maze using only camera input with adaptive replanning, successfully navigating complex environments with 98% goal-reaching success rate'
+      'Extracted 2048-dim ResNet50 descriptors from 3,751 exploration images and indexed them in a BallTree for fast nearest-neighbor localization in high-dimensional feature space.',
+      'Constructed a sparse weighted topological graph where nodes are exploration viewpoints and edges encode navigable transitions, then ran A* search with feature-distance heuristics to plan optimal routes.',
+      'Matched goal images (4 candidate views) against the feature database using fused similarity scores to identify the target graph node without any prior map or GPS.',
+      'Ran a continuous sense-plan-act loop with real-time visual re-localization, path validation, off-path replanning, and stuck detection, reducing planned routes to 5-10 stable waypoints.'
     ],
-    technologies: ['ResNet50', 'BallTree', 'A* Planning', 'OpenCV', 'Python'],
-    link: '#'
+    technologies: ['ResNet50', 'BallTree Indexing', 'A* Search', 'Topological Graphs', 'PyTorch'],
+    link: 'https://github.com/jotheesh1729/vis-nav.git'
+  },
+  {
+    title: 'Decentralized Heterogeneous Swarm Robots',
+    image: '/assets/images/swarm.png',
+    dates: 'February - May 2025',
+    points: [
+      'Developed a three-layered autonomy stack for heterogeneous UGV-UAV swarms: decentralized goal assignment via DGNN-GA, swarm coordination through Extended Olfati-Saber Flocking, and type-specific local control policies for collision-free navigation.',
+      'Implemented DGNN-GA with encoder-GNN-decoder architecture performing iterative message passing across agent communication and assignment edges to compute optimal goal allocations using only local observations.',
+      'Extended Olfati-Saber Flocking with sigma-norm-based attraction-repulsion potentials, bump-function adjacency, informed-agent target tracking, and proximity-activated damping.',
+      'Validated the framework from MATLAB prototyping through ROS 2 Humble deployment in Unity3D simulation, demonstrating stable 10-agent homogeneous flocking with alpha-lattice formation convergence.'
+    ],
+    technologies: ['Graph Neural Networks', 'Olfati-Saber Flocking', 'ROS 2 Humble', 'Unity3D', 'PX4 Autopilot'],
+    link: '/assets/pdf/doorbusters.pdf'
   },
   {
     title: 'Wearable Emergency Alerting System',
-    image: '/assets/images/project-wearable.jpg',
-    dates: 'March - June 2023',
+    image: '/assets/images/bts.png',
+    dates: 'March - May 2023',
     points: [
-      'Developed wearable device using vibrations for emergency alerts with interactive acknowledgment, providing non-auditory notification system for diverse user populations',
-      'Powered by Adafruit QT PY ESP32 microcontroller with Adafruit IO integration for real-time cloud communication, enabling remote monitoring and alert triggering',
-      'Designed watch and neckband in Fusion 360 and 3D printed for broad accessibility, conducting user testing with 15 participants to optimize ergonomics and usability',
-      'Focused on older adults, people with disabilities, and people with autism, implementing customizable vibration patterns and emergency SOS features with battery life exceeding 48 hours'
+      'Built a wrist-worn emergency alert device using an ESP32-S2 microcontroller connected to Adafruit IO cloud, enabling real-time SOS transmission and alert reception between multiple devices over WiFi.',
+      'Designed distinct vibration patterns for different emergency types (fire, general, combined), allowing non-visual alert recognition with 72-94% accuracy across tested age groups.',
+      'Achieved 93% SOS transmission success rate and 100% alert delivery reliability in system trials, validated through a 17-participant usability study across multiple age groups.',
+      'Designed the wearable enclosure (watch and neckband form factors) in Fusion 360 and 3D printed the prototypes, prioritizing accessibility for both disabled and non-disabled users.'
     ],
-    technologies: ['ESP32', 'Arduino', 'IoT', 'Adafruit IO', 'Fusion 360', 'C++'],
-    link: 'https://github.com/jotheesh1729'
-  }
+    technologies: ['ESP32-S2', 'Adafruit IO', 'IoT', 'Fusion 360', '3D Printing'],
+    link: 'https://github.com/jotheesh1729/Wearble-based-alerting-system-for-humans.git'
+  },
 ];
 
 const Projects = () => {
@@ -125,34 +132,35 @@ const Projects = () => {
 
             {/* Project Details */}
             <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '4px' }}>
-                <h3 style={{ fontSize: '17px', fontWeight: '600', color: '#111' }}>
-                  {project.title}
-                </h3>
-                {project.link && (
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{ 
-                      marginLeft: '8px',
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}
-                    title="View on GitHub"
-                  >
-                    <GitHubIcon />
-                  </a>
-                )}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <h3 style={{ fontSize: '17px', fontWeight: '600', color: '#111' }}>
+                    {project.title}
+                  </h3>
+                  {project.link && (
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      style={{ 
+                        display: 'flex',
+                        alignItems: 'center',
+                        color: '#555'
+                      }}
+                      title="View on GitHub"
+                    >
+                      <FaGithub size={18} />
+                    </a>
+                  )}
+                </div>
+                <span style={{ fontSize: '13px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+                  {project.dates}
+                </span>
               </div>
-              
-              <p style={{ fontSize: '13px', color: '#888', marginBottom: '10px' }}>
-                {project.dates}
-              </p>
               
               <ul style={{ margin: '0 0 12px 0', paddingLeft: '20px' }}>
                 {project.points.map((point, idx) => (
-                  <li key={idx} style={{ fontSize: '14px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
+                  <li key={idx} style={{ fontSize: '13px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
                     {point}
                   </li>
                 ))}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -17,12 +18,12 @@ const Contact = () => {
         Contact
       </h2>
 
-      <p style={{ fontSize: '14px', color: '#555', marginBottom: '12px' }}>
+      <p style={{ fontSize: '13px', color: '#555', marginBottom: '12px' }}>
         I'm currently seeking opportunities in robotics and embedded systems. 
         Feel free to reach out.
       </p>
 
-      <div style={{ fontSize: '14px', color: '#555', lineHeight: '1.8' }}>
+      <div style={{ fontSize: '13px', color: '#555', lineHeight: '1.8' }}>
         <p>
           <strong>Email:</strong>{' '}
           <a href="mailto:jotheeshreddykummathi@gmail.com" style={{ color: '#2563eb' }}>
@@ -30,7 +31,7 @@ const Contact = () => {
           </a>
         </p>
         <p style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <Github size={16} style={{ color: '#555' }} />
+          <FaGithub size={16} style={{ color: '#555' }} />
           <strong>GitHub:</strong>{' '}
           <a href="https://github.com/jotheesh1729" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb' }}>
             github.com/jotheesh1729

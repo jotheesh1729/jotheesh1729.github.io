@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { Linkedin, Mail, FileText } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 import { Button } from './ui/button';
 
 const Hero = () => {
@@ -76,7 +77,7 @@ const Hero = () => {
                     e.target.style.color = '#d1d1d1';
                   }}
                 >
-                  <Github className="mr-1.5" size={14} />
+                  <FaGithub className="mr-1.5" size={14} />
                   GitHub
                 </Button>
               </a>
