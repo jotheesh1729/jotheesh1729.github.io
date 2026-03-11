@@ -7,6 +7,7 @@ const experiences = [
     organization: 'New York University',
     dates: 'Jan 2025 - Present',
     githubLink: '#',
+    showGithub: true,
     points: [
       'Assisting in the Real-Time Embedded Systems course by grading assignments, providing feedback, and leading recitation sessions',
       'Conducting office hours and discussion sessions to support student learning, focusing on hardware-software integration',
@@ -17,7 +18,7 @@ const experiences = [
     role: 'Graduate Engineering Assistant',
     organization: 'Agile Robotics And Perception Lab, NYU',
     dates: 'Jan 2025 - Present',
-    githubLink: '#',
+    showGithub: false,
     points: [
       'Assembled and configured drones working with PX4 Pro autopilot and NVIDIA Jetson Orin board',
       'Performed firmware flashing, sensor calibration, and system integration for experimental platforms',
@@ -28,7 +29,7 @@ const experiences = [
     role: 'Embedded Engineer',
     organization: 'Magnibot Technology Solutions',
     dates: 'July 2023 - July 2024',
-    githubLink: '#',
+    showGithub: false,
     points: [
       'Developed and optimized embedded software for IoT products targeting domestic and industrial applications',
       'Designed, debugged, and integrated embedded solutions using C/C++, Python, and RTOS',
@@ -59,7 +60,7 @@ const Experience = () => {
                 <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111' }}>
                   {exp.role}
                 </h3>
-                {exp.githubLink && (
+                {exp.showGithub && exp.githubLink && (
                   <a 
                     href={exp.githubLink} 
                     target="_blank" 
