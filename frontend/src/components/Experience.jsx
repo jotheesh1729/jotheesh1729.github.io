@@ -39,28 +39,28 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-12">
-          <Briefcase size={32} className="text-gray-900" />
-          <h2 className="text-4xl font-bold text-gray-900">Experience</h2>
+    <section id="experience" className="py-12 px-6 bg-gray-100">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex items-center gap-2 mb-8">
+          <Briefcase size={20} className="text-gray-600" />
+          <h2 className="text-2xl font-semibold text-gray-700">Experience</h2>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="border-l-4 border-gray-900 pl-8 hover:border-gray-600 transition-colors"
+              className="border-l-2 border-gray-400 pl-6 hover:border-gray-500 transition-colors"
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">{exp.role}</h3>
-              <p className="text-lg text-gray-700 font-medium mb-1">{exp.organization}</p>
-              <p className="text-sm text-gray-500 mb-4">
+              <h3 className="text-lg font-semibold text-gray-700 mb-1">{exp.role}</h3>
+              <p className="text-sm text-gray-600 font-medium mb-1">{exp.organization}</p>
+              <p className="text-xs text-gray-500 mb-3">
                 {exp.location} • {exp.dates}
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-1.5">
                 {exp.descriptions.map((desc, idx) => (
-                  <li key={idx} className="text-gray-600 flex items-start">
-                    <span className="mr-2 mt-2 w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0" />
+                  <li key={idx} className="text-xs text-gray-600 flex items-start">
+                    <span className="mr-2 mt-1.5 w-1 h-1 bg-gray-400 rounded-full flex-shrink-0" />
                     <span>{desc}</span>
                   </li>
                 ))}

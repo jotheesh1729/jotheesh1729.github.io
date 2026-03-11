@@ -48,37 +48,37 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-12">
-          <Rocket size={32} className="text-gray-900" />
-          <h2 className="text-4xl font-bold text-gray-900">Projects</h2>
+    <section id="projects" className="py-12 px-6 bg-gray-50">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex items-center gap-2 mb-8">
+          <Rocket size={20} className="text-gray-600" />
+          <h2 className="text-2xl font-semibold text-gray-700">Projects</h2>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-6">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="border-2 border-gray-200 hover:border-gray-900 transition-all duration-300 overflow-hidden"
+              className="border border-gray-300 hover:border-gray-400 transition-all duration-300 overflow-hidden"
             >
               <div className="grid md:grid-cols-5 gap-0">
                 {/* Project Image */}
-                <div className="md:col-span-2 bg-gray-200 h-64 md:h-auto relative overflow-hidden">
+                <div className="md:col-span-2 bg-gray-200 h-48 md:h-auto relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-400 text-sm font-medium">Project Demo Image</div>';
+                      e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-400 text-xs font-medium">Project Demo</div>';
                     }}
                   />
                 </div>
 
                 {/* Project Details */}
-                <CardContent className="md:col-span-3 p-6 md:p-8">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold text-gray-900 leading-tight">
+                <CardContent className="md:col-span-3 p-5">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-base font-semibold text-gray-700 leading-tight">
                       {project.title}
                     </h3>
                     {project.github && (
@@ -86,26 +86,26 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-gray-900 transition-colors ml-2 flex-shrink-0"
+                        className="text-gray-500 hover:text-gray-700 transition-colors ml-2 flex-shrink-0"
                         aria-label="View on GitHub"
                       >
-                        <ExternalLink size={20} />
+                        <ExternalLink size={16} />
                       </a>
                     )}
                   </div>
                   
-                  <p className="text-sm text-gray-500 mb-4">{project.dates}</p>
+                  <p className="text-xs text-gray-500 mb-3">{project.dates}</p>
                   
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-xs text-gray-600 mb-4 leading-relaxed">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.technologies.map((tech, idx) => (
                       <Badge
                         key={idx}
                         variant="outline"
-                        className="border-gray-300 text-gray-700 bg-white hover:bg-gray-100"
+                        className="border-gray-300 text-gray-600 bg-white hover:bg-gray-100 text-xs px-2 py-0.5"
                       >
                         {tech}
                       </Badge>

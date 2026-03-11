@@ -39,23 +39,23 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-12">
-          <Wrench size={32} className="text-gray-900" />
-          <h2 className="text-4xl font-bold text-gray-900">Skills</h2>
+    <section id="skills" className="py-12 px-6 bg-gray-50">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex items-center gap-2 mb-8">
+          <Wrench size={20} className="text-gray-600" />
+          <h2 className="text-2xl font-semibold text-gray-700">Skills</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-4">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white border-2 border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{category.category}</h3>
-              <div className="flex flex-wrap gap-2">
+            <div key={index} className="bg-white border border-gray-300 rounded-md p-4">
+              <h3 className="text-sm font-semibold text-gray-700 mb-3">{category.category}</h3>
+              <div className="flex flex-wrap gap-1.5">
                 {category.skills.map((skill, idx) => (
                   <Badge
                     key={idx}
                     variant="secondary"
-                    className="bg-gray-100 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors border border-gray-300"
+                    className="bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors border border-gray-300 text-xs px-2 py-0.5"
                   >
                     {skill}
                   </Badge>

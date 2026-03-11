@@ -16,36 +16,36 @@ const publications = [
 
 const Publications = () => {
   return (
-    <section id="publications" className="py-20 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-12">
-          <BookOpen size={32} className="text-gray-900" />
-          <h2 className="text-4xl font-bold text-gray-900">Publications</h2>
+    <section id="publications" className="py-12 px-6 bg-gray-100">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex items-center gap-2 mb-8">
+          <BookOpen size={20} className="text-gray-600" />
+          <h2 className="text-2xl font-semibold text-gray-700">Publications</h2>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {publications.map((pub, index) => (
             <Card
               key={index}
-              className="border-2 border-gray-200 hover:border-gray-900 transition-all duration-300"
+              className="border border-gray-300 hover:border-gray-400 transition-all duration-300"
             >
-              <CardContent className="p-6">
+              <CardContent className="p-5">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                    <h3 className="text-sm font-semibold text-gray-700 mb-2 leading-tight">
                       {pub.title}
                     </h3>
-                    <p className="text-gray-600 mb-2">
+                    <p className="text-xs text-gray-600 mb-1.5">
                       {pub.authors}
                       {pub.supervisor && (
                         <span className="text-gray-500"> • Supervisor: {pub.supervisor}</span>
                       )}
                     </p>
-                    <p className="text-gray-600 mb-2">
+                    <p className="text-xs text-gray-600 mb-1.5">
                       {pub.institution} • {pub.year}
                     </p>
                     {pub.urn && (
-                      <p className="text-sm text-gray-500">
+                      <p className="text-xs text-gray-500">
                         URN: {pub.urn}
                       </p>
                     )}
@@ -55,10 +55,10 @@ const Publications = () => {
                       href={pub.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-900 transition-colors ml-4 flex-shrink-0"
+                      className="text-gray-500 hover:text-gray-700 transition-colors ml-3 flex-shrink-0"
                       aria-label="View publication"
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={16} />
                     </a>
                   )}
                 </div>

@@ -33,33 +33,33 @@ const Header = ({ activeSection }) => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-gray-50 shadow-sm' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4">
+      <nav className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('home')}
-            className="text-xl font-bold text-gray-900 hover:text-gray-700 transition-colors"
+            className="text-base font-semibold text-gray-700 hover:text-gray-900 transition-colors"
           >
             Jotheesh Reddy
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors relative ${
+                className={`text-xs font-medium transition-colors relative ${
                   activeSection === item.id
-                    ? 'text-gray-900'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-gray-700'
+                    : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gray-900" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gray-400" />
                 )}
               </button>
             ))}
@@ -68,24 +68,24 @@ const Header = ({ activeSection }) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gray-900 p-2"
+            className="md:hidden text-gray-700 p-2"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-gray-200">
+          <div className="md:hidden mt-3 py-3 border-t border-gray-300">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors ${
+                className={`block w-full text-left px-4 py-2 text-xs font-medium transition-colors ${
                   activeSection === item.id
-                    ? 'text-gray-900 bg-gray-100'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    ? 'text-gray-700 bg-gray-200'
+                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                 }`}
               >
                 {item.label}
