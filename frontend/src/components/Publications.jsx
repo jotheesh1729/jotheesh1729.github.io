@@ -18,8 +18,8 @@ const Publications = () => {
         fontSize: '22px', 
         fontWeight: '600',
         marginBottom: '24px',
-        color: '#111',
-        borderBottom: '1px solid #e5e5e5',
+        color: '#f5f5f5',
+        borderBottom: '1px solid #555',
         paddingBottom: '8px'
       }}>
         Publications
@@ -27,19 +27,19 @@ const Publications = () => {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {publications.map((pub, index) => (
-          <div key={index} style={{ paddingLeft: '12px', borderLeft: '3px solid #e5e5e5' }}>
-            <p style={{ fontSize: '15px', fontWeight: '500', color: '#111', marginBottom: '6px' }}>
+          <div key={index} style={{ paddingLeft: '12px', borderLeft: '3px solid #555' }}>
+            <p style={{ fontSize: '15px', fontWeight: '500', color: '#f5f5f5', marginBottom: '6px' }}>
               {pub.title}
             </p>
-            <p style={{ fontSize: '14px', color: '#666', marginBottom: '4px' }}>
+            <p style={{ fontSize: '14px', color: '#b8b8b8', marginBottom: '4px' }}>
               {pub.authors}
               {pub.supervisor && ` • Supervisor: ${pub.supervisor}`}
             </p>
-            <p style={{ fontSize: '14px', color: '#666' }}>
+            <p style={{ fontSize: '14px', color: '#b8b8b8' }}>
               {pub.venue}, {pub.year}
             </p>
             {pub.urn && (
-              <p style={{ fontSize: '13px', color: '#999', marginTop: '4px' }}>
+              <p style={{ fontSize: '13px', color: '#888', marginTop: '4px' }}>
                 URN: {pub.urn}
               </p>
             )}

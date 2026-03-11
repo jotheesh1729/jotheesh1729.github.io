@@ -30,8 +30,8 @@ const Skills = () => {
         fontSize: '22px', 
         fontWeight: '600',
         marginBottom: '24px',
-        color: '#111',
-        borderBottom: '1px solid #e5e5e5',
+        color: '#f5f5f5',
+        borderBottom: '1px solid #555',
         paddingBottom: '8px'
       }}>
         Skills
@@ -40,10 +40,10 @@ const Skills = () => {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {skillCategories.map((category, index) => (
           <div key={index}>
-            <h3 style={{ fontSize: '14px', fontWeight: '600', color: '#111', marginBottom: '8px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: '600', color: '#f5f5f5', marginBottom: '8px' }}>
               {category.category}
             </h3>
-            <p style={{ fontSize: '14px', color: '#555', lineHeight: '1.6' }}>
+            <p style={{ fontSize: '14px', color: '#d1d1d1', lineHeight: '1.6' }}>
               {category.skills.join(' • ')}
             </p>
           </div>

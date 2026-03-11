@@ -76,8 +76,8 @@ const Projects = () => {
         fontSize: '22px', 
         fontWeight: '600',
         marginBottom: '24px',
-        color: '#111',
-        borderBottom: '1px solid #e5e5e5',
+        color: '#f5f5f5',
+        borderBottom: '1px solid #555',
         paddingBottom: '8px'
       }}>
         Selected Projects
@@ -91,9 +91,9 @@ const Projects = () => {
               display: 'flex',
               gap: '24px',
               padding: '20px',
-              border: '1px solid #e5e5e5',
+              border: '1px solid #555',
               borderRadius: '4px',
-              backgroundColor: '#fafafa'
+              backgroundColor: '#3a3a3a'
             }}
           >
             {/* Project Image */}
@@ -101,7 +101,7 @@ const Projects = () => {
               <div style={{
                 width: '220px',
                 height: '165px',
-                backgroundColor: '#e5e5e5',
+                backgroundColor: '#444',
                 borderRadius: '3px',
                 overflow: 'hidden'
               }}>
@@ -111,7 +111,7 @@ const Projects = () => {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
                     e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999;">Project Demo</div>';
+                    e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #888;">Project Demo</div>';
                   }}
                 />
               </div>
@@ -120,23 +120,23 @@ const Projects = () => {
             {/* Project Details */}
             <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '4px' }}>
-                <h3 style={{ fontSize: '17px', fontWeight: '600', color: '#111' }}>
+                <h3 style={{ fontSize: '17px', fontWeight: '600', color: '#f5f5f5' }}>
                   {project.title}
                 </h3>
                 {project.link && (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ color: '#666', marginLeft: '8px' }}>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ color: '#999', marginLeft: '8px' }}>
                     <ExternalLink size={16} />
                   </a>
                 )}
               </div>
               
-              <p style={{ fontSize: '13px', color: '#888', marginBottom: '10px' }}>
+              <p style={{ fontSize: '13px', color: '#999', marginBottom: '10px' }}>
                 {project.dates}
               </p>
               
               <ul style={{ margin: '0 0 12px 0', paddingLeft: '20px' }}>
                 {project.points.map((point, idx) => (
-                  <li key={idx} style={{ fontSize: '14px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
+                  <li key={idx} style={{ fontSize: '14px', color: '#d1d1d1', lineHeight: '1.6', marginBottom: '4px' }}>
                     {point}
                   </li>
                 ))}
@@ -149,10 +149,10 @@ const Projects = () => {
                     style={{
                       fontSize: '12px',
                       padding: '3px 9px',
-                      backgroundColor: '#fff',
-                      border: '1px solid #d1d5db',
+                      backgroundColor: '#2a2a2a',
+                      border: '1px solid #555',
                       borderRadius: '3px',
-                      color: '#555'
+                      color: '#b8b8b8'
                     }}
                   >
                     {tech}
