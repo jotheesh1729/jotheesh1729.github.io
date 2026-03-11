@@ -33,14 +33,18 @@ const Header = ({ activeSection }) => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-gray-50 shadow-sm' : 'bg-transparent'
+        isScrolled ? 'shadow-md' : ''
       }`}
+      style={{ backgroundColor: isScrolled ? '#2a2a2a' : 'transparent' }}
     >
       <nav className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('home')}
-            className="text-base font-semibold text-gray-700 hover:text-gray-900 transition-colors"
+            className="text-base font-semibold transition-colors"
+            style={{ color: '#f5f5f5' }}
+            onMouseEnter={(e) => e.target.style.color = '#d1d1d1'}
+            onMouseLeave={(e) => e.target.style.color = '#f5f5f5'}
           >
             Jotheesh Reddy
           </button>
@@ -51,15 +55,16 @@ const Header = ({ activeSection }) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-xs font-medium transition-colors relative ${
-                  activeSection === item.id
-                    ? 'text-gray-700'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
+                className={`text-xs font-medium transition-colors relative`}
+                style={{ 
+                  color: activeSection === item.id ? '#f5f5f5' : '#b0b0b0'
+                }}
+                onMouseEnter={(e) => e.target.style.color = '#f5f5f5'}
+                onMouseLeave={(e) => e.target.style.color = activeSection === item.id ? '#f5f5f5' : '#b0b0b0'}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gray-400" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5" style={{ backgroundColor: '#808080' }} />
                 )}
               </button>
             ))}
@@ -68,7 +73,8 @@ const Header = ({ activeSection }) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gray-700 p-2"
+            className="md:hidden p-2"
+            style={{ color: '#f5f5f5' }}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -77,16 +83,16 @@ const Header = ({ activeSection }) => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-3 py-3 border-t border-gray-300">
+          <div className="md:hidden mt-3 py-3" style={{ borderTop: '1px solid #555' }}>
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-2 text-xs font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-gray-700 bg-gray-200'
-                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
-                }`}
+                className={`block w-full text-left px-4 py-2 text-xs font-medium transition-colors`}
+                style={{
+                  color: activeSection === item.id ? '#f5f5f5' : '#b0b0b0',
+                  backgroundColor: activeSection === item.id ? '#444' : 'transparent'
+                }}
               >
                 {item.label}
               </button>

@@ -4,19 +4,19 @@ import { Button } from './ui/button';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-20 pb-12 px-6 bg-gray-50">
+    <section id="home" className="pt-20 pb-12 px-6" style={{ backgroundColor: '#3a3a3a' }}>
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 items-start">
           {/* Profile Photo */}
           <div className="order-1 md:order-1 flex justify-center">
-            <div className="w-48 h-48 bg-gray-200 rounded-md overflow-hidden border-2 border-gray-400">
+            <div className="w-48 h-48 bg-gray-600 rounded-md overflow-hidden border-2" style={{ borderColor: '#666' }}>
               <img
                 src="/assets/images/profile-photo.jpg"
                 alt="Jotheesh Reddy Kummathi"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.target.style.display = 'none';
-                  e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-400 text-4xl font-semibold">JRK</div>';
+                  e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-4xl font-semibold" style="color: #888">JRK</div>';
                 }}
               />
             </div>
@@ -24,13 +24,13 @@ const Hero = () => {
 
           {/* Text Content */}
           <div className="order-2 md:order-2 md:col-span-2">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-700 mb-2">
+            <h1 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: '#f5f5f5' }}>
               Jotheesh Reddy Kummathi
             </h1>
-            <p className="text-base text-gray-600 font-medium mb-4">
+            <p className="text-base font-medium mb-4" style={{ color: '#d1d1d1' }}>
               Robotics & Embedded Systems Engineer
             </p>
-            <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+            <p className="text-sm mb-4 leading-relaxed" style={{ color: '#b8b8b8' }}>
               Master's student in Electrical Engineering at New York University with expertise in autonomous systems, 
               embedded design, and real-time robotics. Specialized in developing intelligent control systems, 
               state estimation algorithms, and hardware-software integration for complex robotics applications. 
@@ -49,7 +49,10 @@ const Hero = () => {
               >
                 <Button
                   variant="default"
-                  className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-1.5 text-xs"
+                  className="px-4 py-1.5 text-xs transition-colors"
+                  style={{ backgroundColor: '#555', color: '#f5f5f5' }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#666'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#555'}
                 >
                   <FileText className="mr-1.5" size={14} />
                   Resume
@@ -62,7 +65,16 @@ const Hero = () => {
               >
                 <Button
                   variant="outline"
-                  className="border-gray-400 text-gray-600 hover:bg-gray-200 px-4 py-1.5 text-xs"
+                  className="px-4 py-1.5 text-xs transition-colors"
+                  style={{ borderColor: '#666', color: '#d1d1d1', backgroundColor: 'transparent' }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#555';
+                    e.target.style.color = '#f5f5f5';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = '#d1d1d1';
+                  }}
                 >
                   <Github className="mr-1.5" size={14} />
                   GitHub
@@ -75,7 +87,16 @@ const Hero = () => {
               >
                 <Button
                   variant="outline"
-                  className="border-gray-400 text-gray-600 hover:bg-gray-200 px-4 py-1.5 text-xs"
+                  className="px-4 py-1.5 text-xs transition-colors"
+                  style={{ borderColor: '#666', color: '#d1d1d1', backgroundColor: 'transparent' }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#555';
+                    e.target.style.color = '#f5f5f5';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = '#d1d1d1';
+                  }}
                 >
                   <Linkedin className="mr-1.5" size={14} />
                   LinkedIn
@@ -84,7 +105,16 @@ const Hero = () => {
               <a href="mailto:jotheeshreddykummathi@gmail.com">
                 <Button
                   variant="outline"
-                  className="border-gray-400 text-gray-600 hover:bg-gray-200 px-4 py-1.5 text-xs"
+                  className="px-4 py-1.5 text-xs transition-colors"
+                  style={{ borderColor: '#666', color: '#d1d1d1', backgroundColor: 'transparent' }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#555';
+                    e.target.style.color = '#f5f5f5';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = '#d1d1d1';
+                  }}
                 >
                   <Mail className="mr-1.5" size={14} />
                   Email

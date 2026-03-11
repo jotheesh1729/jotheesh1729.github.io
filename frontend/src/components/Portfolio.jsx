@@ -33,7 +33,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen" style={{ backgroundColor: '#333333' }}>
       <Header activeSection={activeSection} />
       <main>
         <Hero />

@@ -39,23 +39,32 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-12 px-6 bg-gray-50">
+    <section id="skills" className="py-12 px-6" style={{ backgroundColor: '#3a3a3a' }}>
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-2 mb-8">
-          <Wrench size={20} className="text-gray-600" />
-          <h2 className="text-2xl font-semibold text-gray-700">Skills</h2>
+          <Wrench size={20} style={{ color: '#d1d1d1' }} />
+          <h2 className="text-2xl font-semibold" style={{ color: '#f5f5f5' }}>Skills</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white border border-gray-300 rounded-md p-4">
-              <h3 className="text-sm font-semibold text-gray-700 mb-3">{category.category}</h3>
+            <div 
+              key={index} 
+              className="border rounded-md p-4"
+              style={{ borderColor: '#555', backgroundColor: '#2a2a2a' }}
+            >
+              <h3 className="text-sm font-semibold mb-3" style={{ color: '#f5f5f5' }}>{category.category}</h3>
               <div className="flex flex-wrap gap-1.5">
                 {category.skills.map((skill, idx) => (
                   <Badge
                     key={idx}
                     variant="secondary"
-                    className="bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors border border-gray-300 text-xs px-2 py-0.5"
+                    className="transition-colors border text-xs px-2 py-0.5"
+                    style={{ 
+                      backgroundColor: '#333',
+                      color: '#b8b8b8',
+                      borderColor: '#555'
+                    }}
                   >
                     {skill}
                   </Badge>

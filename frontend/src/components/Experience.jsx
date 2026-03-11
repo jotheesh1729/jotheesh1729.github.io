@@ -39,28 +39,31 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-12 px-6 bg-gray-100">
+    <section id="experience" className="py-12 px-6" style={{ backgroundColor: '#333333' }}>
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-2 mb-8">
-          <Briefcase size={20} className="text-gray-600" />
-          <h2 className="text-2xl font-semibold text-gray-700">Experience</h2>
+          <Briefcase size={20} style={{ color: '#d1d1d1' }} />
+          <h2 className="text-2xl font-semibold" style={{ color: '#f5f5f5' }}>Experience</h2>
         </div>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="border-l-2 border-gray-400 pl-6 hover:border-gray-500 transition-colors"
+              className="border-l-2 pl-6 transition-colors"
+              style={{ borderColor: '#666' }}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = '#888'}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = '#666'}
             >
-              <h3 className="text-lg font-semibold text-gray-700 mb-1">{exp.role}</h3>
-              <p className="text-sm text-gray-600 font-medium mb-1">{exp.organization}</p>
-              <p className="text-xs text-gray-500 mb-3">
+              <h3 className="text-lg font-semibold mb-1" style={{ color: '#f5f5f5' }}>{exp.role}</h3>
+              <p className="text-sm font-medium mb-1" style={{ color: '#d1d1d1' }}>{exp.organization}</p>
+              <p className="text-xs mb-3" style={{ color: '#999' }}>
                 {exp.location} • {exp.dates}
               </p>
               <ul className="space-y-1.5">
                 {exp.descriptions.map((desc, idx) => (
-                  <li key={idx} className="text-xs text-gray-600 flex items-start">
-                    <span className="mr-2 mt-1.5 w-1 h-1 bg-gray-400 rounded-full flex-shrink-0" />
+                  <li key={idx} className="text-xs flex items-start" style={{ color: '#b8b8b8' }}>
+                    <span className="mr-2 mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: '#888' }} />
                     <span>{desc}</span>
                   </li>
                 ))}

@@ -48,71 +48,80 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-12 px-6 bg-gray-50">
-      <div className="max-w-5xl mx-auto">
+    <section id="projects" className="py-12 px-6" style={{ backgroundColor: '#3a3a3a' }}>
+      <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-2 mb-8">
-          <Rocket size={20} className="text-gray-600" />
-          <h2 className="text-2xl font-semibold text-gray-700">Projects</h2>
+          <Rocket size={20} style={{ color: '#d1d1d1' }} />
+          <h2 className="text-2xl font-semibold" style={{ color: '#f5f5f5' }}>Projects</h2>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="border border-gray-300 hover:border-gray-400 transition-all duration-300 overflow-hidden"
+              className="border transition-all duration-300 overflow-hidden"
+              style={{ borderColor: '#555', backgroundColor: '#2a2a2a' }}
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = '#777'}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = '#555'}
             >
-              <div className="grid md:grid-cols-5 gap-0">
-                {/* Project Image */}
-                <div className="md:col-span-2 bg-gray-200 h-48 md:h-auto relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-400 text-xs font-medium">Project Demo</div>';
-                    }}
-                  />
-                </div>
-
-                {/* Project Details */}
-                <CardContent className="md:col-span-3 p-5">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-base font-semibold text-gray-700 leading-tight">
-                      {project.title}
-                    </h3>
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-gray-700 transition-colors ml-2 flex-shrink-0"
-                        aria-label="View on GitHub"
-                      >
-                        <ExternalLink size={16} />
-                      </a>
-                    )}
-                  </div>
-                  
-                  <p className="text-xs text-gray-500 mb-3">{project.dates}</p>
-                  
-                  <p className="text-xs text-gray-600 mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.technologies.map((tech, idx) => (
-                      <Badge
-                        key={idx}
-                        variant="outline"
-                        className="border-gray-300 text-gray-600 bg-white hover:bg-gray-100 text-xs px-2 py-0.5"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
+              {/* Project Image */}
+              <div className="bg-gray-700 h-40 relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-xs font-medium" style="color: #888">Project Demo</div>';
+                  }}
+                />
               </div>
+
+              {/* Project Details */}
+              <CardContent className="p-4">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-sm font-semibold leading-tight" style={{ color: '#f5f5f5' }}>
+                    {project.title}
+                  </h3>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors ml-2 flex-shrink-0"
+                      style={{ color: '#999' }}
+                      onMouseEnter={(e) => e.target.style.color = '#d1d1d1'}
+                      onMouseLeave={(e) => e.target.style.color = '#999'}
+                      aria-label="View on GitHub"
+                    >
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
+                </div>
+                
+                <p className="text-xs mb-2" style={{ color: '#999' }}>{project.dates}</p>
+                
+                <p className="text-xs mb-3 leading-relaxed" style={{ color: '#b8b8b8' }}>
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {project.technologies.map((tech, idx) => (
+                    <Badge
+                      key={idx}
+                      variant="outline"
+                      className="text-xs px-2 py-0.5"
+                      style={{ 
+                        borderColor: '#555',
+                        color: '#b8b8b8',
+                        backgroundColor: '#333'
+                      }}
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
             </Card>
           ))}
         </div>
