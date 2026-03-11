@@ -1,10 +1,12 @@
 import React from 'react';
+import { Github } from 'lucide-react';
 
 const experiences = [
   {
     role: 'Head Teaching Assistant',
     organization: 'New York University',
     dates: 'Jan 2025 - Present',
+    githubLink: '#',
     points: [
       'Assisting in the Real-Time Embedded Systems course by grading assignments, providing feedback, and leading recitation sessions',
       'Conducting office hours and discussion sessions to support student learning, focusing on hardware-software integration',
@@ -15,6 +17,7 @@ const experiences = [
     role: 'Graduate Engineering Assistant',
     organization: 'Agile Robotics And Perception Lab, NYU',
     dates: 'Jan 2025 - Present',
+    githubLink: '#',
     points: [
       'Assembled and configured drones working with PX4 Pro autopilot and NVIDIA Jetson Orin board',
       'Performed firmware flashing, sensor calibration, and system integration for experimental platforms',
@@ -25,6 +28,7 @@ const experiences = [
     role: 'Embedded Engineer',
     organization: 'Magnibot Technology Solutions',
     dates: 'July 2023 - July 2024',
+    githubLink: '#',
     points: [
       'Developed and optimized embedded software for IoT products targeting domestic and industrial applications',
       'Designed, debugged, and integrated embedded solutions using C/C++, Python, and RTOS',
@@ -51,9 +55,32 @@ const Experience = () => {
         {experiences.map((exp, index) => (
           <div key={index}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111' }}>
-                {exp.role}
-              </h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111' }}>
+                  {exp.role}
+                </h3>
+                {exp.githubLink && (
+                  <a 
+                    href={exp.githubLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '50%',
+                      backgroundColor: '#fff',
+                      border: '1px solid #d1d5db',
+                      textDecoration: 'none'
+                    }}
+                    title="View on GitHub"
+                  >
+                    <Github size={14} style={{ color: '#111' }} />
+                  </a>
+                )}
+              </div>
               <span style={{ fontSize: '13px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
                 {exp.dates}
               </span>
