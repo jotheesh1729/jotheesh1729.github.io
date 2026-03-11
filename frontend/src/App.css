@@ -1,0 +1,14 @@
+/* Smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Remove any default margins */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    min-height: 100vh;
+}
