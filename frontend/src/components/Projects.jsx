@@ -5,41 +5,66 @@ const projects = [
   {
     title: 'Decentralized Coordination of Heterogeneous Swarm Robots',
     image: '/assets/images/project-swarm-robots.jpg',
-    description: 'Designed a decentralized multi-robot framework for mixed UGV-UAV teams in confined spaces using Graph Neural Networks for collision-free navigation and dynamic goal assignment.',
-    technologies: ['Graph Neural Networks', 'ROS2', 'Unity3D', 'Python'],
     dates: 'Feb - May 2025',
+    points: [
+      'Designed a decentralized multi-robot framework for mixed UGV-UAV teams in confined spaces',
+      'Implemented collision-free navigation and dynamic goal assignment without centralized control',
+      'Adapted Graph Neural Network architecture for scalable goal allocation using local observations',
+      'Validated in ROS2-Unity3D simulation demonstrating resilience to agent failures and communication delays'
+    ],
+    technologies: ['Graph Neural Networks', 'ROS2', 'Unity3D', 'Python'],
     link: '#'
   },
   {
     title: 'Reinforcement Learning for Quadruped Locomotion',
     image: '/assets/images/project-quadruped.jpg',
-    description: 'Trained PPO-based walking policy for Unitree Go2 in Isaac Lab with domain randomization. Implemented PD torque controller with gait phase tracking for stable locomotion.',
-    technologies: ['PPO', 'Isaac Lab', 'PyTorch', 'Python'],
     dates: 'Sep - Dec 2024',
+    points: [
+      'Trained PPO-based walking policy for Unitree Go2 quadruped in Isaac Lab',
+      'Implemented custom reward shaping for foot placement and contact forces',
+      'Achieved stable velocity tracking across flat and rough terrain',
+      'Built PD torque controller with gait phase tracking and action smoothing for stable trotting'
+    ],
+    technologies: ['PPO', 'Isaac Lab', 'PyTorch', 'Python', 'Domain Randomization'],
     link: '#'
   },
   {
     title: 'Slip-Aware MPPI Navigation for Skid-Steer Robots',
     image: '/assets/images/project-mppi-navigation.jpg',
-    description: 'Developed autonomous navigation for Clearpath Warthog on Martian terrain combining slip-aware kinematics, UKF localization, and MPPI trajectory optimization.',
-    technologies: ['MPPI', 'Isaac Sim', 'UKF', 'LiDAR', 'C++'],
     dates: 'Sep - Dec 2024',
+    points: [
+      'Developed autonomous navigation stack for Clearpath Warthog on Mars-like terrain in Isaac Sim',
+      'Combined slip-aware kinematics with Unscented Kalman Filter for GPS-free localization',
+      'Implemented real-time MPPI controller with terrain-aware cost function',
+      'Integrated 3D LiDAR and RTAB-Map SLAM for autonomous obstacle avoidance and mapping'
+    ],
+    technologies: ['MPPI', 'Isaac Sim', 'UKF', 'LiDAR', 'RTAB-Map', 'C++'],
     link: '#'
   },
   {
     title: 'Vision-Based Maze Navigation',
     image: '/assets/images/project-vision-navigation.jpg',
-    description: 'Built vision-only localization using ResNet50 features and BallTree search (sub-2ms query). Created topological graph for A* path planning using camera input only.',
-    technologies: ['ResNet50', 'A* Planning', 'OpenCV', 'Python'],
     dates: 'Sep - Dec 2024',
+    points: [
+      'Built vision-only localization system using ResNet50 features and BallTree search',
+      'Achieved sub-2ms query time matching live frames against reference images',
+      'Created topological graph with sequential and loop-closure connections',
+      'Enabled A* path planning through maze using only camera input with adaptive replanning'
+    ],
+    technologies: ['ResNet50', 'BallTree', 'A* Planning', 'OpenCV', 'Python'],
     link: '#'
   },
   {
     title: 'Wearable Emergency Alerting System',
     image: '/assets/images/project-wearable.jpg',
-    description: 'Developed IoT wearable device for emergency alerts with ESP32, Adafruit IO integration, and 3D printed design for accessibility.',
-    technologies: ['ESP32', 'IoT', 'Fusion 360', 'C++'],
     dates: 'March - June 2023',
+    points: [
+      'Developed wearable device using vibrations for emergency alerts with interactive acknowledgment',
+      'Powered by Adafruit QT PY ESP32 microcontroller with Adafruit IO integration',
+      'Designed watch and neckband in Fusion 360 and 3D printed for broad accessibility',
+      'Focused on older adults, people with disabilities, and people with autism'
+    ],
+    technologies: ['ESP32', 'Arduino', 'IoT', 'Adafruit IO', 'Fusion 360', 'C++'],
     link: 'https://github.com/jotheesh1729'
   }
 ];
@@ -58,14 +83,14 @@ const Projects = () => {
         Selected Projects
       </h2>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
         {projects.map((project, index) => (
           <div 
             key={index}
             style={{
               display: 'flex',
-              gap: '20px',
-              padding: '16px',
+              gap: '24px',
+              padding: '20px',
               border: '1px solid #e5e5e5',
               borderRadius: '4px',
               backgroundColor: '#fafafa'
@@ -74,8 +99,8 @@ const Projects = () => {
             {/* Project Image */}
             <div style={{ flexShrink: 0 }}>
               <div style={{
-                width: '140px',
-                height: '105px',
+                width: '220px',
+                height: '165px',
                 backgroundColor: '#e5e5e5',
                 borderRadius: '3px',
                 overflow: 'hidden'
@@ -86,7 +111,7 @@ const Projects = () => {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
                     e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #999;">Demo</div>';
+                    e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999;">Project Demo</div>';
                   }}
                 />
               </div>
@@ -94,24 +119,28 @@ const Projects = () => {
 
             {/* Project Details */}
             <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-                <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111', marginBottom: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '4px' }}>
+                <h3 style={{ fontSize: '17px', fontWeight: '600', color: '#111' }}>
                   {project.title}
                 </h3>
                 {project.link && (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ color: '#666' }}>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ color: '#666', marginLeft: '8px' }}>
                     <ExternalLink size={16} />
                   </a>
                 )}
               </div>
               
-              <p style={{ fontSize: '13px', color: '#888', marginBottom: '8px' }}>
+              <p style={{ fontSize: '13px', color: '#888', marginBottom: '10px' }}>
                 {project.dates}
               </p>
               
-              <p style={{ fontSize: '14px', color: '#555', marginBottom: '10px', lineHeight: '1.5' }}>
-                {project.description}
-              </p>
+              <ul style={{ margin: '0 0 12px 0', paddingLeft: '20px' }}>
+                {project.points.map((point, idx) => (
+                  <li key={idx} style={{ fontSize: '14px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
+                    {point}
+                  </li>
+                ))}
+              </ul>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {project.technologies.map((tech, idx) => (
@@ -119,7 +148,7 @@ const Projects = () => {
                     key={idx}
                     style={{
                       fontSize: '12px',
-                      padding: '2px 8px',
+                      padding: '3px 9px',
                       backgroundColor: '#fff',
                       border: '1px solid #d1d5db',
                       borderRadius: '3px',

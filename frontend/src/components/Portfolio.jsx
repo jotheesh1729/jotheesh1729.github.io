@@ -15,9 +15,9 @@ const Portfolio = () => {
         padding: '40px 20px'
       }}>
         <About />
+        <Experience />
         <Projects />
         <Publications />
-        <Experience />
         <Skills />
         <Contact />
       </div>

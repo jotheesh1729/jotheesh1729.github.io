@@ -1,4 +1,5 @@
 import React from 'react';
+import { Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -28,13 +29,15 @@ const Contact = () => {
             jotheeshreddykummathi@gmail.com
           </a>
         </p>
-        <p>
+        <p style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <Github size={16} style={{ color: '#555' }} />
           <strong>GitHub:</strong>{' '}
           <a href="https://github.com/jotheesh1729" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb' }}>
             github.com/jotheesh1729
           </a>
         </p>
-        <p>
+        <p style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <Linkedin size={16} style={{ color: '#555' }} />
           <strong>LinkedIn:</strong>{' '}
           <a href="https://linkedin.com/in/jotheesh1729" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb' }}>
             linkedin.com/in/jotheesh1729
