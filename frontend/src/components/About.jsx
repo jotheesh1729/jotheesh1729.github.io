@@ -11,48 +11,53 @@ const About = () => {
             src="/assets/images/profile-photo.jpg"
             alt="Jotheesh Reddy Kummathi"
             style={{
-              width: '180px',
-              height: '180px',
+              width: '240px',
+              height: '240px',
               borderRadius: '4px',
               objectFit: 'cover',
-              border: '1px solid #555'
+              border: '1px solid #e5e5e5'
             }}
             onError={(e) => {
               e.target.style.display = 'none';
-              e.target.parentElement.innerHTML = '<div style="width: 180px; height: 180px; background: #444; display: flex; align-items: center; justify-content: center; border-radius: 4px; border: 1px solid #555; font-size: 48px; color: #888; font-weight: 600;">JRK</div>';
+              e.target.parentElement.innerHTML = '<div style="width: 240px; height: 240px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; border-radius: 4px; border: 1px solid #e5e5e5; font-size: 56px; color: #999; font-weight: 600;">JRK</div>';
             }}
           />
         </div>
 
         {/* Text Content */}
-        <div style={{ flex: 1, minWidth: '300px' }}>
+        <div style={{ flex: 1, minWidth: '400px' }}>
           <h1 style={{ 
             fontSize: '28px', 
             fontWeight: '600',
             marginBottom: '12px',
-            color: '#f5f5f5'
+            color: '#111'
           }}>
             Jotheesh Reddy Kummathi
           </h1>
           
-          <div style={{ fontSize: '15px', color: '#d1d1d1', marginBottom: '16px', lineHeight: '1.7' }}>
+          <div style={{ fontSize: '15px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
               I'm a Master's student in Electrical Engineering at New York University, focusing on robotics, 
               embedded systems, and autonomous systems. My research interests lie at the intersection of 
-              reinforcement learning, state estimation, and real-time control for robotic systems.
+              reinforcement learning, state estimation, and real-time control for robotic systems. I'm 
+              passionate about building intelligent systems that can operate reliably in complex, 
+              unstructured environments.
             </p>
             
             <p style={{ marginBottom: '12px' }}>
               Currently, I work as a Head Teaching Assistant for Real-Time Embedded Systems and as a 
               Graduate Research Assistant at the Agile Robotics and Perception Lab, where I'm involved 
-              in drone development and autonomous systems research.
+              in drone development and autonomous systems research. This role allows me to bridge theoretical 
+              concepts with practical implementations while mentoring students in embedded programming and 
+              real-time system design.
             </p>
             
             <p>
-              My experience spans quadruped locomotion, multi-agent coordination, embedded IoT systems, 
-              and hardware-software integration for industrial applications. I'm particularly interested 
-              in developing intelligent control systems that bridge the gap between simulation and 
-              real-world deployment.
+              My experience spans quadruped locomotion using deep reinforcement learning, multi-agent 
+              coordination with graph neural networks, embedded IoT systems, and hardware-software integration 
+              for industrial applications. I'm particularly interested in developing intelligent control systems 
+              that bridge the gap between simulation and real-world deployment, with a focus on robust 
+              performance under uncertainty and computational constraints.
             </p>
           </div>
 
@@ -67,12 +72,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #555',
+                border: '1px solid #d1d5db',
                 borderRadius: '4px',
                 fontSize: '14px',
-                color: '#d1d1d1',
+                color: '#374151',
                 textDecoration: 'none',
-                backgroundColor: '#3a3a3a'
+                backgroundColor: '#fff'
               }}
             >
               <FileText size={16} />
@@ -87,12 +92,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #555',
+                border: '1px solid #d1d5db',
                 borderRadius: '4px',
                 fontSize: '14px',
-                color: '#d1d1d1',
+                color: '#374151',
                 textDecoration: 'none',
-                backgroundColor: '#3a3a3a'
+                backgroundColor: '#fff'
               }}
             >
               <Github size={16} />
@@ -107,12 +112,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #555',
+                border: '1px solid #d1d5db',
                 borderRadius: '4px',
                 fontSize: '14px',
-                color: '#d1d1d1',
+                color: '#374151',
                 textDecoration: 'none',
-                backgroundColor: '#3a3a3a'
+                backgroundColor: '#fff'
               }}
             >
               <Linkedin size={16} />
@@ -125,12 +130,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #555',
+                border: '1px solid #d1d5db',
                 borderRadius: '4px',
                 fontSize: '14px',
-                color: '#d1d1d1',
+                color: '#374151',
                 textDecoration: 'none',
-                backgroundColor: '#3a3a3a'
+                backgroundColor: '#fff'
               }}
             >
               <Mail size={16} />

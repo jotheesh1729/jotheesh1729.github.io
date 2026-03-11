@@ -40,8 +40,8 @@ const Experience = () => {
         fontSize: '22px', 
         fontWeight: '600',
         marginBottom: '24px',
-        color: '#f5f5f5',
-        borderBottom: '1px solid #555',
+        color: '#111',
+        borderBottom: '1px solid #e5e5e5',
         paddingBottom: '8px'
       }}>
         Experience
@@ -51,19 +51,19 @@ const Experience = () => {
         {experiences.map((exp, index) => (
           <div key={index}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#f5f5f5' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111' }}>
                 {exp.role}
               </h3>
-              <span style={{ fontSize: '13px', color: '#999', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+              <span style={{ fontSize: '13px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
                 {exp.dates}
               </span>
             </div>
-            <p style={{ fontSize: '14px', color: '#b8b8b8', marginBottom: '8px' }}>
+            <p style={{ fontSize: '14px', color: '#666', marginBottom: '8px' }}>
               {exp.organization}
             </p>
             <ul style={{ margin: 0, paddingLeft: '20px' }}>
               {exp.points.map((point, idx) => (
-                <li key={idx} style={{ fontSize: '14px', color: '#d1d1d1', lineHeight: '1.6', marginBottom: '4px' }}>
+                <li key={idx} style={{ fontSize: '14px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
                   {point}
                 </li>
               ))}

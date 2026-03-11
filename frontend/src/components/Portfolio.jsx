@@ -8,11 +8,11 @@ import Contact from './Contact';
 
 const Portfolio = () => {
   return (
-    <div style={{ backgroundColor: '#333333', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
       <div style={{ 
-        maxWidth: '900px', 
+        maxWidth: '1200px', 
         margin: '0 auto',
-        padding: '40px 10px'
+        padding: '40px 20px'
       }}>
         <About />
         <Experience />
