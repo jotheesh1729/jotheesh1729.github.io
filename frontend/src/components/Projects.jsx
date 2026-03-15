@@ -93,7 +93,7 @@ const Projects = () => {
         borderBottom: '1px solid #e5e5e5',
         paddingBottom: '8px'
       }}>
-        Selected Projects
+        Projects
       </h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>

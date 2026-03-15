@@ -8,8 +8,8 @@ const experiences = [
     dates: 'January 2025 - Present',
     showGithub: false,
     points: [
-      'Lead recitation sessions, grading, and office hours for ECE-GY 6483: Real-Time Embedded Systems',
-      'Support over 200 graduate students on hardware-software integration and real-time system concepts',
+      'Working under induatry associacte professor Matthew Campisi, PhD Leading recitation sessions, grading, and office hours for ECE-GY 6483: Real-Time Embedded Systems',
+      'Support over 200 graduate students every semester on hardware-software integration and real-time system concepts',
       'Provide hands-on guidance for embedded programming and real-time operating systems (RTOS) implementations'
     ]
   },
@@ -20,7 +20,7 @@ const experiences = [
     showGithub: false,
     points: [
       'Assist in assembling drones equipped with PX4 Pro flight controllers and NVIDIA Jetson Orin compute boards',
-      'Perform firmware flashing, sensor calibration, thrust bench testing and system integration for experimental robotics platforms',
+      'Perform firmware tweaking and flashing, sensor calibration, thrust bench testing and system integration for experimental robotics platforms',
       'Support ongoing research experiments in autonomous aerial robotics and perception systems'
     ]
   },

@@ -38,11 +38,14 @@ const About = () => {
           
           <div style={{ fontSize: '13px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
-              I'm a Master's student in Computer Engineering at NYU Tandon. I came into engineering because I wanted to build things that physically interact with the world, not models that live in the cloud, but systems that move, sense, and respond to the messiness of reality. I believe robotics should make humans more capable, not redundant. A robot that takes over a dangerous job, carries a heavier load, or navigates terrain a person can't, that's what interests me. A robot that just replaces a worker doesn't.
+              I'm a Master's student in Computer Engineering at New York University. 
+              I came into engineering because I wanted to build things that physically interact with the world, not models that live in the cloud, but systems that move, sense, and respond to the messiness of reality. 
+              I believe robotics should make humans more capable, not redundant. A robot that takes over a dangerous job, carries a heavier load, or navigates terrain a person can't, that's what interests me. 
+              A robot that just replaces a worker doesn't.
             </p>
             
             <p style={{ marginBottom: '12px' }}>
-              Before NYU I worked as an Embedded Engineer at Magnibot in Bengaluru, writing firmware for IoT and industrial devices. It was my first real taste of hardware that had to work. Not pass a test, not run clean in simulation, but actually work in the hands of someone depending on it. That experience shaped how I think about every system I've built since.
+              Before NYU I worked as an Embedded Engineer at Magnibot in Bengaluru, India, writing firmware for IoT and industrial devices. It was my first real taste of hardware that had to work. Not pass a test, not run clean in simulation, but actually work in the hands of someone depending on it. That experience shaped how I think about every system I've built since.
             </p>
             
             <p>
