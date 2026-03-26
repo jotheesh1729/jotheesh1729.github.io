@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jotheeshk.github.io/static/css/main.6beb3c87.css",
+    "main.js": "/jotheeshk.github.io/static/js/main.bcc08661.js",
+    "index.html": "/jotheeshk.github.io/index.html",
+    "main.6beb3c87.css.map": "/jotheeshk.github.io/static/css/main.6beb3c87.css.map",
+    "main.bcc08661.js.map": "/jotheeshk.github.io/static/js/main.bcc08661.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6beb3c87.css",
+    "static/js/main.bcc08661.js"
+  ]
+}
