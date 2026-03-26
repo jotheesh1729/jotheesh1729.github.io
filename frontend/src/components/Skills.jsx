@@ -3,7 +3,7 @@ import React from 'react';
 const skillCategories = [
   {
     category: 'Programming',
-    skills: ['C', 'C++', 'Embedded C', 'Bare-Metal', 'Python', 'MATLAB', 'Shell', 'LaTeX']
+    skills: ['C', 'C++', 'Embedded C', 'Bare-Metal', 'Python', 'MATLAB', 'Shell']
   },
   {
     category: 'Robotics & Autonomy',
