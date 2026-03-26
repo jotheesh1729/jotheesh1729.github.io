@@ -3,23 +3,27 @@ import React from 'react';
 const skillCategories = [
   {
     category: 'Programming',
-    skills: ['Python', 'C/C++', 'Embedded-C', 'MATLAB', 'Shell']
+    skills: ['C', 'C++', 'Embedded C', 'Bare-Metal', 'Python', 'MATLAB', 'Shell', 'LaTeX']
   },
   {
-    category: 'Robotics',
-    skills: ['ROS2', 'PX4', 'State Estimation', 'Control (PID, MPC, MPPI)', 'Sensor Fusion']
-  },
-  {
-    category: 'Machine Learning',
-    skills: ['PyTorch', 'Reinforcement Learning', 'Computer Vision', 'Neural Networks']
+    category: 'Robotics & Autonomy',
+    skills: ['ROS2', 'PX4 Autopilot', 'MAVLink', 'State Estimation', 'Sensor Fusion', 'PID/MPC/MPPI', 'Kalman Filtering']
   },
   {
     category: 'Embedded Systems',
-    skills: ['STM32', 'ESP32', 'Raspberry Pi', 'FreeRTOS', 'Real-Time Systems']
+    skills: ['FreeRTOS', 'Yocto', 'Bootloaders', 'UART', 'SPI', 'I²C', 'CAN/CANopen', 'PWM', 'ADC/DAC', 'MQTT']
   },
   {
-    category: 'Tools & Simulation',
-    skills: ['Isaac Sim', 'Gazebo', 'MuJoCo', 'Docker', 'Git']
+    category: 'Hardware Platforms',
+    skills: ['STM32 (ARM Cortex-M)', 'TI MSP430', 'ESP32', 'Arduino', 'Raspberry Pi', 'NVIDIA Jetson Orin', 'Pixhawk']
+  },
+  {
+    category: 'Simulation & Tools',
+    skills: ['Isaac Sim', 'Gazebo', 'MuJoCo', 'MATLAB/Simulink', 'Docker', 'Git', 'STM32CubeIDE', 'Fusion 360']
+  },
+  {
+    category: 'ML & Perception',
+    skills: ['PyTorch', 'OpenCV', 'SciPy', 'FFT', 'Time-Series Analysis', 'SLAM (RTAB-Map)']
   }
 ];
 

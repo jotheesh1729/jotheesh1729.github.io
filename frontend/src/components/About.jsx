@@ -36,20 +36,17 @@ const About = () => {
             Jotheesh Reddy Kummathi
           </h1>
           
-          <div style={{ fontSize: '13px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
+          <div style={{ fontSize: '15px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
-              I'm a Master's student in Computer Engineering at New York University. 
-              I came into engineering because I wanted to build things that physically interact with the world, not models that live in the cloud, but systems that move, sense, and respond to the messiness of reality. 
-              I believe robotics should make humans more capable, not redundant. A robot that takes over a dangerous job, carries a heavier load, or navigates terrain a person can't, that's what interests me. 
-              A robot that just replaces a worker doesn't.
+              I am an Embedded Systems & Robotics Engineer and Master's student at NYU specializing in controls, perception, and Real-Time Operating Systems (RTOS)—building across autonomous aerial drones, robotics platforms, and industrial IoT systems.
             </p>
             
             <p style={{ marginBottom: '12px' }}>
-              Before NYU I worked as an Embedded Engineer at Magnibot in Bengaluru, India, writing firmware for IoT and industrial devices. It was my first real taste of hardware that had to work. Not pass a test, not run clean in simulation, but actually work in the hands of someone depending on it. That experience shaped how I think about every system I've built since.
+              I have developed and optimized production firmware for domestic and industrial IoT devices at Magnibot; integrated advanced perception compute and flight control systems at NYU's Agile Robotics and Perception Lab (ARPL); and serve as the Head Teaching Assistant for NYU's Real-Time Embedded Systems course—always optimizing for system reliability, energy efficiency, and real-world robustness.
             </p>
             
             <p>
-              I'm looking for roles in embedded systems and robotics where the work is close to hardware and the impact is on people doing real things in the real world.
+ I am passionate about building systems that physically interact with the world and am actively looking for roles where the work is close to the metal.
             </p>
           </div>
 
