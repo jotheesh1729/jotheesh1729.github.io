@@ -12,7 +12,7 @@ const Hero = () => {
           <div className="order-1 md:order-1 flex justify-center">
             <div className="w-48 h-48 bg-gray-600 rounded-md overflow-hidden border-2" style={{ borderColor: '#666' }}>
               <img
-                src="/assets/images/profile-photo.jpg"
+                src={`${process.env.PUBLIC_URL}/assets/images/profile-photo.jpg`}
                 alt="Jotheesh Reddy Kummathi"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -43,7 +43,7 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-2">
               <a
-                href="/assets/documents/resume.pdf"
+                href={`${process.env.PUBLIC_URL}/assets/documents/resume.pdf`}
                 download
                 target="_blank"
                 rel="noopener noreferrer"

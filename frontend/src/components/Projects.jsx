@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: 'Slip-Aware MPPI Navigation for Skid-Steer Robots',
-    image: '/assets/images/warthog.jpg',
+    image: '/assets/images/Warthog.jpg',
     dates: 'September - December 2025',
     points: [
       'Modeled the Extended Differential Drive (EDD) kinematics where Martian regolith (μ=0.35) causes the effective track width to expand 2.2×, quantifying the massive understeer that renders standard kinematic models unreliable.',
@@ -118,15 +118,28 @@ const Projects = () => {
                 borderRadius: '3px',
                 overflow: 'hidden'
               }}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999;">Project Demo</div>';
-                  }}
-                />
+                {project.image.toLowerCase().endsWith('.mov') || project.image.toLowerCase().endsWith('.mp4') ? (
+                  <video
+                    src={project.image.startsWith('/') ? process.env.PUBLIC_URL + project.image : project.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="none"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <img
+                    src={project.image.startsWith('/') ? process.env.PUBLIC_URL + project.image : project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999;">Project Demo</div>';
+                    }}
+                  />
+                )}
               </div>
             </div>
 
@@ -139,7 +152,7 @@ const Projects = () => {
                   </h3>
                   {project.link && (
                     <a 
-                      href={project.link} 
+                      href={project.link.startsWith('/') ? process.env.PUBLIC_URL + project.link : project.link} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       style={{ 
@@ -153,14 +166,14 @@ const Projects = () => {
                     </a>
                   )}
                 </div>
-                <span style={{ fontSize: '13px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+                <span style={{ fontSize: '15px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
                   {project.dates}
                 </span>
               </div>
               
               <ul style={{ margin: '0 0 12px 0', paddingLeft: '20px' }}>
                 {project.points.map((point, idx) => (
-                  <li key={idx} style={{ fontSize: '13px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
+                  <li key={idx} style={{ fontSize: '15px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
                     {point}
                   </li>
                 ))}
@@ -171,7 +184,7 @@ const Projects = () => {
                   <span
                     key={idx}
                     style={{
-                      fontSize: '12px',
+                      fontSize: '14px',
                       padding: '3px 9px',
                       backgroundColor: '#fff',
                       border: '1px solid #d1d5db',

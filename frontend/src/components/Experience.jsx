@@ -77,16 +77,16 @@ const Experience = () => {
                   </a>
                 )}
               </div>
-              <span style={{ fontSize: '13px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+              <span style={{ fontSize: '15px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
                 {exp.dates}
               </span>
             </div>
-            <p style={{ fontSize: '14px', color: '#666', marginBottom: '8px' }}>
+            <p style={{ fontSize: '15px', color: '#666', marginBottom: '8px' }}>
               {exp.organization}
             </p>
             <ul style={{ margin: 0, paddingLeft: '20px' }}>
               {exp.points.map((point, idx) => (
-                <li key={idx} style={{ fontSize: '13px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
+                <li key={idx} style={{ fontSize: '15px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
                   {point}
                 </li>
               ))}

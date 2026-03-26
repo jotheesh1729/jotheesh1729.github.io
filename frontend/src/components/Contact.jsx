@@ -18,12 +18,12 @@ const Contact = () => {
         Contact
       </h2>
 
-      <p style={{ fontSize: '13px', color: '#555', marginBottom: '12px' }}>
+      <p style={{ fontSize: '15px', color: '#555', marginBottom: '12px' }}>
         I'm currently seeking opportunities in robotics and embedded systems. 
         Feel free to reach out.
       </p>
 
-      <div style={{ fontSize: '13px', color: '#555', lineHeight: '1.8' }}>
+      <div style={{ fontSize: '15px', color: '#555', lineHeight: '1.8' }}>
         <p>
           <strong>Email:</strong>{' '}
           <a href="mailto:jotheeshreddykummathi@gmail.com" style={{ color: '#2563eb' }}>

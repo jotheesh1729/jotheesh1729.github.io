@@ -9,7 +9,7 @@ const About = () => {
         {/* Profile Image */}
         <div>
           <img
-            src="/assets/images/profile-photo.JPG"
+            src={`${process.env.PUBLIC_URL}/assets/images/profile-photo.JPG`}
             alt="Jotheesh Reddy Kummathi"
             style={{
               width: '240px',
@@ -53,7 +53,7 @@ const About = () => {
           {/* Links */}
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <a 
-              href="/assets/resume.pdf" 
+              href={`${process.env.PUBLIC_URL}/assets/resume.pdf`} 
               target="_blank" 
               rel="noopener noreferrer"
               style={{
@@ -63,7 +63,7 @@ const About = () => {
                 padding: '6px 12px',
                 border: '1px solid #d1d5db',
                 borderRadius: '4px',
-                fontSize: '14px',
+                fontSize: '15px',
                 color: '#374151',
                 textDecoration: 'none',
                 backgroundColor: '#fff'
@@ -83,7 +83,7 @@ const About = () => {
                 padding: '6px 12px',
                 border: '1px solid #d1d5db',
                 borderRadius: '4px',
-                fontSize: '14px',
+                fontSize: '15px',
                 color: '#374151',
                 textDecoration: 'none',
                 backgroundColor: '#fff'
@@ -103,7 +103,7 @@ const About = () => {
                 padding: '6px 12px',
                 border: '1px solid #d1d5db',
                 borderRadius: '4px',
-                fontSize: '14px',
+                fontSize: '15px',
                 color: '#374151',
                 textDecoration: 'none',
                 backgroundColor: '#fff'
@@ -121,7 +121,7 @@ const About = () => {
                 padding: '6px 12px',
                 border: '1px solid #d1d5db',
                 borderRadius: '4px',
-                fontSize: '14px',
+                fontSize: '15px',
                 color: '#374151',
                 textDecoration: 'none',
                 backgroundColor: '#fff'
