@@ -125,7 +125,7 @@ const Projects = () => {
                     loop
                     muted
                     playsInline
-                    preload="none"
+                    preload="auto"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 ) : (
