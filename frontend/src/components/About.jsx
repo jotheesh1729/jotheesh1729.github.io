@@ -9,7 +9,7 @@ const About = () => {
         {/* Profile Image */}
         <div>
           <img
-            src={`${process.env.PUBLIC_URL}/assets/images/profile-photo.JPG`}
+            src={`${process.env.PUBLIC_URL}/assets/images/csheadshot.jpg`}
             alt="Jotheesh Reddy Kummathi"
             style={{
               width: '240px',
