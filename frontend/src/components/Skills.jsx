@@ -11,7 +11,7 @@ const skillCategories = [
   },
   {
     category: 'Embedded Systems',
-    skills: ['FreeRTOS', 'Mbed RTOS (EOL)', 'Zephyr RTOS', 'UART', 'SPI', 'I²C', 'CAN / CANopen', 'PWM', 'ADC / DAC', 'STM32 (ARM Cortex-M)', 'NVIDIA Jetson Orin', 'Pixhawk', 'ESP32', 'Yocto', 'Bootloaders']
+    skills: ['FreeRTOS', 'Zephyr RTOS', 'UART', 'SPI', 'I²C', 'CAN / CANopen', 'PWM', 'ADC / DAC', 'STM32 (ARM Cortex-M)', 'NVIDIA Jetson Orin', 'Pixhawk', 'ESP32', 'Yocto', 'Bootloaders']
   },
   {
     category: 'Simulation & Tools',
