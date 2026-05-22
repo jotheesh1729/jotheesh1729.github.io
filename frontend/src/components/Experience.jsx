@@ -4,35 +4,35 @@ import { FaGithub } from 'react-icons/fa';
 const experiences = [
   {
     role: 'Head Teaching Assistant',
-    organization: 'New York University',
-    dates: 'January 2025 - Present',
+    organization: 'New York University – New York, NY',
+    dates: 'January 2025 – May 2026',
     showGithub: false,
     points: [
-      'Working under induatry associacte professor Matthew Campisi, PhD Leading recitation sessions, grading, and office hours for ECE-GY 6483: Real-Time Embedded Systems',
-      'Support over 200 graduate students every semester on hardware-software integration and real-time system concepts',
-      'Provide hands-on guidance for embedded programming and real-time operating systems (RTOS) implementations'
+      'Run weekly recitations, hold office hours, and grade for ECE-GY 6483: Real-Time Embedded Systems under Prof. Matthew Campisi — supporting 200+ graduate students per semester.',
+      'Guide students through Mbed RTOS fundamentals: thread lifecycle, mutex vs. semaphore, priority inversion, and EventQueue patterns for interrupt-deferred work.',
+      'Cover harder topics including Rate Monotonic schedulability analysis, deadline monotonic scheduling, watchdog timers, MPU configuration, and identifying race conditions in multi-threaded embedded code.'
     ]
   },
   {
-    role: 'Graduate Engineering Assistant',
-    organization: 'Agile Robotics And Perception Lab - NYU',
-    dates: 'January 2025 - Present',
+    role: 'Graduate Research Assistant',
+    organization: 'Agile Robotics and Perception Lab (ARPL) – NYU / UC Berkeley',
+    dates: 'January 2025 – Present',
     showGithub: false,
     points: [
-      'Assist in assembling drones equipped with PX4 Pro flight controllers and NVIDIA Jetson Orin compute boards',
-      'Perform firmware tweaking and flashing, sensor calibration, thrust bench testing and system integration for experimental robotics platforms',
-      'Support ongoing research experiments in autonomous aerial robotics and perception systems'
+      'Build and maintain research drones with PX4, Jetson Orin, and Connect Tech carrier boards — including firmware flashing, ESC debugging, and PID tuning to resolve in-flight oscillations.',
+      'Run thrust-bench characterization for motor and propeller validation across multiple drone configurations.',
+      'Currently working on extracting spatial uncertainty and scene geometry from 3D Gaussian Splatting representations to enable uncertainty-aware robot navigation.'
     ]
   },
   {
     role: 'Embedded Engineer',
-    organization: 'Magnibot Technology Solutions Pvt Ltd',
-    dates: 'July 2023 - July 2024',
+    organization: 'Magnibot Technology Solutions Pvt. Ltd. – Bengaluru, India',
+    dates: 'July 2023 – July 2024',
     showGithub: false,
     points: [
-      'Developed and optimized software for embedded devices and IoT products targeting domestic and industrial applications',
-      'Designed, debugged, and integrated embedded solutions using C/C++, Python, and RTOS',
-      'Enhanced device functionality and energy efficiency through firmware optimization and robust hardware-software integration'
+      'Wrote and optimized production firmware in C/C++ with FreeRTOS for IoT devices targeting domestic and industrial applications.',
+      'Brought up and debugged hardware across UART, SPI, I²C, and CAN interfaces — resolved integration failures that were impacting production reliability.',
+      'Owned the full embedded cycle from schematic review and firmware development to field validation and iterative optimization.'
     ]
   }
 ];

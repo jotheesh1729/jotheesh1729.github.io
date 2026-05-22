@@ -3,16 +3,15 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
-    title: 'Reinforcement Learning for Quadruped Locomotion',
+    title: 'Reinforcement Learning for Quadruped Locomotion – Unitree Go2',
     image: '/assets/videos/unitree.MOV',
-    dates: 'September - December 2025',
+    dates: 'Sep – Dec 2025',
     points: [
-      'Trained a deep RL policy (PPO) in NVIDIA Isaac Lab using 4,096 parallel GPU-simulated environments with a comprehensive reward function covering velocity tracking, orientation stability, foot clearance, and contact force management.',
-      'Engineered a robust sim-to-real transfer pipeline through extensive domain randomization of ground friction, actuator stiction & viscous friction, and terrain properties, combined with a custom physics-based actuator friction model.',
-      'Developed a two-stage curriculum learning approach — flat terrain with Raibert heuristic gait guidance, then procedurally generated rough terrain with relaxed constraints for adaptive gait learning.',
-      'Selected as one of only 5 teams out of 30+ to demonstrate zero-shot sim-to-real transfer of the trained policy on a real Unitree Go2 robot.'
+      'Trained a PPO walking policy in Isaac Lab across 4,096 parallel GPU environments using multi-term reward shaping: velocity tracking, foot clearance, contact forces, torque regularization, and a 3 Hz Raibert heuristic gait clock — achieving ~48 linear and ~24 angular velocity rewards over 500 episodes.',
+      'Implemented explicit torque-level PD control with domain randomization across actuator friction, ground properties, and a 160-point terrain height scanner for sim-to-real transfer.',
+      'One of 5 teams selected (out of 30+) to demonstrate zero-shot policy transfer on a real Unitree Go2.'
     ],
-    technologies: ['Isaac Lab', 'Deep Reinforcement Learning (PPO)', 'PyTorch', 'Unitree Go2', 'Sim-to-Real Transfer'],
+    technologies: ['Isaac Lab', 'PPO', 'PyTorch', 'Unitree Go2', 'Sim-to-Real'],
     link: 'https://github.com/jotheesh1729/rob6323_go2_project.git'
   },
   {
@@ -20,64 +19,59 @@ const projects = [
     image: '/assets/videos/spot_fast.mp4',
     dates: 'January 2026',
     points: [
-      'Developed a visual servoing pipeline using ZED 2i stereo camera and YOLOv8 for real-time person detection and tracking at 30fps, computing lateral, distance, and pitch control errors from bounding box analysis.',
-      'Implemented proportional control with three independent channels — angular velocity for lateral tracking, linear velocity for distance maintenance, and body pitch for elevation changes like stairs.',
-      'Designed a behavior state machine with autonomous search patterns when the target person is lost, including smooth acceleration ramping and velocity-limited commands sent to Spot at 10Hz.',
-      'Deployed the full system via Docker with NVIDIA GPU acceleration, featuring a live Flask web monitoring stream and comprehensive safety systems including hardware/software E-Stop.'
+      'Real-time visual servoing using YOLOv8 + ZED 2i stereo camera at 30 fps — computes lateral, distance, and pitch control errors from bounding box geometry, sent to Spot at 10 Hz.',
+      'Behavior state machine handles target loss with autonomous search patterns, smooth velocity ramping, and deadband filtering to prevent jitter.',
+      'Full stack deployed via Docker with NVIDIA GPU acceleration; live Flask monitoring stream and hardware/software E-Stop for safety.'
     ],
-    technologies: ['Boston Dynamics Spot SDK', 'YOLOv8', 'Visual Servoing', 'Docker', 'ZED 2i Camera'],
+    technologies: ['Boston Dynamics Spot SDK', 'YOLOv8', 'Visual Servoing', 'ZED 2i', 'Docker'],
     link: 'https://github.com/vivekmattam02/spot.git'
   },
   {
-    title: 'Slip-Aware MPPI Navigation for Skid-Steer Robots',
+    title: 'Slip-Aware MPPI Navigation – Clearpath Warthog on Martian Terrain',
     image: '/assets/images/Warthog.jpg',
-    dates: 'September - December 2025',
+    dates: 'Sep – Dec 2025',
     points: [
-      'Modeled the Extended Differential Drive (EDD) kinematics where Martian regolith (μ=0.35) causes the effective track width to expand 2.2×, quantifying the massive understeer that renders standard kinematic models unreliable.',
-      'Implemented a 6-state Unscented Kalman Filter (UKF) fusing LiDAR-Inertial Odometry with EDD predictions for GPS-denied localization, augmenting the state with longitudinal acceleration to maintain observability during high-slip maneuvers.',
-      'Deployed an MPPI controller with a composite cost function — terminal goal-seeking + heading alignment, running collision penalties, proximity-weighted obstacle costs, and control smoothness terms.',
-      'Validated the framework in Isaac Sim showing Mars regolith induces 2× higher lateral drift velocities and 28× worse cross-track error compared to Earth surfaces, proving the necessity of slip-aware estimation and control.'
+      'Modeled Extended Differential Drive (EDD) kinematics for Martian regolith (μ=0.35) and quantified a 2.2× effective track width expansion — standard kinematic controllers fail entirely under these conditions.',
+      'UKF localization fusing LiDAR-Inertial Odometry with EDD predictions for GPS-denied environments; MPPI (1500 samples at 10 Hz) with composite cost: goal-seeking, heading alignment, obstacle avoidance, and control smoothness.',
+      'Validated in Isaac Sim: Mars terrain causes 28× worse cross-track error vs Earth surfaces, confirming that slip-aware estimation is non-negotiable for planetary rovers.'
     ],
-    technologies: ['NVIDIA Isaac Sim', 'MPPI Control', 'Unscented Kalman Filter', 'LiDAR-Inertial Odometry', 'ROS 2 Humble'],
+    technologies: ['Isaac Sim', 'MPPI', 'UKF', 'LiDAR-Inertial Odometry', 'ROS 2', 'RTAB-Map SLAM'],
     link: 'https://github.com/jotheesh1729/clearpath-warthog-isaac-sim.git'
   },
   {
-    title: 'Vision-Based Maze Navigation',
+    title: 'Vision-Based Maze Navigation Using Deep Features and Graph Planning',
     image: '/assets/images/vis-nav.png',
-    dates: 'September - December 2025',
+    dates: 'Sep – Dec 2025',
     points: [
-      'Extracted 2048-dim ResNet50 descriptors from 3,751 exploration images and indexed them in a BallTree for fast nearest-neighbor localization in high-dimensional feature space.',
-      'Constructed a sparse weighted topological graph where nodes are exploration viewpoints and edges encode navigable transitions, then ran A* search with feature-distance heuristics to plan optimal routes.',
-      'Matched goal images (4 candidate views) against the feature database using fused similarity scores to identify the target graph node without any prior map or GPS.',
-      'Ran a continuous sense-plan-act loop with real-time visual re-localization, path validation, off-path replanning, and stuck detection, reducing planned routes to 5-10 stable waypoints.'
+      'GPS/map-free localization: indexed ResNet50 descriptors from 3,751 exploration images in a BallTree for sub-2ms nearest-neighbor queries.',
+      'Built a topological graph (23,750 edges) of navigable transitions; A* with feature-distance heuristics plans routes to goal images identified purely by visual similarity.',
+      'Continuous sense-plan-act loop with live re-localization, off-path replanning, and stuck detection — no maps, no GPS, camera only.'
     ],
-    technologies: ['ResNet50', 'BallTree Indexing', 'A* Search', 'Topological Graphs', 'PyTorch'],
+    technologies: ['ResNet50', 'BallTree', 'A* Search', 'Topological Graphs', 'PyTorch'],
     link: 'https://github.com/jotheesh1729/vis-nav.git'
   },
   {
-    title: 'Decentralized Heterogeneous Swarm Robots',
+    title: 'Decentralized GNN-Based Coordination of Heterogeneous Swarm Robots (UGV-UAV)',
     image: '/assets/images/swarm.png',
-    dates: 'February - May 2025',
+    dates: 'Feb – May 2025',
     points: [
-      'Developed a three-layered autonomy stack for heterogeneous UGV-UAV swarms: decentralized goal assignment via DGNN-GA, swarm coordination through Extended Olfati-Saber Flocking, and type-specific local control policies for collision-free navigation.',
-      'Implemented DGNN-GA with encoder-GNN-decoder architecture performing iterative message passing across agent communication and assignment edges to compute optimal goal allocations using only local observations.',
-      'Extended Olfati-Saber Flocking with sigma-norm-based attraction-repulsion potentials, bump-function adjacency, informed-agent target tracking, and proximity-activated damping.',
-      'Validated the framework from MATLAB prototyping through ROS 2 Humble deployment in Unity3D simulation, demonstrating stable 10-agent homogeneous flocking with alpha-lattice formation convergence.'
+      '3-layer decentralized stack for mixed UGV-UAV swarms: DGNN-GA (adapted from Goarin & Loianno, IEEE RA-L 2024) for goal assignment, Olfati-Saber flocking for cohesion, and cascaded PX4/PID for low-level control.',
+      'DGNN-GA performs iterative message passing over communication and assignment edges, computing optimal allocations using only local agent observations.',
+      'Validated in ROS2-Unity3D with 5+ agents navigating spatial bottlenecks (max 1 UGV + 1 UAV simultaneously); demoed stable 10-agent homogeneous flocking with alpha-lattice convergence.'
     ],
-    technologies: ['Graph Neural Networks', 'Olfati-Saber Flocking', 'ROS 2 Humble', 'Unity3D', 'PX4 Autopilot'],
+    technologies: ['Graph Neural Networks', 'Olfati-Saber Flocking', 'ROS 2', 'Unity3D', 'PX4'],
     link: '/assets/pdf/doorbusters.pdf'
   },
   {
     title: 'Wearable Emergency Alerting System',
     image: '/assets/images/bts.png',
-    dates: 'March - May 2023',
+    dates: 'Mar – May 2023',
     points: [
-      'Built a wrist-worn emergency alert device using an ESP32-S2 microcontroller connected to Adafruit IO cloud, enabling real-time SOS transmission and alert reception between multiple devices over WiFi.',
-      'Designed distinct vibration patterns for different emergency types (fire, general, combined), allowing non-visual alert recognition with 72-94% accuracy across tested age groups.',
-      'Achieved 93% SOS transmission success rate and 100% alert delivery reliability in system trials, validated through a 17-participant usability study across multiple age groups.',
-      'Designed the wearable enclosure (watch and neckband form factors) in Fusion 360 and 3D printed the prototypes, prioritizing accessibility for both disabled and non-disabled users.'
+      'ESP32-S2 wrist device publishing SOS alerts to Adafruit IO over WiFi; distinct vibration patterns encode fire, general, and combined emergencies for non-visual recognition.',
+      '93% SOS transmission success rate and 100% alert delivery reliability; 72–94% alert-type recognition accuracy validated in a 17-participant usability study.',
+      'Designed watch and neckband enclosures in Fusion 360 and 3D printed the prototypes — published as undergraduate thesis (BTH, June 2023).'
     ],
-    technologies: ['ESP32-S2', 'Adafruit IO', 'IoT', 'Fusion 360', '3D Printing'],
+    technologies: ['ESP32-S2', 'Adafruit IO', 'C++', 'Fusion 360', '3D Printing'],
     link: 'https://github.com/jotheesh1729/Wearble-based-alerting-system-for-humans.git'
   },
 ];

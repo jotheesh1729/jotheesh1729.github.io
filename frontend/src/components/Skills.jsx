@@ -6,24 +6,24 @@ const skillCategories = [
     skills: ['C', 'C++', 'Embedded C', 'Bare-Metal', 'Python', 'MATLAB', 'Shell']
   },
   {
-    category: 'Robotics & Autonomy',
-    skills: ['ROS2', 'PX4 Autopilot', 'MAVLink', 'State Estimation', 'Sensor Fusion', 'PID/MPC/MPPI', 'Kalman Filtering']
+    category: 'State Estimation & Perception',
+    skills: ['MSEKF', 'EKF / UKF', 'OpenVINS', 'Visual-Inertial Odometry', 'LiDAR-Inertial Odometry', 'SLAM (RTAB-Map)', 'Sensor Fusion', '3D Gaussian Splatting']
+  },
+  {
+    category: 'Autonomy & Control',
+    skills: ['MPPI', 'MPC', 'Cascade PID', 'Deep RL (PPO)', 'Olfati-Saber Flocking', 'Visual Servoing', 'Motion Planning (A*, Topological)']
+  },
+  {
+    category: 'Robotics Stack & Middleware',
+    skills: ['ROS 2', 'PX4 Autopilot', 'MAVLink', 'Foxglove Studio', 'Boston Dynamics Spot SDK', 'Mbed RTOS', 'FreeRTOS', 'Zephyr RTOS']
   },
   {
     category: 'Embedded Systems',
-    skills: ['FreeRTOS', 'Yocto', 'Bootloaders', 'UART', 'SPI', 'I²C', 'CAN/CANopen', 'PWM', 'ADC/DAC', 'MQTT']
+    skills: ['UART', 'SPI', 'I²C', 'CAN / CANopen', 'PWM', 'ADC / DAC', 'MQTT', 'Yocto', 'Bootloaders', 'STM32 (ARM Cortex-M)', 'NVIDIA Jetson Orin', 'Pixhawk', 'ESP32']
   },
   {
-    category: 'Hardware Platforms',
-    skills: ['STM32 (ARM Cortex-M)', 'TI MSP430', 'ESP32', 'Arduino', 'Raspberry Pi', 'NVIDIA Jetson Orin', 'Pixhawk']
-  },
-  {
-    category: 'Simulation & Tools',
-    skills: ['Isaac Sim', 'Gazebo', 'MuJoCo', 'MATLAB/Simulink', 'Docker', 'Git', 'STM32CubeIDE', 'Fusion 360']
-  },
-  {
-    category: 'ML & Perception',
-    skills: ['PyTorch', 'OpenCV', 'SciPy', 'FFT', 'Time-Series Analysis', 'SLAM (RTAB-Map)']
+    category: 'Simulation & Dev Tools',
+    skills: ['NVIDIA Isaac Sim', 'Isaac Lab', 'Gazebo', 'MuJoCo', 'MATLAB / Simulink', 'PyTorch', 'OpenCV', 'STM32CubeIDE', 'KiCAD', 'Fusion 360', 'Docker', 'Git']
   }
 ];
 

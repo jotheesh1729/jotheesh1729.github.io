@@ -32,12 +32,10 @@ const Hero = () => {
               Robotics & Embedded Systems Engineer
             </p>
             <p className="text-sm mb-4 leading-relaxed" style={{ color: '#b8b8b8' }}>
-              Master's student in Electrical Engineering at New York University with expertise in autonomous systems, 
-              embedded design, and real-time robotics. Specialized in developing intelligent control systems, 
-              state estimation algorithms, and hardware-software integration for complex robotics applications. 
-              Experienced in reinforcement learning for locomotion, multi-agent coordination, and embedded IoT systems. 
-              Currently working as Head Teaching Assistant for Real-Time Embedded Systems and Graduate Research Assistant 
-              at the Agile Robotics and Perception Lab.
+              M.S. Computer Engineering, NYU (May 2026). I work across the full stack — bare-metal firmware and RTOS on one end,
+              state estimation, control, and sim-to-real RL on the other.
+              Most recently: Head TA for Real-Time Embedded Systems and Graduate Research Assistant at ARPL,
+              where I'm working on uncertainty-aware robot navigation using 3D Gaussian Splatting.
             </p>
 
             {/* CTA Buttons */}
@@ -82,7 +80,7 @@ const Hero = () => {
                 </Button>
               </a>
               <a
-                href="https://linkedin.com/in/jotheesh1729"
+                href="https://www.linkedin.com/in/jotheesh-reddy-kummathi"
                 target="_blank"
                 rel="noopener noreferrer"
               >

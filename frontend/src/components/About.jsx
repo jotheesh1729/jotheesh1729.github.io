@@ -38,15 +38,15 @@ const About = () => {
           
           <div style={{ fontSize: '15px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
-              I am an Embedded Systems & Robotics Engineer and Master's student at NYU specializing in controls, perception, and Real-Time Operating Systems (RTOS)—building across autonomous aerial drones, robotics platforms, and industrial IoT systems.
+              Robotics and Embedded Systems Engineer, M.S. Computer Engineering from NYU (May 2026). I work across the full stack — from bare-metal firmware and RTOS to state estimation, control algorithms, and sim-to-real reinforcement learning.
             </p>
-            
+
             <p style={{ marginBottom: '12px' }}>
-              I have developed and optimized production firmware for domestic and industrial IoT devices at Magnibot; integrated advanced perception compute and flight control systems at NYU's Agile Robotics and Perception Lab (ARPL); and serve as the Head Teaching Assistant for NYU's Real-Time Embedded Systems course—always optimizing for system reliability, energy efficiency, and real-world robustness.
+              At NYU's Agile Robotics and Perception Lab (ARPL), I build and fly research drones and am currently working on extracting uncertainty information from 3D Gaussian Splatting representations for robot navigation. Before that, I wrote production firmware for IoT devices at Magnibot and served as Head TA for NYU's Real-Time Embedded Systems course.
             </p>
-            
+
             <p>
- I am passionate about building systems that physically interact with the world and am actively looking for roles where the work is close to the metal.
+              I'm looking for roles where the work stays close to hardware — autonomous systems, embedded software, or anything that needs to run reliably in the real world.
             </p>
           </div>
 
