@@ -8,8 +8,9 @@ const experiences = [
     dates: 'July 2026 - September 2026',
     showGithub: false,
     points: [
-      'Built embedded vision firmware for an NVIDIA Jetson Orin Nano running Linux, handling real-time object detection, segmentation, and tracking directly on the device in C++ and Python.',
-      'Set up a GStreamer pipeline that captures from two synchronized camera sensors with hardware-accelerated encoding, keeping the overlapping views aligned frame to frame.'
+      'Building embedded computer vision firmware for an NVIDIA Jetson Orin Nano running embedded Linux (L4T, ARM64), implementing real-time object detection, segmentation, and tracking that runs entirely on-device in C++ and Python.',
+      'Designed a GStreamer video pipeline ingesting two synchronized IMX219 camera sensors over MIPI CSI-2 with hardware-accelerated encoding, keeping frame alignment consistent across the overlapping fields of view for downstream perception.',
+      'Working across the C++/Python boundary to balance real-time throughput against development speed, tuning the inference pipeline to run reliably within the Jetson\'s power and compute budget.'
     ]
   },
   {
@@ -18,9 +19,9 @@ const experiences = [
     dates: 'January 2025 - June 2026',
     showGithub: false,
     points: [
-      'Deployed and calibrated a multi-modal sensor suite — LiDAR, depth cameras, and precision GPS — for state estimation in GPS-denied environments, and contributed to research on 3D Gaussian Splatting for perception.',
-      'Brought up PX4 flight stacks on Jetson Orin companion computers and tracked down flight-controller and ESC faults that only surfaced on real hardware, building automated test pipelines with telemetry logging along the way.',
-      'Served as safety pilot for UAV flight tests, and operated a Clearpath UGV and a Boston Dynamics Spot during field experiments.'
+      'Deployed and calibrated a multi-modal sensor suite — LiDAR, depth cameras, and precision GPS — for state estimation in GPS-denied environments, and contributed to ongoing lab research on 3D Gaussian Splatting for real-time scene perception.',
+      'Brought up PX4 flight stacks on Jetson Orin companion computers for experimental drones, tracking down ESC and flight-controller faults that only reproduced on physical hardware, and built hardware- and simulation-in-the-loop test pipelines with telemetry logging to catch regressions before flight tests.',
+      'Served as safety pilot for UAV flight tests, and operated a Clearpath UGV and a Boston Dynamics Spot during field experiments supporting other lab members\' research.'
     ]
   },
   {
@@ -29,9 +30,9 @@ const experiences = [
     dates: 'January 2025 - May 2026',
     showGithub: false,
     points: [
-      'Led recitations, grading, and office hours under industry associate professor Matthew Campisi, PhD.',
-      'Supported more than 700 graduate students across three semesters on C, Embedded C, Mbed OS, RTOS scheduling, and real-time DSP.',
-      'Graded labs on ARM Cortex-M peripherals and interrupts, and gave hands-on guidance for embedded programming and RTOS implementations.'
+      'Led recitations, grading, and office hours under industry associate professor Matthew Campisi, PhD, across three semesters.',
+      'Supported more than 700 graduate students in total on C, Embedded C, Mbed OS, RTOS scheduling, and real-time DSP concepts, translating course material into hands-on lab guidance.',
+      'Graded labs covering ARM Cortex-M peripherals, interrupts, and real-time scheduling, and held office hours to help students debug hardware-software integration issues on their own boards.'
     ]
   },
   {
@@ -40,8 +41,8 @@ const experiences = [
     dates: 'July 2023 - July 2024',
     showGithub: false,
     points: [
-      'Developed and optimized firmware in C/C++ on FreeRTOS for IoT and embedded products used in domestic and industrial deployments.',
-      'Designed, debugged, and integrated embedded solutions across UART, SPI, I2C, and CAN, and maintained the CI/CD pipeline that automated build validation and regression testing.'
+      'Developed and optimized firmware in C/C++ on FreeRTOS for IoT and embedded products spanning domestic and industrial deployments, balancing responsiveness against the tight power and memory budgets typical of consumer devices.',
+      'Designed, debugged, and integrated embedded solutions across UART, SPI, I2C, and CAN, and maintained the CI/CD pipeline that automated build validation and regression testing across the firmware codebase.'
     ]
   }
 ];

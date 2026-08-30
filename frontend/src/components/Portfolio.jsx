@@ -17,9 +17,9 @@ const Portfolio = () => {
       }}>
         <About />
         <Experience />
-        <Education />
         <Projects />
         <Publications />
+        <Education />
         <Skills />
         <Contact />
       </div>
