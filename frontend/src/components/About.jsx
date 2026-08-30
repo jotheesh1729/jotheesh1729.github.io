@@ -38,11 +38,11 @@ const About = () => {
           
           <div style={{ fontSize: '15px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
-              I am an Embedded Systems & Robotics Engineer and Master's student at NYU specializing in controls, perception, and Real-Time Operating Systems (RTOS)—building across autonomous aerial drones, robotics platforms, and industrial IoT systems.
+              I am an Embedded Systems & Robotics Engineer who recently completed my M.S. in Computer Engineering at NYU, specializing in controls, perception, and Real-Time Operating Systems (RTOS)—building across autonomous aerial drones, robotics platforms, and industrial IoT systems.
             </p>
-            
+
             <p style={{ marginBottom: '12px' }}>
-              I have developed and optimized production firmware for domestic and industrial IoT devices at Magnibot; integrated advanced perception compute and flight control systems at NYU's Agile Robotics and Perception Lab (ARPL); and serve as the Head Teaching Assistant for NYU's Real-Time Embedded Systems course—always optimizing for system reliability, energy efficiency, and real-world robustness.
+              I'm currently developing embedded vision firmware as an AI Vision Systems Intern at The Nail Lab. Previously, I integrated advanced perception compute and flight control systems at NYU's Agile Robotics and Perception Lab (ARPL); served as Head Teaching Assistant for NYU's Real-Time Embedded Systems course; and developed production firmware for domestic and industrial IoT devices at Magnibot—always optimizing for system reliability, energy efficiency, and real-world robustness.
             </p>
             
             <p>
@@ -52,9 +52,9 @@ const About = () => {
 
           {/* Links */}
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <a 
-              href={`${process.env.PUBLIC_URL}/assets/resume.pdf`} 
-              target="_blank" 
+            <a
+              href={`${process.env.PUBLIC_URL}/assets/documents/resume-embedded.pdf`}
+              target="_blank"
               rel="noopener noreferrer"
               style={{
                 display: 'flex',
@@ -70,10 +70,30 @@ const About = () => {
               }}
             >
               <FileText size={16} />
-              Resume
+              Resume (Embedded)
             </a>
-            <a 
-              href="https://github.com/jotheesh1729" 
+            <a
+              href={`${process.env.PUBLIC_URL}/assets/documents/resume-robotics.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '4px',
+                fontSize: '15px',
+                color: '#374151',
+                textDecoration: 'none',
+                backgroundColor: '#fff'
+              }}
+            >
+              <FileText size={16} />
+              Resume (Robotics)
+            </a>
+            <a
+              href="https://github.com/jotheesh1729"
               target="_blank" 
               rel="noopener noreferrer"
               style={{

@@ -3,6 +3,19 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
+    title: 'Map-Free Navigation & Person Following on FrodoBots Earth Rover',
+    image: '/assets/videos/person_chair_demo.mp4',
+    dates: 'May 2026',
+    points: [
+      'Built a map-free, monocular-only navigation stack for a FrodoBots Earth Rover with two modes: driving to an object described in plain English ("chair", "person with red shirt") or locking onto and following a person, with no lidar, GPS, or prebuilt map.',
+      'Cascaded YOLO-World open-vocabulary detection with an asynchronous vision-language model (Qwen2-VL-2B or InternVL2-2B) that verifies descriptive and spatial queries and guides search and obstacle-bypass direction without blocking the ~8-12 FPS control loop.',
+      'Estimated ground-plane distance by sampling Depth Anything V2 depth from the lower 25% of each bounding box instead of its center, cutting mean stopping-distance error from 0.47 m to 0.21 m, and tracked bearing and range with an EKF plus HSV-histogram re-identification to resist identity switches.',
+      'Ran a five-band depth-based obstacle-avoidance scan that raised avoidance success from 55% (three-band ablation) to 75%, and evaluated the full system across 4 scenarios x 10 trials x 2 VLM backbones, reaching 67.5-70% end-to-end navigation success.'
+    ],
+    technologies: ['YOLO-World', 'Qwen2-VL / InternVL2', 'Depth Anything V2', 'Extended Kalman Filter', 'FrodoBots Earth Rover'],
+    link: 'https://github.com/jotheesh1729/frodo-follower'
+  },
+  {
     title: 'Reinforcement Learning for Quadruped Locomotion',
     image: '/assets/videos/unitree.MOV',
     dates: 'September - December 2025',

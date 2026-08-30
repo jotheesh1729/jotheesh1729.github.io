@@ -3,36 +3,45 @@ import { FaGithub } from 'react-icons/fa';
 
 const experiences = [
   {
+    role: 'AI Vision Systems Intern',
+    organization: 'The Nail Lab, Inc.',
+    dates: 'July 2026 - September 2026',
+    showGithub: false,
+    points: [
+      'Built embedded vision firmware for an NVIDIA Jetson Orin Nano running Linux, handling real-time object detection, segmentation, and tracking directly on the device in C++ and Python.',
+      'Set up a GStreamer pipeline that captures from two synchronized camera sensors with hardware-accelerated encoding, keeping the overlapping views aligned frame to frame.'
+    ]
+  },
+  {
+    role: 'Graduate Research Assistant',
+    organization: 'Agile Robotics and Perception Lab (ARPL) - New York University',
+    dates: 'January 2025 - June 2026',
+    showGithub: false,
+    points: [
+      'Deployed and calibrated a multi-modal sensor suite — LiDAR, depth cameras, and precision GPS — for state estimation in GPS-denied environments, and contributed to research on 3D Gaussian Splatting for perception.',
+      'Brought up PX4 flight stacks on Jetson Orin companion computers and tracked down flight-controller and ESC faults that only surfaced on real hardware, building automated test pipelines with telemetry logging along the way.',
+      'Served as safety pilot for UAV flight tests, and operated a Clearpath UGV and a Boston Dynamics Spot during field experiments.'
+    ]
+  },
+  {
     role: 'Head Teaching Assistant',
-    organization: 'New York University',
-    dates: 'January 2025 - Present',
+    organization: 'New York University - ECE-GY 6483: Real-Time Embedded Systems',
+    dates: 'January 2025 - May 2026',
     showGithub: false,
     points: [
-      'Working under induatry associacte professor Matthew Campisi, PhD Leading recitation sessions, grading, and office hours for ECE-GY 6483: Real-Time Embedded Systems',
-      'Support over 200 graduate students every semester on hardware-software integration and real-time system concepts',
-      'Provide hands-on guidance for embedded programming and real-time operating systems (RTOS) implementations'
+      'Led recitations, grading, and office hours under industry associate professor Matthew Campisi, PhD.',
+      'Supported more than 700 graduate students across three semesters on C, Embedded C, Mbed OS, RTOS scheduling, and real-time DSP.',
+      'Graded labs on ARM Cortex-M peripherals and interrupts, and gave hands-on guidance for embedded programming and RTOS implementations.'
     ]
   },
   {
-    role: 'Graduate Engineering Assistant',
-    organization: 'Agile Robotics And Perception Lab - NYU',
-    dates: 'January 2025 - Present',
-    showGithub: false,
-    points: [
-      'Assist in assembling drones equipped with PX4 Pro flight controllers and NVIDIA Jetson Orin compute boards',
-      'Perform firmware tweaking and flashing, sensor calibration, thrust bench testing and system integration for experimental robotics platforms',
-      'Support ongoing research experiments in autonomous aerial robotics and perception systems'
-    ]
-  },
-  {
-    role: 'Embedded Engineer',
+    role: 'Junior Embedded Engineer',
     organization: 'Magnibot Technology Solutions Pvt Ltd',
     dates: 'July 2023 - July 2024',
     showGithub: false,
     points: [
-      'Developed and optimized software for embedded devices and IoT products targeting domestic and industrial applications',
-      'Designed, debugged, and integrated embedded solutions using C/C++, Python, and RTOS',
-      'Enhanced device functionality and energy efficiency through firmware optimization and robust hardware-software integration'
+      'Developed and optimized firmware in C/C++ on FreeRTOS for IoT and embedded products used in domestic and industrial deployments.',
+      'Designed, debugged, and integrated embedded solutions across UART, SPI, I2C, and CAN, and maintained the CI/CD pipeline that automated build validation and regression testing.'
     ]
   }
 ];

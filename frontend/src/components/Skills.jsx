@@ -2,28 +2,28 @@ import React from 'react';
 
 const skillCategories = [
   {
-    category: 'Programming',
-    skills: ['C', 'C++', 'Embedded C', 'Bare-Metal', 'Python', 'MATLAB', 'Shell']
+    category: 'Languages',
+    skills: ['C', 'C++', 'Embedded C', 'Python', 'MATLAB', 'Bash/Shell']
   },
   {
-    category: 'Robotics & Autonomy',
-    skills: ['ROS2', 'PX4 Autopilot', 'MAVLink', 'State Estimation', 'Sensor Fusion', 'PID/MPC/MPPI', 'Kalman Filtering']
+    category: 'Embedded Systems & Firmware',
+    skills: ['FreeRTOS', 'Mbed OS', 'Bare-Metal', 'Bootloaders', 'CMSIS-DSP', 'UART', 'SPI', 'I²C', 'CAN/CAN-FD', 'BLE', 'MIPI CSI-2', 'PWM', 'ADC/DAC', 'DMA', 'Timers']
   },
   {
-    category: 'Embedded Systems',
-    skills: ['FreeRTOS', 'Yocto', 'Bootloaders', 'UART', 'SPI', 'I²C', 'CAN/CANopen', 'PWM', 'ADC/DAC', 'MQTT']
+    category: 'Hardware Platforms & Debug Tools',
+    skills: ['STM32 (ARM Cortex-M)', 'ESP32', 'Pixhawk', 'NVIDIA Jetson Orin', 'Arduino', 'Raspberry Pi', 'JTAG/SWD', 'GDB', 'Oscilloscopes', 'Logic Analyzers']
   },
   {
-    category: 'Hardware Platforms',
-    skills: ['STM32 (ARM Cortex-M)', 'TI MSP430', 'ESP32', 'Arduino', 'Raspberry Pi', 'NVIDIA Jetson Orin', 'Pixhawk']
+    category: 'Robotics & Controls',
+    skills: ['ROS2', 'PX4 Autopilot', 'MAVLink', 'Control (PID/MPC/MPPI)', 'State Estimation & Sensor Fusion', 'Kalman Filtering (EKF/UKF)', 'Motion Planning (A*)']
   },
   {
-    category: 'Simulation & Tools',
-    skills: ['Isaac Sim', 'Gazebo', 'MuJoCo', 'MATLAB/Simulink', 'Docker', 'Git', 'STM32CubeIDE', 'Fusion 360']
+    category: 'Computer Vision & Machine Learning',
+    skills: ['PyTorch', 'OpenCV', 'YOLOv8', 'TensorRT', 'GStreamer', 'SLAM (RTAB-Map)', 'Reinforcement Learning (PPO)', '3D Gaussian Splatting']
   },
   {
-    category: 'ML & Perception',
-    skills: ['PyTorch', 'OpenCV', 'SciPy', 'FFT', 'Time-Series Analysis', 'SLAM (RTAB-Map)']
+    category: 'Simulation & Dev Tools',
+    skills: ['Isaac Sim/Lab', 'Gazebo', 'MuJoCo', 'Docker', 'Git', 'CI/CD']
   }
 ];
 
