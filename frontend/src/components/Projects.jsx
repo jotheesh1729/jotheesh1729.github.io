@@ -3,6 +3,19 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
+    title: 'Tremor & Dyskinesia Detection Wearable (Zephyr RTOS)',
+    image: '/assets/images/zephyr.jpeg',
+    dates: 'August - September 2026',
+    points: [
+      'Rebuilt a university tremor-detection assignment from scratch on Zephyr RTOS after Arm discontinued the original Mbed OS platform, writing a custom out-of-tree LSM6DSL IMU driver with devicetree bindings, Kconfig options, and FIFO-watermark-interrupt-to-thread handoff on an STM32L475 (Cortex-M4F, 80MHz).',
+      'Built a real-time DSP pipeline (gravity removal, orientation-independent magnitude vector, 50%-overlap Hann-windowed CMSIS-DSP FFT) classifying tremor (3-9Hz) vs. dyskinesia by relative spectral concentration around the dominant peak, per published wearable-tremor-detection methodology.',
+      'Added a gyroscope-based rejection gate to distinguish involuntary tremor from voluntary wrist motion at the same frequency, and an episode state machine with hysteresis (K-of-N windowing plus cooldown) to turn noisy per-window classifications into stable episode records.',
+      'Reported episode and periodic-summary data (counts, durations, mean severity) over a custom BLE GATT service every 5 minutes rather than streaming live, mirroring commercial tremor monitors such as the Parkinson’s KinetiGraph.'
+    ],
+    technologies: ['Zephyr RTOS', 'STM32L475 (Cortex-M4F)', 'CMSIS-DSP (FFT)', 'LSM6DSL IMU', 'Bluetooth LE (GATT)'],
+    link: 'https://github.com/jotheesh1729/tremor_detection_zephyr'
+  },
+  {
     title: 'Map-Free Navigation & Person Following on FrodoBots Earth Rover',
     image: '/assets/videos/person_chair_demo.mp4',
     dates: 'May 2026',
