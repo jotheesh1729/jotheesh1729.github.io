@@ -3,36 +3,46 @@ import { FaGithub } from 'react-icons/fa';
 
 const experiences = [
   {
-    role: 'Head Teaching Assistant',
-    organization: 'New York University – New York, NY',
-    dates: 'January 2025 – May 2026',
+    role: 'AI Vision Systems Intern',
+    organization: 'The Nail Lab, Inc.',
+    dates: 'July 2026 - September 2026',
     showGithub: false,
     points: [
-      'Run weekly recitations, hold office hours, and grade for ECE-GY 6483: Real-Time Embedded Systems under Prof. Matthew Campisi — supporting 200+ graduate students per semester.',
-      'Guide students through Mbed RTOS fundamentals: thread lifecycle, mutex vs. semaphore, priority inversion, and EventQueue patterns for interrupt-deferred work.',
-      'Cover harder topics including Rate Monotonic schedulability analysis, deadline monotonic scheduling, watchdog timers, MPU configuration, and identifying race conditions in multi-threaded embedded code.'
+      'Building embedded computer vision firmware for an NVIDIA Jetson Orin Nano running embedded Linux (L4T, ARM64), implementing real-time object detection, segmentation, and tracking that runs entirely on-device in C++ and Python.',
+      'Designed a GStreamer video pipeline ingesting two synchronized IMX219 camera sensors over MIPI CSI-2 with hardware-accelerated encoding, keeping frame alignment consistent across the overlapping fields of view for downstream perception.',
+      'Working across the C++/Python boundary to balance real-time throughput against development speed, tuning the inference pipeline to run reliably within the Jetson\'s power and compute budget.'
     ]
   },
   {
     role: 'Graduate Research Assistant',
-    organization: 'Agile Robotics and Perception Lab (ARPL) – NYU / UC Berkeley',
-    dates: 'January 2025 – Present',
+    organization: 'Agile Robotics and Perception Lab (ARPL) - New York University',
+    dates: 'January 2025 - June 2026',
     showGithub: false,
     points: [
-      'Build and maintain research drones with PX4, Jetson Orin, and Connect Tech carrier boards — including firmware flashing, ESC debugging, and PID tuning to resolve in-flight oscillations.',
-      'Run thrust-bench characterization for motor and propeller validation across multiple drone configurations.',
-      'Currently working on extracting spatial uncertainty and scene geometry from 3D Gaussian Splatting representations to enable uncertainty-aware robot navigation.'
+      'Deployed and calibrated a multi-modal sensor suite — LiDAR, depth cameras, and precision GPS — for state estimation in GPS-denied environments, and contributed to ongoing lab research on 3D Gaussian Splatting for real-time scene perception.',
+      'Brought up PX4 flight stacks on Jetson Orin companion computers for experimental drones, tracking down ESC and flight-controller faults that only reproduced on physical hardware, and built hardware- and simulation-in-the-loop test pipelines with telemetry logging to catch regressions before flight tests.',
+      'Served as safety pilot for UAV flight tests, and operated a Clearpath UGV and a Boston Dynamics Spot during field experiments supporting other lab members\' research.'
     ]
   },
   {
-    role: 'Embedded Engineer',
-    organization: 'Magnibot Technology Solutions Pvt. Ltd. – Bengaluru, India',
-    dates: 'July 2023 – July 2024',
+    role: 'Head Teaching Assistant',
+    organization: 'New York University - ECE-GY 6483: Real-Time Embedded Systems',
+    dates: 'January 2025 - May 2026',
     showGithub: false,
     points: [
-      'Wrote and optimized production firmware in C/C++ with FreeRTOS for IoT devices targeting domestic and industrial applications.',
-      'Brought up and debugged hardware across UART, SPI, I²C, and CAN interfaces — resolved integration failures that were impacting production reliability.',
-      'Owned the full embedded cycle from schematic review and firmware development to field validation and iterative optimization.'
+      'Led recitations, grading, and office hours under industry associate professor Matthew Campisi, PhD, across three semesters.',
+      'Supported more than 700 graduate students in total on C, Embedded C, Mbed OS, RTOS scheduling, and real-time DSP concepts, translating course material into hands-on lab guidance.',
+      'Graded labs covering ARM Cortex-M peripherals, interrupts, and real-time scheduling, and held office hours to help students debug hardware-software integration issues on their own boards.'
+    ]
+  },
+  {
+    role: 'Junior Embedded Engineer',
+    organization: 'Magnibot Technology Solutions Pvt Ltd',
+    dates: 'July 2023 - July 2024',
+    showGithub: false,
+    points: [
+      'Developed and optimized firmware in C/C++ on FreeRTOS for IoT and embedded products spanning domestic and industrial deployments, balancing responsiveness against the tight power and memory budgets typical of consumer devices.',
+      'Designed, debugged, and integrated embedded solutions across UART, SPI, I2C, and CAN, and maintained the CI/CD pipeline that automated build validation and regression testing across the firmware codebase.'
     ]
   }
 ];

@@ -38,23 +38,23 @@ const About = () => {
           
           <div style={{ fontSize: '15px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
-              Robotics and Embedded Systems Engineer, M.S. Computer Engineering from NYU (May 2026). I work across the full stack — from bare-metal firmware and RTOS to state estimation, control algorithms, and sim-to-real reinforcement learning.
+              I am an Embedded Systems & Robotics Engineer who recently completed my M.S. in Computer Engineering at NYU, specializing in controls, perception, and Real-Time Operating Systems (RTOS)—building across autonomous aerial drones, robotics platforms, and industrial IoT systems.
             </p>
 
             <p style={{ marginBottom: '12px' }}>
-              At NYU's Agile Robotics and Perception Lab (ARPL), I build and fly research drones and am currently working on extracting uncertainty information from 3D Gaussian Splatting representations for robot navigation. Before that, I wrote production firmware for IoT devices at Magnibot and served as Head TA for NYU's Real-Time Embedded Systems course.
+              I'm currently developing embedded vision firmware as an AI Vision Systems Intern at The Nail Lab. Previously, I integrated advanced perception compute and flight control systems at NYU's Agile Robotics and Perception Lab (ARPL); served as Head Teaching Assistant for NYU's Real-Time Embedded Systems course; and developed production firmware for domestic and industrial IoT devices at Magnibot—always optimizing for system reliability, energy efficiency, and real-world robustness.
             </p>
-
+            
             <p>
-              I'm looking for roles where the work stays close to hardware — autonomous systems, embedded software, or anything that needs to run reliably in the real world.
+ I am passionate about building systems that physically interact with the world and am actively looking for roles where the work is close to the metal.
             </p>
           </div>
 
           {/* Links */}
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <a 
-              href={`${process.env.PUBLIC_URL}/assets/resume.pdf`} 
-              target="_blank" 
+            <a
+              href={`${process.env.PUBLIC_URL}/assets/documents/resume-embedded.pdf`}
+              target="_blank"
               rel="noopener noreferrer"
               style={{
                 display: 'flex',
@@ -70,10 +70,30 @@ const About = () => {
               }}
             >
               <FileText size={16} />
-              Resume
+              Resume (Embedded)
             </a>
-            <a 
-              href="https://github.com/jotheesh1729" 
+            <a
+              href={`${process.env.PUBLIC_URL}/assets/documents/resume-robotics.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '4px',
+                fontSize: '15px',
+                color: '#374151',
+                textDecoration: 'none',
+                backgroundColor: '#fff'
+              }}
+            >
+              <FileText size={16} />
+              Resume (Robotics)
+            </a>
+            <a
+              href="https://github.com/jotheesh1729"
               target="_blank" 
               rel="noopener noreferrer"
               style={{

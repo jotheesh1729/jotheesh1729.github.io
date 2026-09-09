@@ -2,20 +2,28 @@ import React from 'react';
 
 const skillCategories = [
   {
-    category: 'Programming',
-    skills: ['C', 'C++', 'Embedded C', 'Python', 'MATLAB', 'Shell']
+    category: 'Languages',
+    skills: ['C', 'C++', 'Embedded C', 'Python', 'MATLAB', 'Bash/Shell']
   },
   {
-    category: 'Robotics, Autonomy & Control',
-    skills: ['ROS 2', 'PX4 Autopilot', 'MAVLink', 'MPPI', 'MPC', 'PID', 'Deep RL (PPO)', 'EKF / UKF', 'MSEKF', 'OpenVINS', 'SLAM (RTAB-Map)', 'Sensor Fusion', 'Visual Servoing', 'Motion Planning']
+    category: 'Embedded Systems & Firmware',
+    skills: ['FreeRTOS', 'Mbed OS', 'Bare-Metal', 'Bootloaders', 'CMSIS-DSP', 'UART', 'SPI', 'I²C', 'CAN/CAN-FD', 'BLE', 'MIPI CSI-2', 'PWM', 'ADC/DAC', 'DMA', 'Timers']
   },
   {
-    category: 'Embedded Systems',
-    skills: ['FreeRTOS', 'Zephyr RTOS', 'UART', 'SPI', 'I²C', 'CAN / CANopen', 'PWM', 'ADC / DAC', 'STM32 (ARM Cortex-M)', 'NVIDIA Jetson Orin', 'Pixhawk', 'ESP32', 'Yocto', 'Bootloaders']
+    category: 'Hardware Platforms & Debug Tools',
+    skills: ['STM32 (ARM Cortex-M)', 'ESP32', 'Pixhawk', 'NVIDIA Jetson Orin', 'Arduino', 'Raspberry Pi', 'JTAG/SWD', 'GDB', 'Oscilloscopes', 'Logic Analyzers']
   },
   {
-    category: 'Simulation & Tools',
-    skills: ['NVIDIA Isaac Sim', 'Isaac Lab', 'Gazebo', 'MuJoCo', 'MATLAB / Simulink', 'Foxglove Studio', 'PyTorch', 'OpenCV', 'Docker', 'Git', 'STM32CubeIDE', 'KiCAD', 'Fusion 360']
+    category: 'Robotics & Controls',
+    skills: ['ROS2', 'PX4 Autopilot', 'MAVLink', 'Control (PID/MPC/MPPI)', 'State Estimation & Sensor Fusion', 'Kalman Filtering (EKF/UKF)', 'Motion Planning (A*)']
+  },
+  {
+    category: 'Computer Vision & Machine Learning',
+    skills: ['PyTorch', 'OpenCV', 'YOLOv8', 'TensorRT', 'GStreamer', 'SLAM (RTAB-Map)', 'Reinforcement Learning (PPO)', '3D Gaussian Splatting']
+  },
+  {
+    category: 'Simulation & Dev Tools',
+    skills: ['Isaac Sim/Lab', 'Gazebo', 'MuJoCo', 'Docker', 'Git', 'CI/CD']
   }
 ];
 

@@ -40,8 +40,8 @@ const Contact = () => {
         <p style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <Linkedin size={16} style={{ color: '#555' }} />
           <strong>LinkedIn:</strong>{' '}
-          <a href="https://linkedin.com/in/jotheesh1729" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb' }}>
-            linkedin.com/in/jotheesh1729
+          <a href="https://www.linkedin.com/in/jotheesh-reddy-kummathi" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb' }}>
+            linkedin.com/in/jotheesh-reddy-kummathi
           </a>
         </p>
       </div>

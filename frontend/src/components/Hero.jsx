@@ -32,16 +32,18 @@ const Hero = () => {
               Robotics & Embedded Systems Engineer
             </p>
             <p className="text-sm mb-4 leading-relaxed" style={{ color: '#b8b8b8' }}>
-              M.S. Computer Engineering, NYU (May 2026). I work across the full stack — bare-metal firmware and RTOS on one end,
-              state estimation, control, and sim-to-real RL on the other.
-              Most recently: Head TA for Real-Time Embedded Systems and Graduate Research Assistant at ARPL,
-              where I'm working on uncertainty-aware robot navigation using 3D Gaussian Splatting.
+              M.S. in Computer Engineering from New York University with expertise in autonomous systems,
+              embedded design, and real-time robotics. Specialized in developing intelligent control systems,
+              state estimation algorithms, and hardware-software integration for complex robotics applications.
+              Experienced in reinforcement learning for locomotion, multi-agent coordination, and embedded IoT systems.
+              Currently working as an AI Vision Systems Intern at The Nail Lab, building embedded vision firmware
+              on NVIDIA Jetson Orin Nano.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-2">
               <a
-                href={`${process.env.PUBLIC_URL}/assets/documents/resume.pdf`}
+                href={`${process.env.PUBLIC_URL}/assets/documents/resume-embedded.pdf`}
                 download
                 target="_blank"
                 rel="noopener noreferrer"
@@ -54,7 +56,30 @@ const Hero = () => {
                   onMouseLeave={(e) => e.target.style.backgroundColor = '#555'}
                 >
                   <FileText className="mr-1.5" size={14} />
-                  Resume
+                  Resume (Embedded)
+                </Button>
+              </a>
+              <a
+                href={`${process.env.PUBLIC_URL}/assets/documents/resume-robotics.pdf`}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="px-4 py-1.5 text-xs transition-colors"
+                  style={{ borderColor: '#666', color: '#d1d1d1', backgroundColor: 'transparent' }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = '#555';
+                    e.target.style.color = '#f5f5f5';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = '#d1d1d1';
+                  }}
+                >
+                  <FileText className="mr-1.5" size={14} />
+                  Resume (Robotics)
                 </Button>
               </a>
               <a
@@ -80,7 +105,7 @@ const Hero = () => {
                 </Button>
               </a>
               <a
-                href="https://www.linkedin.com/in/jotheesh-reddy-kummathi"
+                href="https://linkedin.com/in/jotheesh1729"
                 target="_blank"
                 rel="noopener noreferrer"
               >

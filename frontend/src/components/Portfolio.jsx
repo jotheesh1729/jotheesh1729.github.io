@@ -3,14 +3,15 @@ import About from './About';
 import Projects from './Projects';
 import Publications from './Publications';
 import Experience from './Experience';
+import Education from './Education';
 import Skills from './Skills';
 import Contact from './Contact';
 
 const Portfolio = () => {
   return (
     <div style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
-      <div style={{ 
-        maxWidth: '1200px', 
+      <div style={{
+        maxWidth: '1200px',
         margin: '0 auto',
         padding: '40px 20px'
       }}>
@@ -18,6 +19,7 @@ const Portfolio = () => {
         <Experience />
         <Projects />
         <Publications />
+        <Education />
         <Skills />
         <Contact />
       </div>
