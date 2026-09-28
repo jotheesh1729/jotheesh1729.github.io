@@ -3,28 +3,29 @@ import { FaGithub } from 'react-icons/fa';
 import { withBold } from '@/lib/utils';
 
 const experiences = [
-  {
-    role: 'AI Vision Systems Intern',
-    organization: 'The Nail Lab, Inc.',
-    dates: 'July 2026 - September 2026',
-    showGithub: false,
-    points: [
-      'Building embedded computer vision firmware for an **NVIDIA Jetson Orin Nano** running **embedded Linux** (L4T, ARM64), implementing **real-time object detection, segmentation, and tracking** that runs entirely on-device in **C++ and Python**.',
-      'Designed a **GStreamer video pipeline** ingesting **two synchronized IMX219 camera sensors** over **MIPI CSI-2** with **hardware-accelerated encoding**, keeping frame alignment consistent across the overlapping fields of view for downstream perception.',
-      'Working across the **C++/Python boundary** to balance **real-time throughput** against development speed, tuning the inference pipeline to run reliably within the Jetson\'s power and compute budget.'
-    ]
-  },
-  {
-    role: 'Graduate Research Assistant',
-    organization: 'Agile Robotics and Perception Lab (ARPL) - New York University',
-    dates: 'January 2025 - June 2026',
-    showGithub: false,
-    points: [
-      'Deployed and calibrated a **multi-modal sensor suite** — LiDAR, depth cameras, and precision GPS — for state estimation in **GPS-denied environments**, and contributed to ongoing lab research on **3D Gaussian Splatting** for real-time scene perception.',
-      'Brought up **PX4 flight stacks** on **Jetson Orin companion computers** for experimental drones, tracking down **ESC and flight-controller faults** that only reproduced on physical hardware, and built **hardware- and simulation-in-the-loop** test pipelines with telemetry logging to catch regressions before flight tests.',
-      'Served as **safety pilot** for UAV flight tests, and operated a **Clearpath UGV** and a **Boston Dynamics Spot** during field experiments supporting other lab members\' research.'
-    ]
-  },
+  // Hidden for now: The Nail Lab and ARPL (uncomment to restore)
+//   {
+//     role: 'AI Vision Systems Intern',
+//     organization: 'The Nail Lab, Inc.',
+//     dates: 'July 2026 - September 2026',
+//     showGithub: false,
+//     points: [
+//       'Building embedded computer vision firmware for an **NVIDIA Jetson Orin Nano** running **embedded Linux** (L4T, ARM64), implementing **real-time object detection, segmentation, and tracking** that runs entirely on-device in **C++ and Python**.',
+//       'Designed a **GStreamer video pipeline** ingesting **two synchronized IMX219 camera sensors** over **MIPI CSI-2** with **hardware-accelerated encoding**, keeping frame alignment consistent across the overlapping fields of view for downstream perception.',
+//       'Working across the **C++/Python boundary** to balance **real-time throughput** against development speed, tuning the inference pipeline to run reliably within the Jetson\'s power and compute budget.'
+//     ]
+//   },
+//   {
+//     role: 'Graduate Research Assistant',
+//     organization: 'Agile Robotics and Perception Lab (ARPL) - New York University',
+//     dates: 'January 2025 - June 2026',
+//     showGithub: false,
+//     points: [
+//       'Deployed and calibrated a **multi-modal sensor suite** — LiDAR, depth cameras, and precision GPS — for state estimation in **GPS-denied environments**, and contributed to ongoing lab research on **3D Gaussian Splatting** for real-time scene perception.',
+//       'Brought up **PX4 flight stacks** on **Jetson Orin companion computers** for experimental drones, tracking down **ESC and flight-controller faults** that only reproduced on physical hardware, and built **hardware- and simulation-in-the-loop** test pipelines with telemetry logging to catch regressions before flight tests.',
+//       'Served as **safety pilot** for UAV flight tests, and operated a **Clearpath UGV** and a **Boston Dynamics Spot** during field experiments supporting other lab members\' research.'
+//     ]
+//   },
   {
     role: 'Head Teaching Assistant',
     organization: 'New York University - ECE-GY 6483: Real-Time Embedded Systems',
