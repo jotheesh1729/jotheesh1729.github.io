@@ -1,11 +1,13 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
+import { FileText } from 'lucide-react';
 import { withBold } from '@/lib/utils';
 
 const projects = [
   {
     title: 'Tremor & Dyskinesia Detection Wearable (Zephyr RTOS)',
     image: '/assets/images/zephyr.jpeg',
+    imageFit: 'contain',
     dates: 'August - September 2026',
     points: [
       'Rebuilt a university tremor-detection assignment from scratch on **Zephyr RTOS** after Arm discontinued the original Mbed OS platform, writing a **custom out-of-tree LSM6DSL IMU driver** with devicetree bindings, Kconfig options, and FIFO-watermark-interrupt-to-thread handoff on an **STM32L475** (Cortex-M4F, 80MHz).',
@@ -92,7 +94,7 @@ const projects = [
       'Validated the framework from **MATLAB** prototyping through **ROS 2 Humble** deployment in **Unity3D** simulation, demonstrating stable **10-agent** homogeneous flocking with alpha-lattice formation convergence.'
     ],
     technologies: ['Graph Neural Networks', 'Olfati-Saber Flocking', 'ROS 2 Humble', 'Unity3D', 'PX4 Autopilot'],
-    link: '/assets/pdf/doorbusters.pdf'
+    link: '/assets/documents/doorbusters.pdf'
   },
   {
     title: 'Wearable Emergency Alerting System',
@@ -160,7 +162,7 @@ const Projects = () => {
                     src={project.image.startsWith('/') ? process.env.PUBLIC_URL + project.image : project.image}
                     alt={project.title}
                     loading="lazy"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%', objectFit: project.imageFit || 'cover', backgroundColor: '#fff' }}
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999;">Project Demo</div>';
@@ -187,9 +189,9 @@ const Projects = () => {
                         alignItems: 'center',
                         color: '#555'
                       }}
-                      title="View on GitHub"
+                      title={project.link.endsWith('.pdf') ? 'Read the report' : 'View on GitHub'}
                     >
-                      <FaGithub size={18} />
+                      {project.link.endsWith('.pdf') ? <FileText size={18} /> : <FaGithub size={18} />}
                     </a>
                   )}
                 </div>
