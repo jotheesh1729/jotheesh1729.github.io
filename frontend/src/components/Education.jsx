@@ -37,7 +37,7 @@ const Education = () => {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {education.map((edu, index) => (
-          <div key={index} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+          <div key={index} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline' }}>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111' }}>
                 {edu.school}

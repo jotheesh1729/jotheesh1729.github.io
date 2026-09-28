@@ -26,7 +26,7 @@ const About = () => {
         </div>
 
         {/* Text Content */}
-        <div style={{ flex: 1, minWidth: '400px' }}>
+        <div style={{ flex: 1, minWidth: 'min(400px, 100%)' }}>
           <h1 style={{ 
             fontSize: '28px', 
             fontWeight: '600',

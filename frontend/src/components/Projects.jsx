@@ -31,7 +31,7 @@ const projects = [
   },
   {
     title: 'Reinforcement Learning for Quadruped Locomotion',
-    image: '/assets/videos/unitree.MOV',
+    image: '/assets/videos/unitree.mp4',
     dates: 'September - December 2025',
     points: [
       'Trained a **deep RL policy (PPO)** in **NVIDIA Isaac Lab** using **4,096 parallel GPU-simulated environments** with a comprehensive reward function covering velocity tracking, orientation stability, foot clearance, and contact force management.',
@@ -70,7 +70,7 @@ const projects = [
   },
   {
     title: 'Vision-Based Maze Navigation',
-    image: '/assets/images/vis-nav.png',
+    image: '/assets/images/vis-nav.jpg',
     dates: 'September - December 2025',
     points: [
       'Extracted **2048-dim ResNet50 descriptors** from **3,751** exploration images and indexed them in a **BallTree** for fast nearest-neighbor localization in high-dimensional feature space.',
@@ -83,7 +83,7 @@ const projects = [
   },
   {
     title: 'Decentralized Heterogeneous Swarm Robots',
-    image: '/assets/images/swarm.png',
+    image: '/assets/images/swarm.jpg',
     dates: 'February - May 2025',
     points: [
       'Developed a **three-layered autonomy stack** for **heterogeneous UGV-UAV swarms**: decentralized goal assignment via DGNN-GA, swarm coordination through Extended Olfati-Saber Flocking, and type-specific local control policies for collision-free navigation.',
@@ -96,7 +96,7 @@ const projects = [
   },
   {
     title: 'Wearable Emergency Alerting System',
-    image: '/assets/images/bts.png',
+    image: '/assets/images/bts.jpg',
     dates: 'March - May 2023',
     points: [
       'Built a wrist-worn emergency alert device using an **ESP32-S2** microcontroller connected to **Adafruit IO** cloud, enabling **real-time SOS** transmission and alert reception between multiple devices over WiFi.',
@@ -130,6 +130,7 @@ const Projects = () => {
             style={{
               display: 'flex',
               gap: '24px',
+              flexWrap: 'wrap',
               padding: '20px',
               border: '1px solid #e5e5e5',
               borderRadius: '4px',
@@ -137,9 +138,9 @@ const Projects = () => {
             }}
           >
             {/* Project Image */}
-            <div style={{ flexShrink: 0 }}>
+            <div style={{ flexShrink: 0, width: 'min(280px, 100%)' }}>
               <div style={{
-                width: '280px',
+                width: '100%',
                 height: '210px',
                 backgroundColor: '#e5e5e5',
                 borderRadius: '3px',
@@ -170,8 +171,8 @@ const Projects = () => {
             </div>
 
             {/* Project Details */}
-            <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
+            <div style={{ flex: '1 1 300px', minWidth: 0 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <h3 style={{ fontSize: '17px', fontWeight: '600', color: '#111' }}>
                     {project.title}
@@ -192,7 +193,7 @@ const Projects = () => {
                     </a>
                   )}
                 </div>
-                <span style={{ fontSize: '15px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+                <span style={{ fontSize: '15px', color: '#888', whiteSpace: 'nowrap' }}>
                   {project.dates}
                 </span>
               </div>

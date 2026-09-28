@@ -67,7 +67,7 @@ const Experience = () => {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
         {experiences.map((exp, index) => (
           <div key={index}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111' }}>
                   {exp.role}
@@ -90,7 +90,7 @@ const Experience = () => {
                   </a>
                 )}
               </div>
-              <span style={{ fontSize: '15px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+              <span style={{ fontSize: '15px', color: '#888', whiteSpace: 'nowrap' }}>
                 {exp.dates}
               </span>
             </div>
