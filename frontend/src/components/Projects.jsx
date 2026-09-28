@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { FileText } from 'lucide-react';
 import { withBold } from '@/lib/utils';
 
 const projects = [
@@ -85,7 +84,7 @@ const projects = [
   },
   {
     title: 'Decentralized Heterogeneous Swarm Robots',
-    image: '/assets/images/swarm.jpg',
+    image: '/assets/images/swarm.png',
     dates: 'February - May 2025',
     points: [
       'Developed a **three-layered autonomy stack** for **heterogeneous UGV-UAV swarms**: decentralized goal assignment via DGNN-GA, swarm coordination through Extended Olfati-Saber Flocking, and type-specific local control policies for collision-free navigation.',
@@ -189,9 +188,9 @@ const Projects = () => {
                         alignItems: 'center',
                         color: '#555'
                       }}
-                      title={project.link.endsWith('.pdf') ? 'Read the report' : 'View on GitHub'}
+                      title="View on GitHub"
                     >
-                      {project.link.endsWith('.pdf') ? <FileText size={18} /> : <FaGithub size={18} />}
+                      <FaGithub size={18} />
                     </a>
                   )}
                 </div>
