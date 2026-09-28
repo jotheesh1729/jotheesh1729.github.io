@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
+import { withBold } from '@/lib/utils';
 
 const projects = [
   {
@@ -7,10 +8,10 @@ const projects = [
     image: '/assets/images/zephyr.jpeg',
     dates: 'August - September 2026',
     points: [
-      'Rebuilt a university tremor-detection assignment from scratch on Zephyr RTOS after Arm discontinued the original Mbed OS platform, writing a custom out-of-tree LSM6DSL IMU driver with devicetree bindings, Kconfig options, and FIFO-watermark-interrupt-to-thread handoff on an STM32L475 (Cortex-M4F, 80MHz).',
-      'Built a real-time DSP pipeline (gravity removal, orientation-independent magnitude vector, 50%-overlap Hann-windowed CMSIS-DSP FFT) classifying tremor (3-9Hz) vs. dyskinesia by relative spectral concentration around the dominant peak, per published wearable-tremor-detection methodology.',
-      'Added a gyroscope-based rejection gate to distinguish involuntary tremor from voluntary wrist motion at the same frequency, and an episode state machine with hysteresis (K-of-N windowing plus cooldown) to turn noisy per-window classifications into stable episode records.',
-      'Reported episode and periodic-summary data (counts, durations, mean severity) over a custom BLE GATT service every 5 minutes rather than streaming live, mirroring commercial tremor monitors such as the Parkinson’s KinetiGraph.'
+      'Rebuilt a university tremor-detection assignment from scratch on **Zephyr RTOS** after Arm discontinued the original Mbed OS platform, writing a **custom out-of-tree LSM6DSL IMU driver** with devicetree bindings, Kconfig options, and FIFO-watermark-interrupt-to-thread handoff on an **STM32L475** (Cortex-M4F, 80MHz).',
+      'Built a **real-time DSP pipeline** (gravity removal, orientation-independent magnitude vector, 50%-overlap Hann-windowed **CMSIS-DSP FFT**) classifying **tremor (3-9Hz) vs. dyskinesia** by relative spectral concentration around the dominant peak, per published wearable-tremor-detection methodology.',
+      'Added a **gyroscope-based rejection gate** to distinguish involuntary tremor from voluntary wrist motion at the same frequency, and an **episode state machine with hysteresis** (K-of-N windowing plus cooldown) to turn noisy per-window classifications into stable episode records.',
+      'Reported episode and periodic-summary data (counts, durations, mean severity) over a **custom BLE GATT service** every 5 minutes rather than streaming live, mirroring commercial tremor monitors such as the Parkinson’s KinetiGraph.'
     ],
     technologies: ['Zephyr RTOS', 'STM32L475 (Cortex-M4F)', 'CMSIS-DSP (FFT)', 'LSM6DSL IMU', 'Bluetooth LE (GATT)'],
     link: 'https://github.com/jotheesh1729/tremor_detection_zephyr'
@@ -20,10 +21,10 @@ const projects = [
     image: '/assets/videos/person_chair_demo.mp4',
     dates: 'May 2026',
     points: [
-      'Built a map-free, monocular-only navigation stack for a FrodoBots Earth Rover with two modes: driving to an object described in plain English ("chair", "person with red shirt") or locking onto and following a person, with no lidar, GPS, or prebuilt map.',
-      'Cascaded YOLO-World open-vocabulary detection with an asynchronous vision-language model (Qwen2-VL-2B or InternVL2-2B) that verifies descriptive and spatial queries and guides search and obstacle-bypass direction without blocking the ~8-12 FPS control loop.',
-      'Estimated ground-plane distance by sampling Depth Anything V2 depth from the lower 25% of each bounding box instead of its center, cutting mean stopping-distance error from 0.47 m to 0.21 m, and tracked bearing and range with an EKF plus HSV-histogram re-identification to resist identity switches.',
-      'Ran a five-band depth-based obstacle-avoidance scan that raised avoidance success from 55% (three-band ablation) to 75%, and evaluated the full system across 4 scenarios x 10 trials x 2 VLM backbones, reaching 67.5-70% end-to-end navigation success.'
+      'Built a **map-free, monocular-only navigation stack** for a FrodoBots Earth Rover with two modes: driving to an object described in plain English ("chair", "person with red shirt") or locking onto and following a person, with **no lidar, GPS, or prebuilt map**.',
+      'Cascaded **YOLO-World** open-vocabulary detection with an asynchronous **vision-language model** (Qwen2-VL-2B or InternVL2-2B) that verifies descriptive and spatial queries and guides search and obstacle-bypass direction without blocking the **~8-12 FPS** control loop.',
+      'Estimated ground-plane distance by sampling **Depth Anything V2** depth from the lower 25% of each bounding box instead of its center, cutting mean stopping-distance error from **0.47 m to 0.21 m**, and tracked bearing and range with an **EKF** plus HSV-histogram re-identification to resist identity switches.',
+      'Ran a five-band depth-based obstacle-avoidance scan that raised avoidance success from **55%** (three-band ablation) to **75%**, and evaluated the full system across 4 scenarios x 10 trials x 2 VLM backbones, reaching **67.5-70% end-to-end navigation success**.'
     ],
     technologies: ['YOLO-World', 'Qwen2-VL / InternVL2', 'Depth Anything V2', 'Extended Kalman Filter', 'FrodoBots Earth Rover'],
     link: 'https://github.com/jotheesh1729/frodo-follower'
@@ -33,10 +34,10 @@ const projects = [
     image: '/assets/videos/unitree.MOV',
     dates: 'September - December 2025',
     points: [
-      'Trained a deep RL policy (PPO) in NVIDIA Isaac Lab using 4,096 parallel GPU-simulated environments with a comprehensive reward function covering velocity tracking, orientation stability, foot clearance, and contact force management.',
-      'Engineered a robust sim-to-real transfer pipeline through extensive domain randomization of ground friction, actuator stiction & viscous friction, and terrain properties, combined with a custom physics-based actuator friction model.',
-      'Developed a two-stage curriculum learning approach — flat terrain with Raibert heuristic gait guidance, then procedurally generated rough terrain with relaxed constraints for adaptive gait learning.',
-      'Selected as one of only 5 teams out of 30+ to demonstrate zero-shot sim-to-real transfer of the trained policy on a real Unitree Go2 robot.'
+      'Trained a **deep RL policy (PPO)** in **NVIDIA Isaac Lab** using **4,096 parallel GPU-simulated environments** with a comprehensive reward function covering velocity tracking, orientation stability, foot clearance, and contact force management.',
+      'Engineered a robust **sim-to-real transfer pipeline** through extensive **domain randomization** of ground friction, actuator stiction & viscous friction, and terrain properties, combined with a custom physics-based actuator friction model.',
+      'Developed a **two-stage curriculum learning** approach — flat terrain with Raibert heuristic gait guidance, then procedurally generated rough terrain with relaxed constraints for adaptive gait learning.',
+      'Selected as **one of only 5 teams out of 30+** to demonstrate **zero-shot sim-to-real transfer** of the trained policy on a real **Unitree Go2** robot.'
     ],
     technologies: ['Isaac Lab', 'Deep Reinforcement Learning (PPO)', 'PyTorch', 'Unitree Go2', 'Sim-to-Real Transfer'],
     link: 'https://github.com/jotheesh1729/rob6323_go2_project.git'
@@ -46,10 +47,10 @@ const projects = [
     image: '/assets/videos/spot_fast.mp4',
     dates: 'January 2026',
     points: [
-      'Developed a visual servoing pipeline using ZED 2i stereo camera and YOLOv8 for real-time person detection and tracking at 30fps, computing lateral, distance, and pitch control errors from bounding box analysis.',
-      'Implemented proportional control with three independent channels — angular velocity for lateral tracking, linear velocity for distance maintenance, and body pitch for elevation changes like stairs.',
-      'Designed a behavior state machine with autonomous search patterns when the target person is lost, including smooth acceleration ramping and velocity-limited commands sent to Spot at 10Hz.',
-      'Deployed the full system via Docker with NVIDIA GPU acceleration, featuring a live Flask web monitoring stream and comprehensive safety systems including hardware/software E-Stop.'
+      'Developed a **visual servoing pipeline** using **ZED 2i** stereo camera and **YOLOv8** for real-time person detection and tracking at **30fps**, computing lateral, distance, and pitch control errors from bounding box analysis.',
+      'Implemented **proportional control with three independent channels** — angular velocity for lateral tracking, linear velocity for distance maintenance, and body pitch for elevation changes like stairs.',
+      'Designed a **behavior state machine** with autonomous search patterns when the target person is lost, including smooth acceleration ramping and velocity-limited commands sent to Spot at **10Hz**.',
+      'Deployed the full system via **Docker** with **NVIDIA GPU acceleration**, featuring a live Flask web monitoring stream and comprehensive safety systems including hardware/software **E-Stop**.'
     ],
     technologies: ['Boston Dynamics Spot SDK', 'YOLOv8', 'Visual Servoing', 'Docker', 'ZED 2i Camera'],
     link: 'https://github.com/vivekmattam02/spot.git'
@@ -59,10 +60,10 @@ const projects = [
     image: '/assets/images/Warthog.jpg',
     dates: 'September - December 2025',
     points: [
-      'Modeled the Extended Differential Drive (EDD) kinematics where Martian regolith (μ=0.35) causes the effective track width to expand 2.2×, quantifying the massive understeer that renders standard kinematic models unreliable.',
-      'Implemented a 6-state Unscented Kalman Filter (UKF) fusing LiDAR-Inertial Odometry with EDD predictions for GPS-denied localization, augmenting the state with longitudinal acceleration to maintain observability during high-slip maneuvers.',
-      'Deployed an MPPI controller with a composite cost function — terminal goal-seeking + heading alignment, running collision penalties, proximity-weighted obstacle costs, and control smoothness terms.',
-      'Validated the framework in Isaac Sim showing Mars regolith induces 2× higher lateral drift velocities and 28× worse cross-track error compared to Earth surfaces, proving the necessity of slip-aware estimation and control.'
+      'Modeled the **Extended Differential Drive (EDD)** kinematics where Martian regolith (μ=0.35) causes the effective track width to expand **2.2×**, quantifying the massive understeer that renders standard kinematic models unreliable.',
+      'Implemented a **6-state Unscented Kalman Filter (UKF)** fusing **LiDAR-Inertial Odometry** with EDD predictions for GPS-denied localization, augmenting the state with longitudinal acceleration to maintain observability during high-slip maneuvers.',
+      'Deployed an **MPPI controller** with a composite cost function — terminal goal-seeking + heading alignment, running collision penalties, proximity-weighted obstacle costs, and control smoothness terms.',
+      'Validated the framework in **Isaac Sim** showing Mars regolith induces **2× higher lateral drift** velocities and **28× worse cross-track error** compared to Earth surfaces, proving the necessity of slip-aware estimation and control.'
     ],
     technologies: ['NVIDIA Isaac Sim', 'MPPI Control', 'Unscented Kalman Filter', 'LiDAR-Inertial Odometry', 'ROS 2 Humble'],
     link: 'https://github.com/jotheesh1729/clearpath-warthog-isaac-sim.git'
@@ -72,10 +73,10 @@ const projects = [
     image: '/assets/images/vis-nav.png',
     dates: 'September - December 2025',
     points: [
-      'Extracted 2048-dim ResNet50 descriptors from 3,751 exploration images and indexed them in a BallTree for fast nearest-neighbor localization in high-dimensional feature space.',
-      'Constructed a sparse weighted topological graph where nodes are exploration viewpoints and edges encode navigable transitions, then ran A* search with feature-distance heuristics to plan optimal routes.',
-      'Matched goal images (4 candidate views) against the feature database using fused similarity scores to identify the target graph node without any prior map or GPS.',
-      'Ran a continuous sense-plan-act loop with real-time visual re-localization, path validation, off-path replanning, and stuck detection, reducing planned routes to 5-10 stable waypoints.'
+      'Extracted **2048-dim ResNet50 descriptors** from **3,751** exploration images and indexed them in a **BallTree** for fast nearest-neighbor localization in high-dimensional feature space.',
+      'Constructed a **sparse weighted topological graph** where nodes are exploration viewpoints and edges encode navigable transitions, then ran **A* search** with feature-distance heuristics to plan optimal routes.',
+      'Matched goal images (4 candidate views) against the feature database using **fused similarity scores** to identify the target graph node **without any prior map or GPS**.',
+      'Ran a continuous **sense-plan-act loop** with real-time visual re-localization, path validation, off-path replanning, and stuck detection, reducing planned routes to **5-10 stable waypoints**.'
     ],
     technologies: ['ResNet50', 'BallTree Indexing', 'A* Search', 'Topological Graphs', 'PyTorch'],
     link: 'https://github.com/jotheesh1729/vis-nav.git'
@@ -85,10 +86,10 @@ const projects = [
     image: '/assets/images/swarm.png',
     dates: 'February - May 2025',
     points: [
-      'Developed a three-layered autonomy stack for heterogeneous UGV-UAV swarms: decentralized goal assignment via DGNN-GA, swarm coordination through Extended Olfati-Saber Flocking, and type-specific local control policies for collision-free navigation.',
-      'Implemented DGNN-GA with encoder-GNN-decoder architecture performing iterative message passing across agent communication and assignment edges to compute optimal goal allocations using only local observations.',
-      'Extended Olfati-Saber Flocking with sigma-norm-based attraction-repulsion potentials, bump-function adjacency, informed-agent target tracking, and proximity-activated damping.',
-      'Validated the framework from MATLAB prototyping through ROS 2 Humble deployment in Unity3D simulation, demonstrating stable 10-agent homogeneous flocking with alpha-lattice formation convergence.'
+      'Developed a **three-layered autonomy stack** for **heterogeneous UGV-UAV swarms**: decentralized goal assignment via DGNN-GA, swarm coordination through Extended Olfati-Saber Flocking, and type-specific local control policies for collision-free navigation.',
+      'Implemented DGNN-GA with **encoder-GNN-decoder** architecture performing iterative message passing across agent communication and assignment edges to compute optimal goal allocations using **only local observations**.',
+      'Extended Olfati-Saber Flocking with **sigma-norm-based attraction-repulsion potentials**, bump-function adjacency, informed-agent target tracking, and proximity-activated damping.',
+      'Validated the framework from **MATLAB** prototyping through **ROS 2 Humble** deployment in **Unity3D** simulation, demonstrating stable **10-agent** homogeneous flocking with alpha-lattice formation convergence.'
     ],
     technologies: ['Graph Neural Networks', 'Olfati-Saber Flocking', 'ROS 2 Humble', 'Unity3D', 'PX4 Autopilot'],
     link: '/assets/pdf/doorbusters.pdf'
@@ -98,10 +99,10 @@ const projects = [
     image: '/assets/images/bts.png',
     dates: 'March - May 2023',
     points: [
-      'Built a wrist-worn emergency alert device using an ESP32-S2 microcontroller connected to Adafruit IO cloud, enabling real-time SOS transmission and alert reception between multiple devices over WiFi.',
-      'Designed distinct vibration patterns for different emergency types (fire, general, combined), allowing non-visual alert recognition with 72-94% accuracy across tested age groups.',
-      'Achieved 93% SOS transmission success rate and 100% alert delivery reliability in system trials, validated through a 17-participant usability study across multiple age groups.',
-      'Designed the wearable enclosure (watch and neckband form factors) in Fusion 360 and 3D printed the prototypes, prioritizing accessibility for both disabled and non-disabled users.'
+      'Built a wrist-worn emergency alert device using an **ESP32-S2** microcontroller connected to **Adafruit IO** cloud, enabling **real-time SOS** transmission and alert reception between multiple devices over WiFi.',
+      'Designed **distinct vibration patterns** for different emergency types (fire, general, combined), allowing non-visual alert recognition with **72-94% accuracy** across tested age groups.',
+      'Achieved **93% SOS transmission success rate** and **100% alert delivery reliability** in system trials, validated through a **17-participant usability study** across multiple age groups.',
+      'Designed the wearable enclosure (watch and neckband form factors) in **Fusion 360** and **3D printed** the prototypes, prioritizing accessibility for both disabled and non-disabled users.'
     ],
     technologies: ['ESP32-S2', 'Adafruit IO', 'IoT', 'Fusion 360', '3D Printing'],
     link: 'https://github.com/jotheesh1729/Wearble-based-alerting-system-for-humans.git'
@@ -199,7 +200,7 @@ const Projects = () => {
               <ul style={{ margin: '0 0 12px 0', paddingLeft: '20px' }}>
                 {project.points.map((point, idx) => (
                   <li key={idx} style={{ fontSize: '15px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
-                    {point}
+                    {withBold(point)}
                   </li>
                 ))}
               </ul>

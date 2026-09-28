@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
+import { withBold } from '@/lib/utils';
 
 const experiences = [
   {
@@ -8,9 +9,9 @@ const experiences = [
     dates: 'July 2026 - September 2026',
     showGithub: false,
     points: [
-      'Building embedded computer vision firmware for an NVIDIA Jetson Orin Nano running embedded Linux (L4T, ARM64), implementing real-time object detection, segmentation, and tracking that runs entirely on-device in C++ and Python.',
-      'Designed a GStreamer video pipeline ingesting two synchronized IMX219 camera sensors over MIPI CSI-2 with hardware-accelerated encoding, keeping frame alignment consistent across the overlapping fields of view for downstream perception.',
-      'Working across the C++/Python boundary to balance real-time throughput against development speed, tuning the inference pipeline to run reliably within the Jetson\'s power and compute budget.'
+      'Building embedded computer vision firmware for an **NVIDIA Jetson Orin Nano** running **embedded Linux** (L4T, ARM64), implementing **real-time object detection, segmentation, and tracking** that runs entirely on-device in **C++ and Python**.',
+      'Designed a **GStreamer video pipeline** ingesting **two synchronized IMX219 camera sensors** over **MIPI CSI-2** with **hardware-accelerated encoding**, keeping frame alignment consistent across the overlapping fields of view for downstream perception.',
+      'Working across the **C++/Python boundary** to balance **real-time throughput** against development speed, tuning the inference pipeline to run reliably within the Jetson\'s power and compute budget.'
     ]
   },
   {
@@ -19,9 +20,9 @@ const experiences = [
     dates: 'January 2025 - June 2026',
     showGithub: false,
     points: [
-      'Deployed and calibrated a multi-modal sensor suite — LiDAR, depth cameras, and precision GPS — for state estimation in GPS-denied environments, and contributed to ongoing lab research on 3D Gaussian Splatting for real-time scene perception.',
-      'Brought up PX4 flight stacks on Jetson Orin companion computers for experimental drones, tracking down ESC and flight-controller faults that only reproduced on physical hardware, and built hardware- and simulation-in-the-loop test pipelines with telemetry logging to catch regressions before flight tests.',
-      'Served as safety pilot for UAV flight tests, and operated a Clearpath UGV and a Boston Dynamics Spot during field experiments supporting other lab members\' research.'
+      'Deployed and calibrated a **multi-modal sensor suite** — LiDAR, depth cameras, and precision GPS — for state estimation in **GPS-denied environments**, and contributed to ongoing lab research on **3D Gaussian Splatting** for real-time scene perception.',
+      'Brought up **PX4 flight stacks** on **Jetson Orin companion computers** for experimental drones, tracking down **ESC and flight-controller faults** that only reproduced on physical hardware, and built **hardware- and simulation-in-the-loop** test pipelines with telemetry logging to catch regressions before flight tests.',
+      'Served as **safety pilot** for UAV flight tests, and operated a **Clearpath UGV** and a **Boston Dynamics Spot** during field experiments supporting other lab members\' research.'
     ]
   },
   {
@@ -30,9 +31,9 @@ const experiences = [
     dates: 'January 2025 - May 2026',
     showGithub: false,
     points: [
-      'Led recitations, grading, and office hours under industry associate professor Matthew Campisi, PhD, across three semesters.',
-      'Supported more than 700 graduate students in total on C, Embedded C, Mbed OS, RTOS scheduling, and real-time DSP concepts, translating course material into hands-on lab guidance.',
-      'Graded labs covering ARM Cortex-M peripherals, interrupts, and real-time scheduling, and held office hours to help students debug hardware-software integration issues on their own boards.'
+      'Led **recitations, grading, and office hours** under industry associate professor Matthew Campisi, PhD, across **three semesters**.',
+      'Supported **more than 700 graduate students** in total on **C, Embedded C, Mbed OS, RTOS scheduling, and real-time DSP** concepts, translating course material into hands-on lab guidance.',
+      'Graded labs covering **ARM Cortex-M peripherals, interrupts, and real-time scheduling**, and held office hours to help students debug hardware-software integration issues on their own boards.'
     ]
   },
   {
@@ -41,8 +42,10 @@ const experiences = [
     dates: 'July 2023 - July 2024',
     showGithub: false,
     points: [
-      'Developed and optimized firmware in C/C++ on FreeRTOS for IoT and embedded products spanning domestic and industrial deployments, balancing responsiveness against the tight power and memory budgets typical of consumer devices.',
-      'Designed, debugged, and integrated embedded solutions across UART, SPI, I2C, and CAN, and maintained the CI/CD pipeline that automated build validation and regression testing across the firmware codebase.'
+      'Developed **FreeRTOS** and **bare-metal** firmware in C/C++ for battery-powered **Nordic nRF BLE** devices across two product lines: **home-automation** curtain and drive motors, and **industrial environmental-monitoring nodes** deployed in food-processing and manufacturing plants.',
+      'Integrated **Sensirion SCD30/SCD40 (NDIR CO2)** and **Bosch BME680** sensors alongside hazardous-gas, temperature, and smoke sensors, implementing **calibration and drift compensation** and **on-device threshold alerts** so hazards were flagged without waiting on the cloud.',
+      'Wrote **interrupt-driven SPI/I2C drivers** using Nordic **EasyDMA**, **ring-buffered UART** handling, and **CAN** motor control via an external **MCP2515** controller over SPI, and tuned **sleep modes and radio duty-cycling** to extend battery life on continuously monitoring nodes.',
+      'Bridged BLE node data to a cloud dashboard over **MQTT** through a local gateway, shipped **BLE OTA/DFU** updates to field devices, designed the node and gateway PCBs in **KiCAD**, and maintained the **CI/CD pipeline** for build validation and regression testing.'
     ]
   }
 ];
@@ -97,7 +100,7 @@ const Experience = () => {
             <ul style={{ margin: 0, paddingLeft: '20px' }}>
               {exp.points.map((point, idx) => (
                 <li key={idx} style={{ fontSize: '15px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
-                  {point}
+                  {withBold(point)}
                 </li>
               ))}
             </ul>
