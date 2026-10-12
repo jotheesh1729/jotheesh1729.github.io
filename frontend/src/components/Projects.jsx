@@ -4,8 +4,22 @@ import { withBold } from '@/lib/utils';
 
 const projects = [
   {
-    title: 'Tremor & Dyskinesia Detection Wearable (Zephyr RTOS)',
+    title: 'OTA Kit: Signed Firmware Updates with Rollback (Zephyr + MCUboot)',
     image: '/assets/images/zephyr.jpeg',
+    imageFit: 'contain',
+    dates: 'September - October 2026',
+    points: [
+      'Built a **Zephyr module** for **signed over-the-air firmware updates with automatic rollback** on **MCUboot**, delivering images over **UART, Bluetooth LE, and Wi-Fi** to an **STM32L475** and an **ESP32**.',
+      'Implemented a **test-boot, health-check, confirm** flow with **ECDSA P-256** signature verification: a new image runs once, becomes permanent only if the application health check passes, and is otherwise **reverted by MCUboot**, with a **watchdog** handover so a hung image also rolls back.',
+      'Built a **relay-based power-loss rig** and cut power **60 times** across upload, swap, revert, confirm, and erase with **no board lost**; also passed an **11-of-11 failure-case suite** and **20 of 20** measured update runs over UART.',
+      'Wrote Python host tooling: an **SMP update client** and an **"OTA doctor"** that checks a build\'s partitions, sector sizes, image size, watchdog timeouts, and signing key before flashing, and documented the open risks and limits for each board and transport.'
+    ],
+    technologies: ['Zephyr RTOS', 'MCUboot', 'ECDSA P-256', 'MCUmgr (SMP)', 'STM32L475 + ESP32'],
+    link: 'https://github.com/jotheesh1729/zephyr-ota-kit'
+  },
+  {
+    title: 'Tremor & Dyskinesia Detection Wearable (Zephyr RTOS)',
+    image: '/assets/images/tremor.png',
     imageFit: 'contain',
     dates: 'August - September 2026',
     points: [
