@@ -1,12 +1,10 @@
 import React from 'react';
 import About from './About';
-import Projects from './Projects';
-import OpenSource from './OpenSource';
-import Publications from './Publications';
-import Experience from './Experience';
 import Education from './Education';
+import Experience from './Experience';
+import Projects from './Projects';
 import Skills from './Skills';
-import Contact from './Contact';
+import OpenSource from './OpenSource';
 
 const Portfolio = () => {
   return (
@@ -17,13 +15,11 @@ const Portfolio = () => {
         padding: '40px 20px'
       }}>
         <About />
+        <Education />
         <Experience />
         <Projects />
-        <OpenSource />
-        <Publications />
-        <Education />
         <Skills />
-        <Contact />
+        <OpenSource />
       </div>
     </div>
   );

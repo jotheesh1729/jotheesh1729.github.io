@@ -5,7 +5,7 @@ import { withBold } from '@/lib/utils';
 
 const projects = [
   {
-    title: 'Icarus: Rust Flight Controller and 6-Layer PCB (STM32N6)',
+    title: 'Icarus: Rust Flight-Controller Firmware on a Custom STM32N6 Board',
     // repo is private for now; add `link` back when it goes public
     logo: (
       <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', backgroundColor: '#fff' }}>
@@ -18,13 +18,11 @@ const projects = [
     ),
     dates: 'October 2026 - Present',
     points: [
-      'Designed the full schematic for a **36 x 36 mm, 6-layer flight-controller PCB** in **KiCad** around the **STM32N657** (800 MHz Arm **Cortex-M55** with NPU and camera ISP, 264-ball BGA): 8 sheets covering power, microcontroller, sensors, outputs, ports, USB/SD, memory and camera, with a 96-line BOM (43 JLCPCB Basic parts) and the design frozen at tag schematic-v1.0.',
-      'Wrote **Python netlist and design-rule checkers** that gate every build (shorts, missing nets, off-grid or overlapping symbols, crystal transconductance margin); the suite caught **13 faults before fabrication**, including swapped BMI088 chip selects, an I2C/SPI mode pin strapped to the wrong rail, a rail that came up in 550 µs against a 250 µs limit, and a crystal needing 3.1 mA/V of gain against a 1.95 mA/V budget.',
-      'Building modular **no_std Rust (Embassy)** firmware for the same STM32N657 target, with HAL-agnostic **embedded-hal** drivers for 3 redundant SPI IMUs and a **MIPI CSI-2 IMX219** camera (1080p RAW10 through the DCMIPP ISP).',
-      'Sampled 3 IMUs at ~800 Hz each on a shared 8 MHz SPI bus with DMA and edge timestamps; moving acquisition to a **high-priority interrupt executor** cut worst-case read latency from **10.4 ms to 0.6 ms** under USB load. Implemented **Mahony/Madgwick AHRS** with biquad/PT1 filters in the FRD frame.',
-      'Root-caused a **USB high-speed** bulk stall to a PHY clocked from the ~1%-accurate HSI; moving it to the HSE crystal gave **0 stalls at 3.85 MB/s**. Fixed an Embassy OTG FIFO sizing bug and built a Rust GUI streaming telemetry at **2,900 frames/s** with a live 3D attitude view.'
+      'Writing **no_std Rust (Embassy)** flight firmware for the **STM32N657** (Cortex-M55 with NPU and camera ISP): embedded-hal drivers for **3 redundant SPI IMUs** and a **MIPI CSI-2** camera, with **Mahony/Madgwick** attitude estimation.',
+      'Samples the 3 IMUs at ~800 Hz on a shared SPI bus with DMA; moving acquisition to a **high-priority interrupt executor** cut worst-case read latency from **10.4 ms to 0.6 ms**. Root-caused a **USB high-speed** stall to the PHY clock source, and now streams telemetry at 2,900 frames/s to a Rust GUI.',
+      'Designed the matching **36 x 36 mm, 6-layer board** schematic in **KiCad**, checked by Python netlist scripts that caught **13 faults** before fabrication (schematic complete, layout next).'
     ],
-    technologies: ['Rust (Embassy, no_std)', 'STM32N657 (Cortex-M55)', 'KiCad (6-layer PCB)', 'MIPI CSI-2', 'Mahony/Madgwick AHRS']
+    technologies: ['Rust (Embassy, no_std)', 'STM32N657 (Cortex-M55)', 'MIPI CSI-2', 'Mahony/Madgwick AHRS', 'KiCad']
   },
   {
     title: 'OTA Kit: Signed Firmware Updates with Rollback (Zephyr + MCUboot)',
