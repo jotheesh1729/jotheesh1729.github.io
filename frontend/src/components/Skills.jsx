@@ -3,27 +3,31 @@ import React from 'react';
 const skillCategories = [
   {
     category: 'Languages',
-    skills: ['C', 'C++', 'Embedded C', 'Python', 'MATLAB', 'Bash/Shell']
+    skills: ['C', 'C++', 'Rust', 'Embedded C', 'Python', 'MATLAB', 'Bash/Shell']
   },
   {
     category: 'Embedded Systems & Firmware',
-    skills: ['FreeRTOS', 'Mbed OS', 'Bare-Metal', 'Bootloaders', 'CMSIS-DSP', 'UART', 'SPI', 'I²C', 'CAN/CAN-FD', 'BLE', 'MIPI CSI-2', 'PWM', 'ADC/DAC', 'DMA', 'Timers']
+    skills: ['FreeRTOS', 'Zephyr RTOS', 'Bare-Metal', 'Embassy (Rust)', 'MCUboot/OTA-DFU', 'Embedded Linux (L4T, Yocto)', 'Devicetree/Kconfig', 'CMSIS-DSP', 'UART', 'SPI', 'I²C', 'CAN/CAN-FD', 'BLE (GATT)', 'USB', 'MIPI CSI-2', 'MQTT', 'DMA']
   },
   {
     category: 'Hardware Platforms & Debug Tools',
-    skills: ['STM32 (ARM Cortex-M)', 'ESP32', 'Pixhawk', 'NVIDIA Jetson Orin', 'Arduino', 'Raspberry Pi', 'JTAG/SWD', 'GDB', 'Oscilloscopes', 'Logic Analyzers']
+    skills: ['STM32 (ARM Cortex-M4/M7/M55)', 'Nordic nRF52', 'ESP32', 'Pixhawk', 'NVIDIA Jetson Orin', 'JTAG/SWD', 'GDB', 'Oscilloscopes', 'Logic Analyzers', 'KiCad (multi-layer PCB)', 'Fusion 360']
   },
   {
     category: 'Robotics & Controls',
-    skills: ['ROS2', 'PX4 Autopilot', 'MAVLink', 'Control (PID/MPC/MPPI)', 'State Estimation & Sensor Fusion', 'Kalman Filtering (EKF/UKF)', 'Motion Planning (A*)']
+    skills: ['ROS 2/DDS', 'Nav2', 'PX4 Autopilot', 'uORB', 'MAVLink', 'uXRCE-DDS', 'Control (PID, LQR, MPC, MPPI)', 'Motion Planning (A*, RRT)', 'HIL/SIL Testing']
   },
   {
-    category: 'Computer Vision & Machine Learning',
-    skills: ['PyTorch', 'OpenCV', 'YOLOv8', 'TensorRT', 'GStreamer', 'SLAM (RTAB-Map)', 'Reinforcement Learning (PPO)', '3D Gaussian Splatting']
+    category: 'Perception & Estimation',
+    skills: ['SLAM (RTAB-Map)', 'Visual-Inertial Odometry', 'Kalman Filtering (EKF/UKF)', 'Sensor Fusion', 'LiDAR', 'GNSS/RTK', 'OpenCV', 'PCL', '3D Gaussian Splatting', 'GStreamer']
+  },
+  {
+    category: 'Machine Learning & Edge AI',
+    skills: ['PyTorch', 'TensorFlow', 'JAX', 'Reinforcement Learning (PPO)', 'Vision-Language Models', 'YOLOv8/YOLO-World', 'Graph Neural Networks', 'ONNX Runtime', 'TensorRT', 'CUDA']
   },
   {
     category: 'Simulation & Dev Tools',
-    skills: ['Isaac Sim/Lab', 'Gazebo', 'MuJoCo', 'Docker', 'Git', 'CI/CD']
+    skills: ['Isaac Sim/Lab', 'Gazebo', 'MuJoCo', 'Docker', 'CMake', 'Git', 'CI/CD', 'Linux']
   }
 ];
 
