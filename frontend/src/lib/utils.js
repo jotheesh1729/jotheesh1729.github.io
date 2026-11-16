@@ -8,6 +8,6 @@ export function cn(...inputs) {
 // Renders "**text**" segments as bold for quick scanning.
 export function withBold(text) {
   return text.split('**').map((part, i) =>
-    i % 2 ? <strong key={i} style={{ color: '#222', fontWeight: 600 }}>{part}</strong> : part
+    i % 2 ? <strong key={i} style={{ color: 'var(--fg-bold)', fontWeight: 600 }}>{part}</strong> : part
   );
 }

@@ -28,8 +28,8 @@ const Education = () => {
         fontSize: '22px',
         fontWeight: '600',
         marginBottom: '24px',
-        color: '#111',
-        borderBottom: '1px solid #e5e5e5',
+        color: 'var(--fg-strong)',
+        borderBottom: '1px solid var(--border)',
         paddingBottom: '8px'
       }}>
         Education
@@ -39,17 +39,17 @@ const Education = () => {
         {education.map((edu, index) => (
           <div key={index} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline' }}>
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#111' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--fg-strong)' }}>
                 {edu.school}
               </h3>
-              <p style={{ fontSize: '15px', color: '#555' }}>
+              <p style={{ fontSize: '15px', color: 'var(--fg)' }}>
                 {edu.degree}
               </p>
-              <p style={{ fontSize: '14px', color: '#888' }}>
+              <p style={{ fontSize: '14px', color: 'var(--fg-3)' }}>
                 {edu.location}
               </p>
             </div>
-            <span style={{ fontSize: '15px', color: '#888', whiteSpace: 'nowrap', marginLeft: '16px' }}>
+            <span style={{ fontSize: '15px', color: 'var(--fg-3)', whiteSpace: 'nowrap', marginLeft: '16px' }}>
               {edu.dates}
             </span>
           </div>

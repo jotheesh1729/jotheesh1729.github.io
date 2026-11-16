@@ -38,8 +38,8 @@ const OpenSource = () => {
         fontSize: '22px',
         fontWeight: '600',
         marginBottom: '24px',
-        color: '#111',
-        borderBottom: '1px solid #e5e5e5',
+        color: 'var(--fg-strong)',
+        borderBottom: '1px solid var(--border)',
         paddingBottom: '8px'
       }}>
         Open Source Contributions
@@ -47,13 +47,13 @@ const OpenSource = () => {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {contributions.map((c, index) => (
-          <div key={index} style={{ paddingLeft: '12px', borderLeft: '3px solid #e5e5e5' }}>
-            <p style={{ fontSize: '15px', fontWeight: '500', color: '#111', marginBottom: '6px' }}>
+          <div key={index} style={{ paddingLeft: '12px', borderLeft: '3px solid var(--border)' }}>
+            <p style={{ fontSize: '15px', fontWeight: '500', color: 'var(--fg-strong)', marginBottom: '6px' }}>
               {c.project}
             </p>
-            <p style={{ fontSize: '14px', color: '#666' }}>
+            <p style={{ fontSize: '14px', color: 'var(--fg-2)' }}>
               {c.text}{' '}
-              <a href={c.link} target="_blank" rel="noopener noreferrer" style={{ color: '#374151' }}>
+              <a href={c.link} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--fg-btn)' }}>
                 {c.ref}
               </a>{' '}
               ({c.status})

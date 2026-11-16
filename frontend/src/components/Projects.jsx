@@ -8,7 +8,7 @@ const projects = [
     title: 'Icarus: Rust Flight-Controller Firmware on a Custom STM32N6 Board',
     // repo is private for now; add `link` back when it goes public
     logo: (
-      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', backgroundColor: '#fff' }}>
+      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', backgroundColor: 'white' }}>
         <div style={{ textAlign: 'center', color: '#03234B' }}>
           <SiStmicroelectronics size={96} title="STMicroelectronics" />
           <div style={{ fontSize: '15px', fontWeight: '700', letterSpacing: '0.5px' }}>STM32N6</div>
@@ -152,8 +152,8 @@ const Projects = () => {
         fontSize: '22px', 
         fontWeight: '600',
         marginBottom: '24px',
-        color: '#111',
-        borderBottom: '1px solid #e5e5e5',
+        color: 'var(--fg-strong)',
+        borderBottom: '1px solid var(--border)',
         paddingBottom: '8px'
       }}>
         Projects
@@ -168,9 +168,9 @@ const Projects = () => {
               gap: '24px',
               flexWrap: 'wrap',
               padding: '20px',
-              border: '1px solid #e5e5e5',
+              border: '1px solid var(--border)',
               borderRadius: '4px',
-              backgroundColor: '#fafafa'
+              backgroundColor: 'var(--card)'
             }}
           >
             {/* Project Image */}
@@ -178,7 +178,7 @@ const Projects = () => {
               <div style={{
                 width: '100%',
                 height: '210px',
-                backgroundColor: '#e5e5e5',
+                backgroundColor: 'var(--border)',
                 borderRadius: '3px',
                 overflow: 'hidden'
               }}>
@@ -196,7 +196,7 @@ const Projects = () => {
                     src={project.image.startsWith('/') ? process.env.PUBLIC_URL + project.image : project.image}
                     alt={project.title}
                     loading="lazy"
-                    style={{ width: '100%', height: '100%', objectFit: project.imageFit || 'cover', backgroundColor: '#fff' }}
+                    style={{ width: '100%', height: '100%', objectFit: project.imageFit || 'cover', backgroundColor: 'white' }}
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999;">Project Demo</div>';
@@ -210,7 +210,7 @@ const Projects = () => {
             <div style={{ flex: '1 1 300px', minWidth: 0 }}>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <h3 style={{ fontSize: '17px', fontWeight: '600', color: '#111' }}>
+                  <h3 style={{ fontSize: '17px', fontWeight: '600', color: 'var(--fg-strong)' }}>
                     {project.title}
                   </h3>
                   {project.link && (
@@ -221,7 +221,7 @@ const Projects = () => {
                       style={{ 
                         display: 'flex',
                         alignItems: 'center',
-                        color: '#555'
+                        color: 'var(--fg)'
                       }}
                       title="View on GitHub"
                     >
@@ -229,14 +229,14 @@ const Projects = () => {
                     </a>
                   )}
                 </div>
-                <span style={{ fontSize: '15px', color: '#888', whiteSpace: 'nowrap' }}>
+                <span style={{ fontSize: '15px', color: 'var(--fg-3)', whiteSpace: 'nowrap' }}>
                   {project.dates}
                 </span>
               </div>
               
-              <ul style={{ margin: '0 0 12px 0', paddingLeft: '20px' }}>
+              <ul style={{ margin: '0 0 12px 0', paddingLeft: '20px', listStyleType: 'disc' }}>
                 {project.points.map((point, idx) => (
-                  <li key={idx} style={{ fontSize: '15px', color: '#555', lineHeight: '1.6', marginBottom: '4px' }}>
+                  <li key={idx} style={{ fontSize: '15px', color: 'var(--fg)', lineHeight: '1.6', marginBottom: '4px' }}>
                     {withBold(point)}
                   </li>
                 ))}
@@ -249,10 +249,10 @@ const Projects = () => {
                     style={{
                       fontSize: '14px',
                       padding: '3px 9px',
-                      backgroundColor: '#fff',
-                      border: '1px solid #d1d5db',
+                      backgroundColor: 'var(--surface)',
+                      border: '1px solid var(--border-2)',
                       borderRadius: '3px',
-                      color: '#555'
+                      color: 'var(--fg)'
                     }}
                   >
                     {tech}

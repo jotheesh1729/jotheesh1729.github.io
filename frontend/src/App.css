@@ -31,3 +31,18 @@ h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
     padding: 0;
 }
+/* Theme colors, used by the inline styles in components/ */
+:root {
+    --page: #ffffff; --card: #fafafa; --surface: #fff;
+    --border: #e5e5e5; --border-2: #d1d5db;
+    --fg-strong: #111; --fg-bold: #222; --fg-btn: #374151;
+    --fg: #555; --fg-2: #666; --fg-3: #888; --fg-4: #999;
+}
+:root[data-theme="dark"] {
+    --page: #0d1014; --card: #14181d; --surface: #1b2027;
+    --border: #2a2f36; --border-2: #3a4048;
+    --fg-strong: #f3f4f6; --fg-bold: #e8eaed; --fg-btn: #d1d5db;
+    --fg: #c0c4ca; --fg-2: #a8adb5; --fg-3: #9097a0; --fg-4: #7d838c;
+    color-scheme: dark;
+}
+:root[data-theme="dark"] body { background: var(--page); color: var(--fg); }

@@ -47,6 +47,13 @@
           ]
         }
         </script>
+    <script>
+            // set theme before first paint: saved choice, else the OS setting
+            try {
+                var t = localStorage.getItem('theme');
+                document.documentElement.dataset.theme = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            } catch (e) {}
+        </script>
     </head>
     <body>
         <noscript><h1>Jotheesh Reddy Kummathi</h1><p>Embedded Systems &amp; Robotics Engineer. Enable JavaScript to view the full portfolio.</p></noscript>

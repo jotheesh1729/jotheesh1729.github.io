@@ -16,7 +16,7 @@ const About = () => {
               height: '300px',
               borderRadius: '4px',
               objectFit: 'cover',
-              border: '1px solid #e5e5e5'
+              border: '1px solid var(--border)'
             }}
             onError={(e) => {
               e.target.style.display = 'none';
@@ -31,12 +31,12 @@ const About = () => {
             fontSize: '28px', 
             fontWeight: '600',
             marginBottom: '12px',
-            color: '#111'
+            color: 'var(--fg-strong)'
           }}>
             Jotheesh Reddy Kummathi
           </h1>
           
-          <div style={{ fontSize: '15px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
+          <div style={{ fontSize: '15px', color: 'var(--fg)', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
               I'm an embedded and robotics software engineer with an M.S. in Computer Engineering from NYU. I work across the whole stack that makes a robot move: RTOS and bare-metal firmware on ARM Cortex-M, PX4 flight software, embedded Linux on NVIDIA Jetson, and ROS 2 perception, state estimation, and control on drones, ground robots, and quadrupeds.
             </p>
@@ -61,12 +61,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #d1d5db',
+                border: '1px solid var(--border-2)',
                 borderRadius: '4px',
                 fontSize: '15px',
-                color: '#374151',
+                color: 'var(--fg-btn)',
                 textDecoration: 'none',
-                backgroundColor: '#fff'
+                backgroundColor: 'var(--surface)'
               }}
             >
               <FileText size={16} />
@@ -81,12 +81,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #d1d5db',
+                border: '1px solid var(--border-2)',
                 borderRadius: '4px',
                 fontSize: '15px',
-                color: '#374151',
+                color: 'var(--fg-btn)',
                 textDecoration: 'none',
-                backgroundColor: '#fff'
+                backgroundColor: 'var(--surface)'
               }}
             >
               <FileText size={16} />
@@ -101,12 +101,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #d1d5db',
+                border: '1px solid var(--border-2)',
                 borderRadius: '4px',
                 fontSize: '15px',
-                color: '#374151',
+                color: 'var(--fg-btn)',
                 textDecoration: 'none',
-                backgroundColor: '#fff'
+                backgroundColor: 'var(--surface)'
               }}
             >
               <FaGithub size={16} />
@@ -121,12 +121,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #d1d5db',
+                border: '1px solid var(--border-2)',
                 borderRadius: '4px',
                 fontSize: '15px',
-                color: '#374151',
+                color: 'var(--fg-btn)',
                 textDecoration: 'none',
-                backgroundColor: '#fff'
+                backgroundColor: 'var(--surface)'
               }}
             >
               <Linkedin size={16} />
@@ -139,12 +139,12 @@ const About = () => {
                 alignItems: 'center',
                 gap: '6px',
                 padding: '6px 12px',
-                border: '1px solid #d1d5db',
+                border: '1px solid var(--border-2)',
                 borderRadius: '4px',
                 fontSize: '15px',
-                color: '#374151',
+                color: 'var(--fg-btn)',
                 textDecoration: 'none',
-                backgroundColor: '#fff'
+                backgroundColor: 'var(--surface)'
               }}
             >
               <Mail size={16} />
