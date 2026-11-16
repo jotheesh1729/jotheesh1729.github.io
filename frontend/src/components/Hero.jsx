@@ -36,7 +36,7 @@ const Hero = () => {
               embedded design, and real-time robotics. Specialized in developing intelligent control systems,
               state estimation algorithms, and hardware-software integration for complex robotics applications.
               Experienced in reinforcement learning for locomotion, multi-agent coordination, and embedded IoT systems.
-              Currently working as an AI Vision Systems Intern at The Nail Lab, building embedded vision firmware
+              Currently working as an AI Vision Systems Engineer at The Nail Lab, building embedded vision firmware
               on NVIDIA Jetson Orin Nano.
             </p>
 

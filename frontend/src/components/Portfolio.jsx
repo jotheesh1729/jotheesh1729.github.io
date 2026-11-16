@@ -1,6 +1,7 @@
 import React from 'react';
 import About from './About';
 import Projects from './Projects';
+import OpenSource from './OpenSource';
 import Publications from './Publications';
 import Experience from './Experience';
 import Education from './Education';
@@ -18,6 +19,7 @@ const Portfolio = () => {
         <About />
         <Experience />
         <Projects />
+        <OpenSource />
         <Publications />
         <Education />
         <Skills />

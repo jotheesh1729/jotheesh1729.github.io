@@ -38,15 +38,15 @@ const About = () => {
           
           <div style={{ fontSize: '15px', color: '#555', marginBottom: '16px', lineHeight: '1.7' }}>
             <p style={{ marginBottom: '12px' }}>
-              I am an Embedded Systems & Robotics Engineer who recently completed my M.S. in Computer Engineering at NYU, specializing in controls, perception, and Real-Time Operating Systems (RTOS)—building across autonomous aerial drones, robotics platforms, and industrial IoT systems.
+              I'm an embedded and robotics software engineer with an M.S. in Computer Engineering from NYU. I work across the whole stack that makes a robot move: RTOS and bare-metal firmware on ARM Cortex-M, PX4 flight software, embedded Linux on NVIDIA Jetson, and ROS 2 perception, state estimation, and control on drones, ground robots, and quadrupeds.
             </p>
 
             <p style={{ marginBottom: '12px' }}>
-              I'm currently developing embedded vision firmware as an AI Vision Systems Intern at The Nail Lab. Previously, I integrated advanced perception compute and flight control systems at NYU's Agile Robotics and Perception Lab (ARPL); served as Head Teaching Assistant for NYU's Real-Time Embedded Systems course; and developed production firmware for domestic and industrial IoT devices at Magnibot—always optimizing for system reliability, energy efficiency, and real-world robustness.
+              I'm currently an AI Vision Systems Engineer at The Nail Lab, building hardware-accelerated camera pipelines on Jetson Orin and device-management services in Rust. Before that, I integrated onboard compute, sensors, and PX4 flight controllers at NYU's Agile Robotics and Perception Lab (ARPL), served as Head Teaching Assistant for NYU's Real-Time Embedded Systems course, and shipped FreeRTOS and bare-metal firmware for BLE environmental-monitoring devices at Magnibot.
             </p>
             
             <p>
- I am passionate about building systems that physically interact with the world and am actively looking for roles where the work is close to the metal.
+              I like systems that physically interact with the world, and I'm looking for roles in firmware, flight software, or robot autonomy where the code runs on real hardware.
             </p>
           </div>
 
