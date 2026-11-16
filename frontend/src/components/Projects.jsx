@@ -18,9 +18,11 @@ const projects = [
     ),
     dates: 'October 2026 - Present',
     points: [
-      'Writing **no_std Rust (Embassy)** flight firmware for the **STM32N657** (Cortex-M55 with NPU and camera ISP): embedded-hal drivers for **3 redundant SPI IMUs** and a **MIPI CSI-2** camera, with **Mahony/Madgwick** attitude estimation.',
-      'Samples the 3 IMUs at ~800 Hz on a shared SPI bus with DMA; moving acquisition to a **high-priority interrupt executor** cut worst-case read latency from **10.4 ms to 0.6 ms**. Root-caused a **USB high-speed** stall to the PHY clock source, and now streams telemetry at 2,900 frames/s to a Rust GUI.',
-      'Designed the matching **36 x 36 mm, 6-layer board** schematic in **KiCad**, checked by Python netlist scripts that caught **13 faults** before fabrication (schematic complete, layout next).'
+      'Writing **no_std Rust (Embassy)** flight firmware for the **STM32N657**, an 800 MHz Cortex-M55 with an NPU and camera ISP, aimed at replacing a separate flight controller and companion computer on sub-250 g drones.',
+      'Wrote HAL-agnostic **embedded-hal drivers** for **3 redundant SPI IMUs** and a **MIPI CSI-2 IMX219** camera (1080p RAW10 through the DCMIPP ISP).',
+      'Samples the 3 IMUs at ~800 Hz on a shared 8 MHz SPI bus with DMA; a **high-priority interrupt executor** cut worst-case read latency from **10.4 ms to 0.6 ms** under USB load.',
+      'Implemented **Mahony/Madgwick attitude estimation** with biquad/PT1 filters, and fixed a **USB high-speed** stall (PHY clock source) to stream telemetry at 2,900 frames/s to a Rust GUI.',
+      'Designed the **36 x 36 mm, 6-layer board** schematic in **KiCad**; Python netlist checks caught **13 faults** before fabrication (schematic complete, layout next).'
     ],
     technologies: ['Rust (Embassy, no_std)', 'STM32N657 (Cortex-M55)', 'MIPI CSI-2', 'Mahony/Madgwick AHRS', 'KiCad']
   },
@@ -30,10 +32,10 @@ const projects = [
     imageFit: 'contain',
     dates: 'September - October 2026',
     points: [
-      'Built a **Zephyr module** for **signed over-the-air firmware updates with automatic rollback** on **MCUboot**, delivering images over **UART, Bluetooth LE, and Wi-Fi** to an **STM32L475** and an **ESP32**.',
-      'Implemented a **test-boot, health-check, confirm** flow with **ECDSA P-256** signature verification: a new image runs once, becomes permanent only if the application health check passes, and is otherwise **reverted by MCUboot**, with a **watchdog** handover so a hung image also rolls back.',
-      'Built a **relay-based power-loss rig** and cut power **60 times** across upload, swap, revert, confirm, and erase with **no board lost**; also passed an **11-of-11 failure-case suite** and **20 of 20** measured update runs over UART.',
-      'Wrote Python host tooling: an **SMP update client** and an **"OTA doctor"** that checks a build\'s partitions, sector sizes, image size, watchdog timeouts, and signing key before flashing, and documented the open risks and limits for each board and transport.'
+      'Built a **Zephyr module** for **signed OTA firmware updates with automatic rollback** on **MCUboot**, delivering images over **UART, Bluetooth LE, and Wi-Fi** to an **STM32L475** and an **ESP32**.',
+      'Implemented a **test-boot, health-check, confirm** flow with **ECDSA P-256** signatures: a new image becomes permanent only if its health check passes, otherwise **MCUboot reverts it**, including after a watchdog reset.',
+      'Built a **relay-based power-loss rig** and cut power **60 times** across upload, swap, revert, confirm, and erase with **no board lost**; passed an **11-of-11 failure-case suite**.',
+      'Wrote Python host tooling: an **SMP update client** and an **"OTA doctor"** that checks partitions, image size, watchdog timeouts, and signing key before flashing.'
     ],
     technologies: ['Zephyr RTOS', 'MCUboot', 'ECDSA P-256', 'MCUmgr (SMP)', 'STM32L475 + ESP32'],
     link: 'https://github.com/jotheesh1729/zephyr-ota-kit'
@@ -44,10 +46,10 @@ const projects = [
     imageFit: 'contain',
     dates: 'August - September 2026',
     points: [
-      'Rebuilt a university tremor-detection assignment from scratch on **Zephyr RTOS** after Arm discontinued the original Mbed OS platform, writing a **custom out-of-tree LSM6DSL IMU driver** with devicetree bindings, Kconfig options, and FIFO-watermark-interrupt-to-thread handoff on an **STM32L475** (Cortex-M4F, 80MHz).',
-      'Built a **real-time DSP pipeline** (gravity removal, orientation-independent magnitude vector, 50%-overlap Hann-windowed **CMSIS-DSP FFT**) classifying **tremor (3-9Hz) vs. dyskinesia** by relative spectral concentration around the dominant peak, per published wearable-tremor-detection methodology.',
-      'Added a **gyroscope-based rejection gate** to distinguish involuntary tremor from voluntary wrist motion at the same frequency, and an **episode state machine with hysteresis** (K-of-N windowing plus cooldown) to turn noisy per-window classifications into stable episode records.',
-      'Reported episode and periodic-summary data (counts, durations, mean severity) over a **custom BLE GATT service** every 5 minutes rather than streaming live, mirroring commercial tremor monitors such as the Parkinson’s KinetiGraph.'
+      'Rebuilt a university tremor-detection assignment on **Zephyr RTOS** with a **custom out-of-tree LSM6DSL IMU driver** (devicetree bindings, FIFO-watermark interrupt to thread handoff) on an **STM32L475**.',
+      'Built a **real-time DSP pipeline** (gravity removal, magnitude vector, Hann-windowed **CMSIS-DSP FFT**) that classifies **tremor (3-9 Hz) vs. dyskinesia** from the spectrum around the dominant peak.',
+      'Added a **gyroscope-based rejection gate** for voluntary wrist motion and an **episode state machine with hysteresis** to turn noisy per-window results into stable episode records.',
+      'Reports episode summaries (counts, durations, mean severity) over a **custom BLE GATT service** every 5 minutes instead of streaming live, as commercial tremor monitors do.'
     ],
     technologies: ['Zephyr RTOS', 'STM32L475 (Cortex-M4F)', 'CMSIS-DSP (FFT)', 'LSM6DSL IMU', 'Bluetooth LE (GATT)'],
     link: 'https://github.com/jotheesh1729/tremor_detection_zephyr'
@@ -57,10 +59,10 @@ const projects = [
     image: '/assets/videos/person_chair_demo.mp4',
     dates: 'May 2026',
     points: [
-      'Built a **map-free, monocular-only navigation stack** for a FrodoBots Earth Rover with two modes: driving to an object described in plain English ("chair", "person with red shirt") or locking onto and following a person, with **no lidar, GPS, or prebuilt map**.',
-      'Cascaded **YOLO-World** open-vocabulary detection with an asynchronous **vision-language model** (Qwen2-VL-2B or InternVL2-2B) that verifies descriptive and spatial queries and guides search and obstacle-bypass direction without blocking the **~8-12 FPS** control loop.',
-      'Estimated ground-plane distance by sampling **Depth Anything V2** depth from the lower 25% of each bounding box instead of its center, cutting mean stopping-distance error from **0.47 m to 0.21 m**, and tracked bearing and range with an **EKF** plus HSV-histogram re-identification to resist identity switches.',
-      'Ran a five-band depth-based obstacle-avoidance scan that raised avoidance success from **55%** (three-band ablation) to **75%**, and evaluated the full system across 4 scenarios x 10 trials x 2 VLM backbones, reaching **67.5-70% end-to-end navigation success**.'
+      'Built a **map-free, monocular-only navigation stack** for a FrodoBots Earth Rover that drives to an object described in plain English or follows a person, with **no lidar, GPS, or prebuilt map**.',
+      'Cascaded **YOLO-World** detection with an asynchronous **vision-language model** (Qwen2-VL-2B or InternVL2-2B) that verifies the target without blocking the **~8-12 FPS** control loop.',
+      'Estimated distance from **Depth Anything V2** depth at the bottom of each bounding box, cutting mean stopping error from **0.47 m to 0.21 m**; tracked the target with an **EKF** and HSV re-identification.',
+      'Raised obstacle-avoidance success from **55% to 75%** with a five-band depth scan, and reached **67.5-70% end-to-end navigation success** over 4 scenarios x 10 trials x 2 VLMs.'
     ],
     technologies: ['YOLO-World', 'Qwen2-VL / InternVL2', 'Depth Anything V2', 'Extended Kalman Filter', 'FrodoBots Earth Rover'],
     link: 'https://github.com/jotheesh1729/frodo-follower'
@@ -70,10 +72,10 @@ const projects = [
     image: '/assets/videos/unitree.mp4',
     dates: 'September - December 2025',
     points: [
-      'Trained a **deep RL policy (PPO)** in **NVIDIA Isaac Lab** using **4,096 parallel GPU-simulated environments** with a comprehensive reward function covering velocity tracking, orientation stability, foot clearance, and contact force management.',
-      'Engineered a robust **sim-to-real transfer pipeline** through extensive **domain randomization** of ground friction, actuator stiction & viscous friction, and terrain properties, combined with a custom physics-based actuator friction model.',
-      'Developed a **two-stage curriculum learning** approach — flat terrain with Raibert heuristic gait guidance, then procedurally generated rough terrain with relaxed constraints for adaptive gait learning.',
-      'Selected as **one of only 5 teams out of 30+** to demonstrate **zero-shot sim-to-real transfer** of the trained policy on a real **Unitree Go2** robot.'
+      'Trained a **PPO** locomotion policy in **NVIDIA Isaac Lab** across **4,096 parallel environments**, with rewards for velocity tracking, orientation stability, foot clearance, and contact forces.',
+      'Built a **sim-to-real** pipeline with domain randomization of ground friction and terrain, plus a custom physics-based **actuator friction model** (stiction and viscous friction).',
+      'Used a two-stage **curriculum**: flat terrain with Raibert-heuristic gait guidance, then procedurally generated rough terrain with relaxed constraints.',
+      'Selected as **one of 5 teams out of 30+** to demonstrate zero-shot sim-to-real transfer on a real **Unitree Go2**.'
     ],
     technologies: ['Isaac Lab', 'Deep Reinforcement Learning (PPO)', 'PyTorch', 'Unitree Go2', 'Sim-to-Real Transfer'],
     link: 'https://github.com/jotheesh1729/rob6323_go2_project.git'
@@ -83,10 +85,10 @@ const projects = [
     image: '/assets/videos/spot_fast.mp4',
     dates: 'January 2026',
     points: [
-      'Developed a **visual servoing pipeline** using **ZED 2i** stereo camera and **YOLOv8** for real-time person detection and tracking at **30fps**, computing lateral, distance, and pitch control errors from bounding box analysis.',
-      'Implemented **proportional control with three independent channels** — angular velocity for lateral tracking, linear velocity for distance maintenance, and body pitch for elevation changes like stairs.',
-      'Designed a **behavior state machine** with autonomous search patterns when the target person is lost, including smooth acceleration ramping and velocity-limited commands sent to Spot at **10Hz**.',
-      'Deployed the full system via **Docker** with **NVIDIA GPU acceleration**, featuring a live Flask web monitoring stream and comprehensive safety systems including hardware/software **E-Stop**.'
+      'Developed a **visual servoing** pipeline with a ZED 2i stereo camera and **YOLOv8** for person detection and tracking at 30 fps, computing lateral, distance, and pitch errors from the bounding box.',
+      'Implemented **proportional control** on three channels: angular velocity for lateral tracking, linear velocity for distance, and body pitch for elevation changes such as stairs.',
+      'Designed a **behavior state machine** with search patterns when the person is lost, acceleration ramping, and velocity-limited commands sent to Spot at 10 Hz.',
+      'Deployed via **Docker** with NVIDIA GPU acceleration, a live Flask monitoring stream, and hardware and software **E-Stop**.'
     ],
     technologies: ['Boston Dynamics Spot SDK', 'YOLOv8', 'Visual Servoing', 'Docker', 'ZED 2i Camera'],
     link: 'https://github.com/vivekmattam02/spot.git'
@@ -96,10 +98,10 @@ const projects = [
     image: '/assets/images/Warthog.jpg',
     dates: 'September - December 2025',
     points: [
-      'Modeled the **Extended Differential Drive (EDD)** kinematics where Martian regolith (μ=0.35) causes the effective track width to expand **2.2×**, quantifying the massive understeer that renders standard kinematic models unreliable.',
-      'Implemented a **6-state Unscented Kalman Filter (UKF)** fusing **LiDAR-Inertial Odometry** with EDD predictions for GPS-denied localization, augmenting the state with longitudinal acceleration to maintain observability during high-slip maneuvers.',
-      'Deployed an **MPPI controller** with a composite cost function — terminal goal-seeking + heading alignment, running collision penalties, proximity-weighted obstacle costs, and control smoothness terms.',
-      'Validated the framework in **Isaac Sim** showing Mars regolith induces **2× higher lateral drift** velocities and **28× worse cross-track error** compared to Earth surfaces, proving the necessity of slip-aware estimation and control.'
+      'Modeled **Extended Differential Drive (EDD)** kinematics, showing that Martian regolith (μ=0.35) expands the effective track width **2.2×** and causes heavy understeer.',
+      'Implemented a 6-state **Unscented Kalman Filter** fusing LiDAR-inertial odometry with EDD predictions for **GPS-denied localization** during high-slip maneuvers.',
+      'Deployed an **MPPI controller** with costs for goal-seeking, heading alignment, collisions, obstacle proximity, and control smoothness.',
+      'Validated in **Isaac Sim**: Mars regolith gave **2× higher lateral drift** and **28× worse cross-track error** than Earth surfaces, showing the need for slip-aware control.'
     ],
     technologies: ['NVIDIA Isaac Sim', 'MPPI Control', 'Unscented Kalman Filter', 'LiDAR-Inertial Odometry', 'ROS 2 Humble'],
     link: 'https://github.com/jotheesh1729/clearpath-warthog-isaac-sim.git'
@@ -109,10 +111,10 @@ const projects = [
     image: '/assets/images/vis-nav.jpg',
     dates: 'September - December 2025',
     points: [
-      'Extracted **2048-dim ResNet50 descriptors** from **3,751** exploration images and indexed them in a **BallTree** for fast nearest-neighbor localization in high-dimensional feature space.',
-      'Constructed a **sparse weighted topological graph** where nodes are exploration viewpoints and edges encode navigable transitions, then ran **A* search** with feature-distance heuristics to plan optimal routes.',
-      'Matched goal images (4 candidate views) against the feature database using **fused similarity scores** to identify the target graph node **without any prior map or GPS**.',
-      'Ran a continuous **sense-plan-act loop** with real-time visual re-localization, path validation, off-path replanning, and stuck detection, reducing planned routes to **5-10 stable waypoints**.'
+      'Extracted **2048-dim ResNet50 descriptors** from **3,751** exploration images and indexed them in a **BallTree** for fast nearest-neighbor localization.',
+      'Built a **sparse weighted topological graph** of exploration viewpoints and ran **A* search** with feature-distance heuristics to plan routes.',
+      'Matched 4 goal-image views against the feature database with **fused similarity scores** to find the target node **without any prior map or GPS**.',
+      'Ran a continuous **sense-plan-act loop** with visual re-localization, off-path replanning, and stuck detection, reducing routes to **5-10 stable waypoints**.'
     ],
     technologies: ['ResNet50', 'BallTree Indexing', 'A* Search', 'Topological Graphs', 'PyTorch'],
     link: 'https://github.com/jotheesh1729/vis-nav.git'
@@ -122,10 +124,10 @@ const projects = [
     image: '/assets/images/swarm.png',
     dates: 'February - May 2025',
     points: [
-      'Developed a **three-layered autonomy stack** for **heterogeneous UGV-UAV swarms**: decentralized goal assignment via DGNN-GA, swarm coordination through Extended Olfati-Saber Flocking, and type-specific local control policies for collision-free navigation.',
-      'Implemented DGNN-GA with **encoder-GNN-decoder** architecture performing iterative message passing across agent communication and assignment edges to compute optimal goal allocations using **only local observations**.',
-      'Extended Olfati-Saber Flocking with **sigma-norm-based attraction-repulsion potentials**, bump-function adjacency, informed-agent target tracking, and proximity-activated damping.',
-      'Validated the framework from **MATLAB** prototyping through **ROS 2 Humble** deployment in **Unity3D** simulation, demonstrating stable **10-agent** homogeneous flocking with alpha-lattice formation convergence.'
+      'Developed a **three-layered autonomy stack** for **heterogeneous UGV-UAV swarms**: decentralized goal assignment (DGNN-GA), Extended Olfati-Saber flocking, and type-specific local control.',
+      'Implemented DGNN-GA with an **encoder-GNN-decoder** that passes messages between agents to compute goal allocations from **only local observations**.',
+      'Extended Olfati-Saber flocking with **sigma-norm attraction-repulsion potentials**, bump-function adjacency, target tracking, and proximity-activated damping.',
+      'Validated from **MATLAB** prototyping through **ROS 2 Humble** in **Unity3D** simulation, with stable **10-agent** flocking and alpha-lattice formation.'
     ],
     technologies: ['Graph Neural Networks', 'Olfati-Saber Flocking', 'ROS 2 Humble', 'Unity3D', 'PX4 Autopilot'],
     link: '/assets/documents/doorbusters.pdf'
@@ -135,10 +137,10 @@ const projects = [
     image: '/assets/images/bts.jpg',
     dates: 'March - May 2023',
     points: [
-      'Built a wrist-worn emergency alert device using an **ESP32-S2** microcontroller connected to **Adafruit IO** cloud, enabling **real-time SOS** transmission and alert reception between multiple devices over WiFi.',
-      'Designed **distinct vibration patterns** for different emergency types (fire, general, combined), allowing non-visual alert recognition with **72-94% accuracy** across tested age groups.',
-      'Achieved **93% SOS transmission success rate** and **100% alert delivery reliability** in system trials, validated through a **17-participant usability study** across multiple age groups.',
-      'Designed the wearable enclosure (watch and neckband form factors) in **Fusion 360** and **3D printed** the prototypes, prioritizing accessibility for both disabled and non-disabled users.'
+      'Built a wrist-worn emergency alert device on an **ESP32-S2** connected to **Adafruit IO**, sending and receiving **real-time SOS** alerts between devices over WiFi.',
+      'Designed **distinct vibration patterns** per emergency type (fire, general, combined), recognized without looking with **72-94% accuracy** across age groups.',
+      'Achieved a **93% SOS transmission success rate** and **100% alert delivery reliability**, validated in a **17-participant usability study**.',
+      'Designed watch and neckband enclosures in **Fusion 360** and **3D printed** the prototypes, with accessibility for disabled and non-disabled users in mind.'
     ],
     technologies: ['ESP32-S2', 'Adafruit IO', 'IoT', 'Fusion 360', '3D Printing'],
     link: 'https://github.com/jotheesh1729/Wearble-based-alerting-system-for-humans.git'
@@ -159,18 +161,14 @@ const Projects = () => {
         Projects
       </h2>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(460px, 100%), 1fr))', gap: '28px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(460px, 100%), 1fr))', gap: '40px 32px' }}>
         {projects.map((project, index) => (
           <div 
             key={index}
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '16px',
-              padding: '20px',
-              border: '1px solid var(--border)',
-              borderRadius: '4px',
-              backgroundColor: 'var(--card)'
+              gap: '16px'
             }}
           >
             {/* Project Image */}
@@ -180,6 +178,7 @@ const Projects = () => {
                 height: '280px',
                 backgroundColor: 'var(--border)',
                 borderRadius: '3px',
+                border: '1px solid var(--border)',
                 overflow: 'hidden'
               }}>
                 {project.logo ? project.logo : project.image.toLowerCase().endsWith('.mov') || project.image.toLowerCase().endsWith('.mp4') ? (
@@ -242,23 +241,9 @@ const Projects = () => {
                 ))}
               </ul>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {project.technologies.map((tech, idx) => (
-                  <span
-                    key={idx}
-                    style={{
-                      fontSize: '14px',
-                      padding: '3px 9px',
-                      backgroundColor: 'var(--surface)',
-                      border: '1px solid var(--border-2)',
-                      borderRadius: '3px',
-                      color: 'var(--fg)'
-                    }}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <p style={{ fontSize: '14px', color: 'var(--fg-3)', margin: 0 }}>
+                {project.technologies.join(' · ')}
+              </p>
             </div>
           </div>
         ))}

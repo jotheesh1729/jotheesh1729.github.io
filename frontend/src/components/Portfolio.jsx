@@ -7,6 +7,16 @@ import Projects from './Projects';
 import Skills from './Skills';
 import OpenSource from './OpenSource';
 
+const sections = [
+  { id: 'education', label: 'Education', Component: Education },
+  { id: 'experience', label: 'Experience', Component: Experience },
+  { id: 'projects', label: 'Projects', Component: Projects },
+  { id: 'skills', label: 'Skills', Component: Skills },
+  { id: 'open-source', label: 'Open Source', Component: OpenSource }
+];
+
+const container = { maxWidth: '1100px', margin: '0 auto', padding: '0 20px' };
+
 const Portfolio = () => {
   // initial theme is set by the inline script in public/index.html
   const [dark, setDark] = useState(document.documentElement.dataset.theme === 'dark');
@@ -19,29 +29,31 @@ const Portfolio = () => {
 
   return (
     <div style={{ backgroundColor: 'var(--page)', minHeight: '100vh' }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '40px 20px'
-      }}>
-        <button
-          onClick={toggleTheme}
-          aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
-          title={dark ? 'Light theme' : 'Dark theme'}
-          style={{
-            position: 'fixed', top: '14px', right: '14px', zIndex: 10,
-            display: 'flex', padding: '8px', borderRadius: '50%', cursor: 'pointer',
-            border: '1px solid var(--border-2)', backgroundColor: 'var(--surface)', color: 'var(--fg-btn)'
-          }}
-        >
-          {dark ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
+      <nav style={{ position: 'sticky', top: 0, zIndex: 10, backgroundColor: 'var(--page)', borderBottom: '1px solid var(--border)' }}>
+        <div style={{ ...container, display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 22px', paddingTop: '10px', paddingBottom: '10px' }}>
+          <a href="#top" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--fg-strong)' }}>Jotheesh Reddy Kummathi</a>
+          <span style={{ flex: 1 }} />
+          {sections.map(({ id, label }) => (
+            <a key={id} href={`#${id}`} style={{ fontSize: '15px', color: 'var(--fg-2)' }}>{label}</a>
+          ))}
+          <button
+            onClick={toggleTheme}
+            aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+            title={dark ? 'Light theme' : 'Dark theme'}
+            style={{ display: 'flex', padding: '4px', cursor: 'pointer', border: 'none', background: 'none', color: 'var(--fg-2)' }}
+          >
+            {dark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
+      </nav>
+
+      <div id="top" style={{ ...container, paddingTop: '40px', paddingBottom: '40px' }}>
         <About />
-        <Education />
-        <Experience />
-        <Projects />
-        <Skills />
-        <OpenSource />
+        {sections.map(({ id, Component }) => (
+          <div key={id} id={id} style={{ scrollMarginTop: '64px' }}>
+            <Component />
+          </div>
+        ))}
       </div>
     </div>
   );
