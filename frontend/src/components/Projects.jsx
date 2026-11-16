@@ -159,14 +159,14 @@ const Projects = () => {
         Projects
       </h2>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(460px, 100%), 1fr))', gap: '28px' }}>
         {projects.map((project, index) => (
           <div 
             key={index}
             style={{
               display: 'flex',
-              gap: '24px',
-              flexWrap: 'wrap',
+              flexDirection: 'column',
+              gap: '16px',
               padding: '20px',
               border: '1px solid var(--border)',
               borderRadius: '4px',
@@ -174,10 +174,10 @@ const Projects = () => {
             }}
           >
             {/* Project Image */}
-            <div style={{ flexShrink: 0, width: 'min(280px, 100%)' }}>
+            <div style={{ flexShrink: 0, width: '100%' }}>
               <div style={{
                 width: '100%',
-                height: '210px',
+                height: '280px',
                 backgroundColor: 'var(--border)',
                 borderRadius: '3px',
                 overflow: 'hidden'
@@ -207,7 +207,7 @@ const Projects = () => {
             </div>
 
             {/* Project Details */}
-            <div style={{ flex: '1 1 300px', minWidth: 0 }}>
+            <div style={{ minWidth: 0 }}>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '4px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <h3 style={{ fontSize: '17px', fontWeight: '600', color: 'var(--fg-strong)' }}>
