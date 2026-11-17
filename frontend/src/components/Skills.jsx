@@ -6,28 +6,44 @@ const skillCategories = [
     skills: ['C', 'C++', 'Rust', 'Embedded C', 'Python', 'MATLAB', 'Bash/Shell']
   },
   {
-    category: 'Embedded Systems & Firmware',
-    skills: ['FreeRTOS', 'Zephyr RTOS', 'Bare-Metal', 'Embassy (Rust)', 'MCUboot/OTA-DFU', 'Embedded Linux (L4T, Yocto)', 'Devicetree/Kconfig', 'CMSIS-DSP', 'UART', 'SPI', 'I²C', 'CAN/CAN-FD', 'BLE (GATT)', 'USB', 'MIPI CSI-2', 'MQTT', 'DMA']
+    category: 'RTOS & Firmware',
+    skills: ['FreeRTOS', 'Zephyr RTOS', 'Bare-Metal', 'Embassy (Rust)', 'MCUboot/OTA-DFU', 'CMSIS-DSP', 'DMA']
   },
   {
-    category: 'Hardware Platforms & Debug Tools',
-    skills: ['STM32 (ARM Cortex-M4/M7/M55)', 'Nordic nRF52', 'ESP32', 'Pixhawk', 'NVIDIA Jetson Orin', 'JTAG/SWD', 'GDB', 'Oscilloscopes', 'Logic Analyzers', 'KiCad (multi-layer PCB)', 'Fusion 360']
+    category: 'Embedded Linux',
+    skills: ['L4T BSP', 'Yocto', 'U-Boot', 'Devicetree/Kconfig', 'Kernel Drivers', 'GStreamer']
+  },
+  {
+    category: 'MCUs & Platforms',
+    skills: ['STM32', 'ARM Cortex-M4/M7/M55', 'Nordic nRF52', 'ESP32', 'Pixhawk', 'NVIDIA Jetson Orin']
+  },
+  {
+    category: 'Communication Protocols',
+    skills: ['UART', 'SPI', 'I²C', 'CAN/CAN-FD', 'USB', 'BLE (GATT)', 'MQTT', 'MAVLink', 'MIPI CSI-2', 'TCP/IP']
   },
   {
     category: 'Robotics & Controls',
-    skills: ['ROS 2/DDS', 'Nav2', 'PX4 Autopilot', 'uORB', 'MAVLink', 'uXRCE-DDS', 'Control (PID, LQR, MPC, MPPI)', 'Motion Planning (A*, RRT)', 'HIL/SIL Testing']
+    skills: ['ROS 2/DDS', 'Nav2', 'PX4 Autopilot', 'uORB', 'uXRCE-DDS', 'Control (PID, LQR, MPC, MPPI)', 'Motion Planning (A*, RRT)']
   },
   {
     category: 'Perception & Estimation',
-    skills: ['SLAM (RTAB-Map)', 'Visual-Inertial Odometry', 'Kalman Filtering (EKF/UKF)', 'Sensor Fusion', 'LiDAR', 'GNSS/RTK', 'OpenCV', 'PCL', '3D Gaussian Splatting', 'GStreamer']
+    skills: ['SLAM (RTAB-Map)', 'Visual-Inertial Odometry', 'Kalman Filtering (EKF/UKF)', 'Sensor Fusion', 'LiDAR', 'GNSS/RTK', 'OpenCV', 'PCL', '3D Gaussian Splatting']
   },
   {
     category: 'Machine Learning & Edge AI',
     skills: ['PyTorch', 'TensorFlow', 'JAX', 'Reinforcement Learning (PPO)', 'Vision-Language Models', 'YOLOv8/YOLO-World', 'Graph Neural Networks', 'ONNX Runtime', 'TensorRT', 'CUDA']
   },
   {
-    category: 'Simulation & Dev Tools',
-    skills: ['Isaac Sim/Lab', 'Gazebo', 'MuJoCo', 'Docker', 'CMake', 'Git', 'CI/CD', 'Linux']
+    category: 'Simulation & Testing',
+    skills: ['Isaac Sim/Lab', 'Gazebo', 'MuJoCo', 'HIL/SIL Testing']
+  },
+  {
+    category: 'Debug & Dev Tools',
+    skills: ['JTAG/SWD', 'GDB', 'Oscilloscopes', 'Logic Analyzers', 'CMake', 'Git', 'CI/CD', 'Docker', 'Linux']
+  },
+  {
+    category: 'Hardware Design',
+    skills: ['KiCad (multi-layer PCB)', 'Fusion 360', '3D Printing']
   }
 ];
 
