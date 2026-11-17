@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
+import { ArrowUpRight } from 'lucide-react';
 import { withBold } from '@/lib/utils';
 
 const experiences = [
@@ -80,15 +81,22 @@ const Experience = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      textDecoration: 'none',
-                      color: 'var(--fg)'
-                    }}
-                    title="View on GitHub"
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '4px',
+                        flexShrink: 0,
+                        whiteSpace: 'nowrap',
+                        padding: '2px 8px',
+                        fontSize: '13px',
+                        textDecoration: 'none',
+                        color: 'var(--fg-btn)',
+                        backgroundColor: 'var(--surface)',
+                        border: '1px solid var(--border-2)',
+                        borderRadius: '4px'
+                      }}
                   >
-                    <FaGithub size={18} />
+                    <FaGithub size={14} /> GitHub
+                    <ArrowUpRight size={14} />
                   </a>
                 )}
               </div>

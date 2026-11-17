@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
+import { ArrowUpRight } from 'lucide-react';
 import { SiRust, SiStmicroelectronics } from 'react-icons/si';
 import { withBold } from '@/lib/utils';
 
@@ -200,14 +201,23 @@ const Projects = () => {
                       href={project.link.startsWith('/') ? process.env.PUBLIC_URL + project.link : project.link} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      style={{ 
-                        display: 'flex',
+                      style={{
+                        display: 'inline-flex',
                         alignItems: 'center',
-                        color: 'var(--fg)'
+                        gap: '4px',
+                        flexShrink: 0,
+                        whiteSpace: 'nowrap',
+                        padding: '2px 8px',
+                        fontSize: '13px',
+                        textDecoration: 'none',
+                        color: 'var(--fg-btn)',
+                        backgroundColor: 'var(--surface)',
+                        border: '1px solid var(--border-2)',
+                        borderRadius: '4px'
                       }}
-                      title="View on GitHub"
                     >
-                      <FaGithub size={18} />
+                      {project.link.includes('github.com') ? <><FaGithub size={14} /> GitHub</> : 'Report'}
+                      <ArrowUpRight size={14} />
                     </a>
                   )}
                 </div>
