@@ -65,7 +65,7 @@ const projects = [
     dates: 'September - December 2025',
     paras: [
       'A **PPO** locomotion policy trained in **NVIDIA Isaac Lab** and deployed on a real **Unitree Go2** through zero-shot **sim-to-real transfer**.',
-      'Trained across **4,096 parallel environments** with a two-stage terrain curriculum; **one of 5 teams out of 30+** selected for the hardware demo.'
+      'Trained across **4,096 parallel environments** with a two-stage terrain curriculum; **one of the top 5 teams out of 30+** selected for the hardware demo.'
     ],
     technologies: ['Isaac Lab', 'Deep Reinforcement Learning (PPO)', 'PyTorch', 'Unitree Go2', 'Sim-to-Real Transfer'],
     link: 'https://github.com/jotheesh1729/rob6323_go2_project.git'
