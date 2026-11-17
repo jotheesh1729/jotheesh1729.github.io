@@ -47,3 +47,17 @@ h1, h2, h3, h4, h5, h6, p, ul {
     color-scheme: dark;
 }
 :root body { background: var(--page); color: var(--fg); }
+
+/* Section nav: sticky top bar by default (phones), left sidebar on desktop */
+.site-nav { position: sticky; top: 0; z-index: 10; background: var(--page); border-bottom: 1px solid var(--border); }
+.site-nav-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; padding: 10px 20px; }
+.site-nav-spacer { flex: 1; }
+.site-nav-links { order: 3; flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; }
+@media (min-width: 1024px) {
+    .site-layout { display: flex; max-width: 1340px; margin: 0 auto; }
+    .site-nav { flex: 0 0 200px; align-self: flex-start; height: 100vh; border-bottom: none; }
+    .site-nav-inner { flex-direction: column; align-items: flex-start; gap: 14px; padding: 48px 20px; }
+    .site-nav-spacer { display: none; }
+    .site-nav-links { order: 0; flex-basis: auto; flex-direction: column; gap: 14px; font-size: 15px; }
+    .site-content { flex: 1; min-width: 0; }
+}
